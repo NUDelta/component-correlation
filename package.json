@@ -1,0 +1,30 @@
+{
+  "name": "component-correlation",
+  "version": "1.0.0",
+  "description": "determining the correlation between components across websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NUDelta/component-correlation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NUDelta/component-correlation/issues"
+  },
+  "homepage": "https://github.com/NUDelta/component-correlation#readme",
+  "private": true,
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-install-dependencies": "^0.2.0",
+    "grunt-sass": "^1.1.0"
+  }
+}
