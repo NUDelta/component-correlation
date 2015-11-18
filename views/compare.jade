@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    title=title
+    link(rel="stylesheet", href="codemirror.css")
+    script(src="codemirror.js")
+  body
+    h1 Scrape
+    p The New Yorker
+    textarea(id="newyorker")
+      | <nav role="navigation" class="primary-nav">
+      |  <ul>
+      |    <li class="main-item tny-nav-icon">
+      |      <a href="http://www.newyorker.com/">Home</a>
+      |    </li>
+      |    <li class="tny-nav-news menu-item"><a href="http://www.newyorker.com/news">News</a></li>
+      |  <li class="tny-nav-culture menu-item"><a href="http://www.newyorker.com/culture">Culture</a></li>
+      |  <li class="tny-nav-books menu-item"><a href="http://www.newyorker.com/books">Books &amp; Fiction</a></li>
+      |  <li class="tny-nav-tech menu-item"><a href="http://www.newyorker.com/tech">Science &amp; Tech</a></li>
+      |  <li class="menu-item"><a href="http://www.newyorker.com/business">Business</a></li>
+      |  <li class="tny-nav-humor menu-item"><a href="http://www.newyorker.com/humor">Humor</a></li>
+      |  <li class="menu-item"><a href="http://www.newyorker.com/cartoons">Cartoons</a></li>
+      |  <li class="tny-nav-magazine menu-item"><a href="http://www.newyorker.com/magazine">Magazine</a></li>
+      |  <li class="menu-item"><a href="http://video.newyorker.com/">Video</a></li>
+      |  <li class="tny-nav-archive menu-item"><a href="http://www.newyorker.com/archive">Archive</a></li>
+      |      <li id="subscribe">
+      |      <div id="AMS_NYR_GLOBAL_NAVBAR" class="ecom-placement"><a title="Subscribe to The New Yorker" target="_blank" href="http://www.newyorker.com/go/failsafe">Subscribe</a></div>      <div id="subscribe-rollover">
+      |          <div class="subscribe-links-wrapper">
+      |            <div id="AMS_NYR_GLOBAL_NAVBAR_ROLLOVER" class="ecom-placement"><img rel="nofollow" src="/wp-content/assets/dist/img/px.gif" class="ecom-responsive" data-src-desktop="/wp-content/assets/dist/img/cn-ecom/failsafe/2/desktop_rollover_300x200.png" usemap="#GLOBAL_NAVBAR_ROLLOVER_MAP" width="300" height="200" alt="Subscribe to The New Yorker"><map id="GLOBAL_NAVBAR_ROLLOVER_MAP" name="GLOBAL_NAVBAR_ROLLOVER_MAP"><area shape="rect" coords="0,249,75,286" href="https://w1.buysub.com/loc/NYR/ATGFailsafeGift" alt="Give a Gift" target="_blank"><area shape="rect" coords="76,249,203,286" href="https://w1.buysub.com/loc/NYR/ATGFailsafeInt" alt="International Orders" target="_blank"><area shape="rect" coords="0,0,399,249" href="http://www.newyorker.com/go/failsafe" alt="Subscribe to The New Yorker" target="_blank"><area shape="rect" coords="203,249,399,290" href="http://www.newyorker.com/go/failsafe" alt="Order Now" target="_blank"></map></div>
+      |   </div>
+      |        </div>
+      |          </li>
+      |        <div id="navSearch" class="navSearch nav-search-container">
+      |    <form method="get" action="http://www.newyorker.com/search">
+      |      <input type="text" name="q" placeholder="Search The New Yorker">
+      |      <input type="submit" value="Submit Search">
+      |    </form>
+      |  </div>     <li class="tny-nav-search"><a href="http://www.newyorker.com/search" title="Search" id="search-toggle" class="search-toggle bignav-search">Search</a></li>
+
+      |    </ul>
+
+      |    <div class="floatingAd-wrapper"><div id="floatingAd" style="display:none;">  <div id="floatingAd_content">    <div id="AMS_NYR_POPUP_FLOATINGAD" class="ecom-placement">    </div>    <div id="floatingAd_header"><a href="javascript:void(0)" class="close">Close</a></div>  </div></div></div>
+      |  </nav>
+  script(type="text/javascript").
+    var newyorkernav = document.getElementById("newyorker");
+    var newyorker = CodeMirror.fromTextArea(newyorkernav, { 
+      lineWrapping: true,
+      lineNumbers: true,
+      mode: "htmlmixed"
+    });

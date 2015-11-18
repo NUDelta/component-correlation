@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    title=title
+    link(rel="stylesheet", href="codemirror.css")
+    script(src="codemirror.js")
+  body
+    h1 Scrape
+    p The New Yorker
+    textarea(id="newyorker")
+      | #{newyorker}
+    p NPR
+    textarea(id="nav")
+      | #{npr}
+  script(type="text/javascript").
+    var textArea = document.getElementById("nav");
+    var myCodeMirror = CodeMirror.fromTextArea(textArea, { 
+      lineWrapping: true,
+      lineNumbers: true,
+      mode: "htmlmixed"
+    });
+
+    var newyorkernav = document.getElementById("newyorker");
+    var newyorker = CodeMirror.fromTextArea(newyorkernav, { 
+      lineWrapping: true,
+      lineNumbers: true,
+      mode: "htmlmixed"
+    });

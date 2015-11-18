@@ -18,8 +18,10 @@
   "homepage": "https://github.com/NUDelta/component-correlation#readme",
   "private": true,
   "dependencies": {
+    "async": "^1.5.0",
     "express": "^4.13.3",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "jquery": "^2.1.4"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
