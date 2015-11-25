@@ -3,26 +3,91 @@ html(lang="en")
   head
     title=title
     link(rel="stylesheet", href="codemirror.css")
+    link(rel="stylesheet", href="stylesheets/style.css")
+    link(rel="stylesheet", href="fold/foldgutter.css")
+    script(src="jquery.min.js")
     script(src="codemirror.js")
+    script(src="mode/xml/xml.js")
+    script(src="mode/htmlmixed/htmlmixed.js")
+    script(src="fold/foldcode.js")
+    script(src="fold/foldgutter.js")
+    script(src="fold/brace-fold.js")
+    script(src="fold/xml-fold.js")
   body
-    h1 Scrape
-    p The New Yorker
-    textarea(id="newyorker")
-      | #{newyorker}
-    p NPR
-    textarea(id="nav")
-      | #{npr}
+    h1 Static Navigation Bar
+    div#comparison
+      h3 Overview
+      div.block
+        p The New Yorker
+        div.crop
+          img(src="img/newyorker.png")
+        textarea(id="newyorker")
+          | #{newyorker}
+      div.block
+        p NPR
+        div.crop
+          img(src="img/npr.png")
+        textarea(id="npr")
+          | #{npr}
+      div.block
+        p NYT
+        div.crop
+          img(src="img/nytimes.png")
+        textarea(id="nytimes")
+          | #{nytimes}
   script(type="text/javascript").
-    var textArea = document.getElementById("nav");
-    var myCodeMirror = CodeMirror.fromTextArea(textArea, { 
-      lineWrapping: true,
+    var nprnav = document.getElementById("npr");
+    var npr = CodeMirror.fromTextArea(nprnav, { 
+      smartIndent: true,
       lineNumbers: true,
-      mode: "htmlmixed"
+      mode: "xml",
+      mode: "text/html",
+      foldGutter: {
+        rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.brace, CodeMirror.fold.comment)
+      },
+      extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
     });
 
+    var to_fold = [11, 17, 23, 29, 35, 41, 49, 56];
+    for (var i=0; i<to_fold.length; i++) {
+      npr.foldCode(CodeMirror.Pos(to_fold[i], 0));
+    }
+
     var newyorkernav = document.getElementById("newyorker");
-    var newyorker = CodeMirror.fromTextArea(newyorkernav, { 
-      lineWrapping: true,
+    var newyorker = CodeMirror.fromTextArea(newyorkernav, {
+      smartIndent: true,
       lineNumbers: true,
-      mode: "htmlmixed"
+      mode: "xml",
+      mode: "text/html",
+      foldGutter: {
+        rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.brace, CodeMirror.fold.comment)
+      },
+      extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
     });
+
+    // find dynamic way to fold children
+    newyorker.foldCode(CodeMirror.Pos(14, 0));
+    newyorker.foldCode(CodeMirror.Pos(30, 0));
+    newyorker.foldCode(CodeMirror.Pos(40, 0));
+
+    var nytnav = document.getElementById("nytimes");
+    var nyt = CodeMirror.fromTextArea(nytnav, {
+      smartIndent: true,
+      lineNumbers: true,
+      mode: "xml",
+      mode: "text/html",
+      foldGutter: {
+        rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.brace, CodeMirror.fold.comment)
+      },
+      extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+    });
+
+    $('h3').append('<p>The New Yorker: ' + newyorker.lineCount() + ' lines</p>');
+    $('h3').append('<p>NPR: ' + npr.lineCount() + ' lines</p>');
+    $('h3').append('<p>NYT: ' + nyt.lineCount() + ' lines</p>');

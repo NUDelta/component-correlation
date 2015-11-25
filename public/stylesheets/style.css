@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700);
+body {
+  font-family: "Source Sans Pro", sans-serif; }
+
+p {
+  font-weight: 400; }
+
+.block {
+  max-width: 48%;
+  float: left; }
+  .block:first-of-type {
+    margin-right: 2%; }
+  .block p {
+    font-weight: 600; }
+
+.crop {
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 1em; }
+  .crop img {
+    width: 100%; }

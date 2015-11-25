@@ -21,7 +21,11 @@
     "async": "^1.5.0",
     "express": "^4.13.3",
     "jade": "^1.11.0",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "js-beautify": "^1.5.10",
+    "node-horseman": "^2.8.2",
+    "node-phantom": "^0.2.5",
+    "phantomjs": "^1.9.19"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

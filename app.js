@@ -1,3 +1,15 @@
+(function() {
+    var childProcess = require("child_process");
+    var oldSpawn = childProcess.spawn;
+    function mySpawn() {
+        console.log('spawn called');
+        console.log(arguments);
+        var result = oldSpawn.apply(this, arguments);
+        return result;
+    }
+    childProcess.spawn = mySpawn;
+})();
+
 // set variables for environment
 var express = require('express');
 var path = require('path');
@@ -7,6 +19,9 @@ var cheerio = require('cheerio');
 var jQuery = require('jquery');
 var async = require('async');
 var app = express();
+// var beautify_js = require('js-beautify'); // also available under "js" export
+// var beautify_css = require('js-beautify').css;
+var beautify_html = require('js-beautify').html;
 
 // set routes
 app.get('/', function(req, res) {
@@ -23,7 +38,7 @@ app.get('/scrape', function(req, res){
 	        request("http://www.npr.org", function(error, response, html) {
 	            if(!error){
 		            var $ = cheerio.load(html);
-		            var firstData = $('#globalheader');
+		            var firstData = beautify_html($('#globalheader').html());
 		        }
 	            next(null, firstData);
 	        });
@@ -31,43 +46,35 @@ app.get('/scrape', function(req, res){
 	    function(next) {
 	        request("http://www.newyorker.com", function(error, response, html) {
 	            var $ = cheerio.load(html);
-		        var secondData = $('.primary-nav');
+		        var secondData = beautify_html($('.primary-nav').html());
+		        $('.primary-nav').each(function(elem){
+		        	$(this).removeAttr('alt');
+				    if ($(this).attr('alt')){
+				        $(this).removeAttr('alt');
+				    };
+				    // console.log($(this));
+				    // console.log($(this).html());
+				});
 	            next(null, secondData);
 	        });
+	    },
+	    function(next) {
+	        request("http://www.nytimes.com", function(error, response, html) {
+	            if(!error){
+		            var $ = cheerio.load(html);
+		            var thirdData = beautify_html($('#shell').html());
+		        }
+	            next(null, thirdData);
+	        });
 	    }], function(err, results) {
-	    	console.log(results);
 	        // results is [firstData, secondData]
-	        res.render('scrape', {npr: results[0], newyorker: results[1]});
+	        res.render('scrape', {title: 'Scraping Navigation Bars', npr: results[0], newyorker: results[1], nytimes: results[2]});
     });
-
-    // // url = 'http://www.newyorker.com/';
-    // url = 'http://www.npr.org';
-
-    // // The structure of our request call
-    // // The first parameter is our URL
-    // // The callback function takes 3 parameters, an error, response status code and the html
-
-    // request(url, function(error, response, html){
-
-    //     // First we'll check to make sure no errors occurred when making the request
-
-    //     if(!error){
-    //         // Next, we'll utilize the cheerio library on the returned html which will essentially give us jQuery functionality
-    //         var $ = cheerio.load(html);
-    //         var page_source = $.html();
-    //         var nav = $('.primary-nav');
-    //         var nav = $('#globalheader');
-    //         // var nav_css = nav.css(attr);
-    //         // console.log(nav_css);
-
-    //         res.render('scrape', {navbar: nav});
-    //     }
-    // });
 });
 
 // set server port
 app.listen(4000);
-console.log('server is running');
+console.log('server is running on port 4000');
 
 // views as directory for all template files
 app.set('views', path.join(__dirname, 'views'));
