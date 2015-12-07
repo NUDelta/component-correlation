@@ -37,6 +37,11 @@ html(lang="en")
           | #{nytimes}
   script(type="text/javascript").
     var nprnav = document.getElementById("npr");
+    var test = $(nprnav).val();
+    var x = $.parseHTML(test)[0];
+    var y = $(x).removeAttr('data-metrics-action');
+    console.log(y);
+
     var npr = CodeMirror.fromTextArea(nprnav, { 
       smartIndent: true,
       lineNumbers: true,
@@ -50,10 +55,10 @@ html(lang="en")
       gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
     });
 
-    var to_fold = [11, 17, 23, 29, 35, 41, 49, 56];
-    for (var i=0; i<to_fold.length; i++) {
-      npr.foldCode(CodeMirror.Pos(to_fold[i], 0));
-    }
+    //- var to_fold = [11, 17, 23, 29, 35, 41, 49, 56];
+    //- for (var i=0; i<to_fold.length; i++) {
+    //-   npr.foldCode(CodeMirror.Pos(to_fold[i], 0));
+    //- }
 
     var newyorkernav = document.getElementById("newyorker");
     var newyorker = CodeMirror.fromTextArea(newyorkernav, {
@@ -70,9 +75,9 @@ html(lang="en")
     });
 
     // find dynamic way to fold children
-    newyorker.foldCode(CodeMirror.Pos(14, 0));
-    newyorker.foldCode(CodeMirror.Pos(30, 0));
-    newyorker.foldCode(CodeMirror.Pos(40, 0));
+    //- newyorker.foldCode(CodeMirror.Pos(14, 0));
+    //- newyorker.foldCode(CodeMirror.Pos(30, 0));
+    //- newyorker.foldCode(CodeMirror.Pos(40, 0));
 
     var nytnav = document.getElementById("nytimes");
     var nyt = CodeMirror.fromTextArea(nytnav, {
@@ -91,3 +96,23 @@ html(lang="en")
     $('h3').append('<p>The New Yorker: ' + newyorker.lineCount() + ' lines</p>');
     $('h3').append('<p>NPR: ' + npr.lineCount() + ' lines</p>');
     $('h3').append('<p>NYT: ' + nyt.lineCount() + ' lines</p>');
+
+    function highlightNames(container) {
+      var cm = $("#" + container).next()[0];
+      var classes = $(cm).find('.cm-attribute');
+      for (var i = 0; i < classes.length; i++) {
+        var el = classes[i];
+        if ($(el).html() == 'class') {
+          $(el).next().addClass('class-highlight');
+        } else if ($(el).html() == 'id') {
+          $(el).next().addClass('id-highlight');
+          if ($(el).html() == 'navSearch') {
+            console.log($(el).html());
+          }
+        }
+      }
+    }
+
+    highlightNames('newyorker');
+    highlightNames('npr');
+    highlightNames('nytimes');

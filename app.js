@@ -16,12 +16,42 @@ var path = require('path');
 var http = require('http');
 var request = require('request');
 var cheerio = require('cheerio');
-var jQuery = require('jquery');
 var async = require('async');
 var app = express();
+var beautify_html = require('js-beautify').html;
+var phridge = require('phridge');
 // var beautify_js = require('js-beautify'); // also available under "js" export
 // var beautify_css = require('js-beautify').css;
-var beautify_html = require('js-beautify').html;
+
+// phridge.spawn() creates a new PhantomJS process
+phridge.spawn()
+    .then(function (phantom) {
+        // phantom.openPage(url) loads a page with the given url
+        return phantom.openPage("http://www.newyorker.com");
+    })
+    .then(function (page) {
+        // page.run(fn) runs fn inside PhantomJS
+        return page.run(function () {
+            // Here we're inside PhantomJS, so we can't reference variables in the scope
+            // 'this' is an instance of PhantomJS' WebPage as returned by require("webpage").create()
+            return this.evaluate(function () {
+            	var $ = jQuery;
+                return jQuery('.primary-nav').css('display');
+            });
+        });
+    })
+
+    // phridge.disposeAll() exits cleanly all previously created child processes.
+    // This should be called in any case to clean up everything.
+    .finally(phridge.disposeAll)
+
+    .done(function (text) {
+        console.log(text);
+    }, function (err) {
+        // Don't forget to handle errors
+        // In this case we're just throwing it
+        throw err;
+    });
 
 // set routes
 app.get('/', function(req, res) {

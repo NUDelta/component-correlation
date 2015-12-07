@@ -19,3 +19,10 @@ p {
   margin-bottom: 1em; }
   .crop img {
     width: 100%; }
+
+.class-highlight {
+  background-color: #F3F315;
+  /* #A9E8FA;*/ }
+
+.id-highlight {
+  background-color: #D3FF6A; }
