@@ -6,17 +6,22 @@ p {
   font-weight: 400; }
 
 .block {
-  max-width: 48%;
+  width: 100%;
   float: left; }
   .block:first-of-type {
     margin-right: 2%; }
   .block p {
     font-weight: 600; }
 
+.CodeMirror {
+  max-width: 48%;
+  float: left; }
+
 .crop {
   height: 200px;
   overflow: hidden;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  text-align: center; }
   .crop img {
     width: 100%; }
 

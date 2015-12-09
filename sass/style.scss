@@ -13,22 +13,28 @@ p {
 }
 
 .block {
+	width: 100%;
+    float: left;
+
 	&:first-of-type {
 		margin-right:2%;
 	}
-
-	max-width: 48%;
-	float: left;
 
 	p {
 		font-weight: 600;
 	}
 }
 
+.CodeMirror {
+	max-width: 48%;
+    float: left;
+}
+
 .crop {
     height: 200px;
     overflow: hidden;
     margin-bottom: 1em;
+    text-align: center;
 
     img {
     	width: 100%;

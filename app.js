@@ -119,17 +119,15 @@ app.get('/scrape', function(req, res){
 			    .done(function (css) {
 			        console.log(css);
 			        newyorkercss = css;
-			        // return newyorkercss;
 			        next(null, newyorkercss);
 			    }, function (err) {
 			        // Don't forget to handle errors
-			        // In this case we're just throwing it
 			        throw err;
 			    });
 			    
 	    }], function(err, results) {
 	        // results is [firstData, secondData]
-	        res.render('scrape', {title: 'Scraping Navigation Bars', npr: results[0], newyorker: results[1], nytimes: results[2], json: JSON.stringify(results[3])});
+	        res.render('scrape', {title: 'Scraping Navigation Bars', npr: results[0], newyorker: results[1], nytimes: results[2], newyorkercss: JSON.stringify(results[3])});
     });
 });
 
