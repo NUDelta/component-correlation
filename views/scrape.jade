@@ -36,12 +36,28 @@ html(lang="en")
         p NPR
         div.crop
           img(src="img/npr.png")
+        textarea(id="nprcss")
+          | #globalheader {
+          = "\n"
+          -var ob = JSON.parse(nprcss)
+          -for(var prop in ob)
+            | #{prop}: #{ob[prop]};
+            = "\n"
+          | }
         textarea(id="npr")
           | #{npr}
       div.block
         p NYT
         div.crop
           img(src="img/nytimes.png")
+        textarea(id="nytcss")
+          | #shell {
+          = "\n"
+          -var ob = JSON.parse(nprcss)
+          -for(var prop in ob)
+            | #{prop}: #{ob[prop]};
+            = "\n"
+          | }
         textarea(id="nytimes")
           | #{nytimes}
   script(type="text/javascript").
@@ -104,6 +120,26 @@ html(lang="en")
 
     var newyorkernavcss = document.getElementById("newyorkercss");
     var cm_newyorkercss = CodeMirror.fromTextArea(newyorkernavcss, {
+      smartIndent: true,
+      lineNumbers: true,
+      mode: "text/css",
+      extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+    });
+
+    var nprnavcss = document.getElementById("nprcss");
+    var cm_nprcss = CodeMirror.fromTextArea(nprnavcss, {
+      smartIndent: true,
+      lineNumbers: true,
+      mode: "text/css",
+      extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+      foldGutter: true,
+      gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+    });
+
+    var nytnavcss = document.getElementById("nytcss");
+    var cm_nytcss = CodeMirror.fromTextArea(nytnavcss, {
       smartIndent: true,
       lineNumbers: true,
       mode: "text/css",

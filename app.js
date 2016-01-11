@@ -1,9 +1,10 @@
+// set up spawns for phridge
 (function() {
     var childProcess = require("child_process");
     var oldSpawn = childProcess.spawn;
     function mySpawn() {
         console.log('spawn called');
-        console.log(arguments);
+        //console.log(arguments);
         var result = oldSpawn.apply(this, arguments);
         return result;
     }
@@ -17,9 +18,16 @@ var http = require('http');
 var request = require('request');
 var cheerio = require('cheerio');
 var async = require('async');
-var app = express();
 var beautify_html = require('js-beautify').html;
 var phridge = require('phridge');
+var https = require('https');
+var fs = require('fs');
+// set options for SSL server
+var options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+};
+var app = express();
 // var beautify_js = require('js-beautify'); // also available under "js" export
 // var beautify_css = require('js-beautify').css;
 
@@ -33,7 +41,9 @@ app.get('/compare', function(req, res) {
 });
 
 app.get('/scrape', function(req, res){
-	var newyorkercss;
+	var newyorkercss, nytcss, nprcss;
+	// (1) first 3 requests get html for nav bars using cheerio
+	// (2) last 3 requests get css for nav bars using phridge/phantom
 	async.parallel([
 	    function(next) {
 	        request("http://www.npr.org", function(error, response, html) {
@@ -53,8 +63,6 @@ app.get('/scrape', function(req, res){
 				    if ($(this).attr('alt')){
 				        $(this).removeAttr('alt');
 				    };
-				    // console.log($(this));
-				    // console.log($(this).html());
 				});
 	            next(null, secondData);
 	        });
@@ -69,20 +77,127 @@ app.get('/scrape', function(req, res){
 	        });
 	    },
 	    function(next) {
-	    	// phridge.spawn() creates a new PhantomJS process
+	    	// creates new PhantomJS process
 			phridge.spawn()
 			    .then(function (phantom) {
-			        // phantom.openPage(url) loads a page with the given url
-			        return phantom.openPage("http://www.newyorker.com");
+			        return phantom.openPage("http://www.npr.org");
 			    })
 			    .then(function (page) {
 			        // page.run(fn) runs fn inside PhantomJS
 			        return page.run(function () {
-			            // Here we're inside PhantomJS, so we can't reference variables in the scope
 			            // 'this' is an instance of PhantomJS' WebPage as returned by require("webpage").create()
-			            return this.evaluate(function () {
+					   //  this.includeJs(
+						  // 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js',
+						  // function() {
+						  //   console.log('included');
+						  // });
+					    return this.evaluate(function () {
+					    	// because of "this", need to redeclare jQuery and css() function in each async request
+					    	// TODO:
+					    	// - find way to abstract out css() function
+					    	// - find way to consolidate async requests
 			            	var $ = jQuery;
 			            	jQuery.fn.css = (function(css2) { 
+							    return function() {
+							        if (arguments.length) { return css2.apply(this, arguments); }
+							        var attr = ['font-family','font-size','font-weight','font-style','color',
+							            'text-transform','text-decoration','letter-spacing','word-spacing',
+							            'line-height','text-align','vertical-align','direction','background-color',
+							            'background-image','background-repeat','background-position',
+							            'background-attachment','opacity','width','height','top','right','bottom',
+							            'left','margin-top','margin-right','margin-bottom','margin-left',
+							            'padding-top','padding-right','padding-bottom','padding-left',
+							            'border-top-width','border-right-width','border-bottom-width',
+							            'border-left-width','border-top-color','border-right-color',
+							            'border-bottom-color','border-left-color','border-top-style',
+							            'border-right-style','border-bottom-style','border-left-style','position',
+							            'display','visibility','z-index','overflow-x','overflow-y','white-space',
+							            'clip','float','clear','cursor','list-style-image','list-style-position',
+							            'list-style-type','marker-offset'];
+							        var len = attr.length, obj = {};
+							        for (var i = 0; i < len; i++) {
+							            obj[attr[i]] = css2.call(this, attr[i]);
+							        }
+							        return obj;
+							    };
+							})(jQuery.fn.css);
+							var styles = jQuery('#globalheader').css();
+							console.log(styles);
+			                return styles;
+			            });
+			        });
+			    })
+
+			    .done(function (css) {
+			        console.log(css);
+			        nprcss = css;
+			        next(null, nprcss);
+			    }, function (err) {
+			        // Don't forget to handle errors
+			        throw err;
+			    });
+			    
+	    },
+	    function(next) {
+			phridge.spawn()
+			    .then(function (phantom) {
+			        return phantom.openPage("http://www.nytimes.com");
+			    })
+			    .then(function (page) {
+			        // page.run(fn) runs fn inside PhantomJS
+			        return page.run(function () {
+					    return this.evaluate(function () {
+			            	var $ = jQuery;
+			            	jQuery.fn.css = (function(css2) { 
+							    return function() {
+							        if (arguments.length) { return css2.apply(this, arguments); }
+							        var attr = ['font-family','font-size','font-weight','font-style','color',
+							            'text-transform','text-decoration','letter-spacing','word-spacing',
+							            'line-height','text-align','vertical-align','direction','background-color',
+							            'background-image','background-repeat','background-position',
+							            'background-attachment','opacity','width','height','top','right','bottom',
+							            'left','margin-top','margin-right','margin-bottom','margin-left',
+							            'padding-top','padding-right','padding-bottom','padding-left',
+							            'border-top-width','border-right-width','border-bottom-width',
+							            'border-left-width','border-top-color','border-right-color',
+							            'border-bottom-color','border-left-color','border-top-style',
+							            'border-right-style','border-bottom-style','border-left-style','position',
+							            'display','visibility','z-index','overflow-x','overflow-y','white-space',
+							            'clip','float','clear','cursor','list-style-image','list-style-position',
+							            'list-style-type','marker-offset'];
+							        var len = attr.length, obj = {};
+							        for (var i = 0; i < len; i++) {
+							            obj[attr[i]] = css2.call(this, attr[i]);
+							        }
+							        return obj;
+							    };
+							})(jQuery.fn.css);
+							var styles = jQuery('#shell').css();
+							console.log(styles);
+			                return styles;
+			            });
+			        });
+			    })
+
+			    .done(function (css) {
+			        console.log(css);
+			        nytcss = css;
+			        next(null, nytcss);
+			    }, function (err) {
+			        // Don't forget to handle errors
+			        throw err;
+			    });
+	    },
+	    function(next) {
+			phridge.spawn()
+			    .then(function (phantom) {
+			        return phantom.openPage("http://www.newyorker.com");
+			    })
+			    .then(function (page) {
+			        return page.run(function () {
+			            return this.evaluate(function () {
+			            	var $ = jQuery;
+							jQuery.fn.css = (function(css2) { 
 							    return function() {
 							        if (arguments.length) { return css2.apply(this, arguments); }
 							        var attr = ['font-family','font-size','font-weight','font-style','color',
@@ -113,7 +228,6 @@ app.get('/scrape', function(req, res){
 			    })
 
 			    // phridge.disposeAll() exits cleanly all previously created child processes.
-			    // This should be called in any case to clean up everything.
 			    .finally(phridge.disposeAll)
 
 			    .done(function (css) {
@@ -126,14 +240,14 @@ app.get('/scrape', function(req, res){
 			    });
 			    
 	    }], function(err, results) {
-	        // results is [firstData, secondData]
-	        res.render('scrape', {title: 'Scraping Navigation Bars', npr: results[0], newyorker: results[1], nytimes: results[2], newyorkercss: JSON.stringify(results[3])});
+	        // results returned in format [firstData, secondData]
+	        res.render('scrape', {title: 'Scraping Navigation Bars', npr: results[0], newyorker: results[1], nytimes: results[2], nprcss: JSON.stringify(results[3]), nytcss: JSON.stringify(results[4]), newyorkercss: JSON.stringify(results[5])});
     });
 });
 
-// set server port
-app.listen(4000);
-console.log('server is running on port 4000');
+// set server port (http and https)
+http.createServer(app).listen(4000);
+https.createServer(options, app).listen(3000);
 
 // views as directory for all template files
 app.set('views', path.join(__dirname, 'views'));
