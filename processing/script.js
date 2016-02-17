@@ -31,6 +31,23 @@ function css2json(css) {
     return s;
 }
 
+// clean up html
+
+function cleanHTML(node) {
+  var data = $(node).data(),
+      i;
+  // Fetch all the key-names
+  var keys = $.map(data , function(value, key) { return key; });
+  // Loop through the keys, remove the attribute if the key contains "lorem".
+  for(i = 0; i < keys.length; i++) {
+    node = $(node).removeAttr("data-" + keys[i]);
+      // if (keys[i].indexOf('lorem') != -1) {
+      //
+      // }
+  }
+  return node;
+}
+
 // v2
 var $ = jQuery;
 jQuery.fn.css = (function(css2) {
