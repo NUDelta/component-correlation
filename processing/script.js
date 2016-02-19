@@ -118,8 +118,10 @@ function cleanCSS(css) {
 }
 
 $(document).ready(function() {
-  getChildren();
+  //getChildren();
 });
+
+
 
 // var style = css($("#elementToGetAllCSS"));
 // $("#elementToPutStyleInto").css(style);
