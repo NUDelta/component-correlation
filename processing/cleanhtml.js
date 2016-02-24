@@ -7,6 +7,8 @@ function cleanHTML(node) {
 
   // Fetch all the key-names
   var keys = $.map(data, function(value, key) { return key; });
+
+  // camel case hack - apparently map function automatically makes attributes camel case
   var rmultiDash = /([a-z])([A-Z])/g;
 
   // Loop through the keys, remove the attribute if the key contains "data-".
@@ -26,13 +28,40 @@ function cleanHTML(node) {
   return node;
 }
 
+Array.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+
+Array.prototype.intersection = function(a) {
+  return this.filter(function(i) { return a.indexOf(i) != -1});
+}
+
 $(document).ready(function() {
-  var nav_bar = $('.page-nav').find('*');
-  var test;
-  // var nav_bar = $('.spotify-header').find('*');
+  // var nav_bar = $('.page-nav').find('*');
+  var nav_bar = $('.spotify-header').find('*');
+  var tags = [];
+
   for (var i = 0; i < nav_bar.length; i++) {
-    test = cleanHTML(nav_bar[i]);
+    cleanHTML(nav_bar[i]);
+
+    // get all tags used in element
+    var tag = $(nav_bar[i]).prop('tagName').toLowerCase();
+    if (jQuery.inArray(tag, tags) == -1) {
+      tags.push(tag);
+    }
   }
-  // console.log($('.spotify-header').html());
-  console.log($('.page-nav').html())
+  console.log($('.spotify-header').html());
+  // console.log($('.page-nav').html());
+
+  // determine common tags
+  var buzzfeed_tags = ["div", "nav", "ul", "li", "a", "span", "svg", "use", "iframe", "form", "input", "button", "img"];
+  var spotify_tags = ["header", "div", "button", "span", "a", "ul", "li", "img", "nav", "svg", "use"];
+
+  var common_tags = buzzfeed_tags.intersection(spotify_tags);
+  var buzzfeed_only = buzzfeed_tags.diff(spotify_tags);
+  var spotify_only = spotify_tags.diff(buzzfeed_tags);
+
+  console.log("common tags", common_tags);
+  console.log("tags only used by buzzfeed", buzzfeed_only);
+  console.log("tags only used by spotify", spotify_only);
 });

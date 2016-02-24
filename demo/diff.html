@@ -78,10 +78,13 @@ function diffUsingJS(viewType) {
     <h1 class="top"><a href="http://github.com/cemerick/jsdifflib">jsdifflib</a> demo</h1>
     <div class="top">
         <strong>Context size (optional):</strong> <input type="text" id="contextSize" value="" />
+        <p>Common tags: ["div", "nav", "ul", "li", "a", "span", "svg", "use", "button", "img"]</p>
     </div>
     <div class="textInput">
         <h2>Base Text</h2>
-        <textarea id="baseText"><nav class="">
+        <p>Unique tags used: ["iframe", "form", "input"]</p>
+        <p>Tags used: ["div", "nav", "ul", "li", "a", "span", "svg", "use", "iframe", "form", "input", "button", "img"]</p>
+        <textarea id="baseText">
             <div class="">
             <nav class="">
                 <ul class="">
@@ -357,6 +360,8 @@ function diffUsingJS(viewType) {
     </div>
     <div class="textInput spacer">
         <h2>New Text</h2>
+        <p>Unique tags used: ["header"]</p>
+        <p>Tags used: ["header", "div", "button", "span", "a", "ul", "li", "img", "nav", "svg", "use"]</p>
         <textarea id="newText">
             <header class="" role="banner">
                 <div class="">
