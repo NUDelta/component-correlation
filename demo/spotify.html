@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotify Navigation Bar</title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="spotify.css" />
+</head>
+<body>
+    <div>
+        <div>
+            <header class="navbar navbar-default navbar-fixed-top" id=
+            "js-navbar" role="banner">
+                <div id="js-message-bars">
+                    <div class="hidden alert alert-info alert-dismissible" id=
+                    "js-message-bar-cookie-notice" role="alert">
+                        <div class="container">
+                            <button class="close" data-dismiss="alert" type=
+                            "button"><span aria-hidden=
+                            "true">×</span><span class=
+                            "sr-only">Close</span></button> We - and our
+                            partners - use cookies to deliver our services and
+                            to show you ads based on your interests. By using
+                            our website, you agree to the use of cookies as
+                            described in our <a class="alert-link cookie-link"
+                            href="/uk/legal/privacy-policy/#cookies">Cookie
+                            Policy</a>.
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-target=
+                        "#navbar-nav" data-toggle="sidepanel" type=
+                        "button"><span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span> <span class=
+                        "icon-bar"></span> <span class=
+                        "icon-bar"></span></button>
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a class=
+                                "user-link dropdown-toggle hidden-xs hidden-sm"
+                                data-toggle="dropdown" href=
+                                "/uk/account/overview/"><img alt="Nicole Zhu"
+                                class="user-img img-circle navbar-user-img"
+                                src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64"></a>
+                                <a class="user-link hidden-md hidden-lg" href=
+                                "/uk/account/overview/"><img alt="Nicole Zhu"
+                                class="user-img img-circle navbar-user-img"
+                                src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href=
+                                        "/uk/account/overview/">Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="/uk/logout/">Log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul><a class="user-link hidden" href=
+                        "/uk/account/overview/"><img alt="Nicole Zhu" class=
+                        "user-img img-circle navbar-user-img" src=
+                        "https://graph.facebook.com/898775106/picture?width=64&amp;height=64"></a>
+                        <a class="navbar-brand" href="/uk/"><span class=
+                        "navbar-logo">Spotify</span></a>
+                    </div>
+                    <nav class="collapse navbar-collapse" id="navbar-nav" role=
+                    "navigation">
+                        <ul class="nav navbar-nav navbar-right nav-main">
+                            <li>
+                                <a data-ga-action="premium" data-ga-category=
+                                "menu" href="/uk/premium/?checkout=false" id=
+                                "nav-link-premium">Premium</a>
+                            </li>
+                            <li>
+                                <a data-ga-action="help" data-ga-category=
+                                "menu" href="https://support.spotify.com" id=
+                                "nav-link-help">Help</a>
+                            </li>
+                            <li>
+                                <a class=" js-get-spotify js-gtm-event"
+                                data-ga-action="download" data-ga-category=
+                                "menu" data-gtm-event-name=
+                                "download_spotify_button_clicked" href=
+                                "/uk/download/" id=
+                                "nav-link-download">Download</a>
+                            </li>
+                            <li class="divider" role="separator"></li>
+                            <li class=
+                            "alternate sidepanel-item-small hidden-md">
+                                <a data-ga-action="upgrade" data-ga-category=
+                                "menu" href="/uk/premium/" id=
+                                "nav-link-upgrade">Upgrade</a>
+                            </li>
+                            <li class=
+                            "alternate sidepanel-item-small hidden-md hidden-lg">
+                            <a data-ga-action="account" data-ga-category="menu"
+                                href="/uk/account/overview/" id=
+                                "nav-link-account">Account</a>
+                            </li>
+                            <li class=
+                            "alternate sidepanel-item-small hidden-md hidden-lg">
+                            <a data-ga-action="log out" data-ga-category="menu"
+                                href="/uk/logout/" id="nav-link-log out">Log
+                                Out</a>
+                            </li>
+                            <li class="dropdown alternate hidden-sidepanel">
+                                <a class="user-link dropdown-toggle"
+                                data-toggle="dropdown" href=
+                                "/uk/account/overview/"><img alt="Nicole Zhu"
+                                class="user-img img-circle navbar-user-img"
+                                src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64">
+                                <span class="user-text">Nicole Zhu</span>
+                                <svg class="svg-chevron-down">
+                                <use xlink:href="#chevron-down" xmlns:xlink=
+                                "http://www.w3.org/1999/xlink"></use></svg></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class=
+                                    "alternate sidepanel-item-small visible-md-block">
+                                    <a data-ga-action="upgrade"
+                                    data-ga-category="menu" href="/uk/premium/"
+                                        id="nav-link-upgrade">Upgrade</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/uk/account/overview/">Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="/uk/logout/">Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+</body>
+</html>
