@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>jsdifflib demo</title>
+    <link rel="stylesheet" type="text/css" href="diff/diffview.css"/>
+    <script type="text/javascript" src="diff/diffview.js"></script>
+    <script type="text/javascript" src="diff/difflib.js"></script>
+<style type="text/css">
+body {
+    font-size: 12px;
+    font-family: Sans-Serif;
+}
+h2 {
+    margin: 0.5em 0 0.1em;
+    text-align: center;
+}
+.top {
+    text-align: center;
+}
+.textInput {
+    display: block;
+    width: 49%;
+    float: left;
+}
+textarea {
+    width:100%;
+    height:300px;
+}
+label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.spacer {
+    margin-left: 10px;
+}
+.viewType {
+    font-size: 16px;
+    clear: both;
+    text-align: center;
+    padding: 1em;
+}
+#diffoutput {
+    width: 100%;
+}
+</style>
+
+<script type="text/javascript">
+
+function diffUsingJS(viewType) {
+    "use strict";
+    var byId = function (id) { return document.getElementById(id); },
+        base = difflib.stringAsLines(byId("baseText").value),
+        newtxt = difflib.stringAsLines(byId("newText").value),
+        sm = new difflib.SequenceMatcher(base, newtxt),
+        opcodes = sm.get_opcodes(),
+        diffoutputdiv = byId("diffoutput"),
+        contextSize = byId("contextSize").value;
+
+    diffoutputdiv.innerHTML = "";
+    contextSize = contextSize || null;
+
+    diffoutputdiv.appendChild(diffview.buildView({
+        baseTextLines: base,
+        newTextLines: newtxt,
+        opcodes: opcodes,
+        baseTextName: "Base Text",
+        newTextName: "New Text",
+        contextSize: contextSize,
+        viewType: viewType
+    }));
+}
+
+</script>
+</head>
+<body>
+    <h1 class="top"><a href="http://github.com/cemerick/jsdifflib">jsdifflib</a> demo</h1>
+    <div class="top">
+        <strong>Context size (optional):</strong> <input type="text" id="contextSize" value="" />
+    </div>
+    <div class="textInput">
+        <h2>Base Text</h2>
+        <textarea id="baseText"><nav class="">
+            <div class="">
+            <nav class="">
+                <ul class="">
+                    <li class="">
+                        <a class="">News</a>
+                    </li>
+                    <li class="">
+                        <a class="">Buzz</a>
+                    </li>
+                    <li class="">
+                        <a class="">Life</a>
+                    </li>
+                    <li class="">
+                        <a class="">Quizzes</a>
+                    </li>
+                    <li class="">
+                        <a class="">Videos</a>
+                    </li>
+                    <li class="">
+                        <span class="">More <svg class="" viewBox="0 0 517 517">
+                        <use xlink:href="#icon-caret-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></span>
+                        <div class="">
+                            <div class="">
+                                <a class="">BuzzFeed Community</a> <a class="">Make A Post!</a>
+                            </div>
+                            <div class="">
+                                <span class="">SECTIONS</span>
+                                <ul class="">
+                                    <li class="">
+                                        <a class="">Animals</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Audio</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Big Stories</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Books</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Business</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Celebrity</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">DIY</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Entertainment</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Food</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Geeky</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Health</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Ideas</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">LGBT</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Music</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Parents</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Podcasts</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Politics</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Puzzles</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Rewind</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Science</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Sports</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Style</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Tech</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Travel</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Weddings</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Weekend</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">World</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <ul class="">
+                                    <li class="">
+                                        <a class="">Advertise</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Jobs</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Mobile</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Newsletters</a>
+                                    </li>
+                                    <li class="">
+                                        <div class="">
+                                            <a class=""><svg class="" viewBox="0 0 170 170.101">
+                                            <use xlink:href="#globe" xmlns:xlink="http://www.w3.org/1999/xlink" class="">
+                                            </use></svg> US Edition <svg class="" viewBox="0 0 517 517">
+                                            <use xlink:href="#icon-caret-down" xmlns:xlink="http://www.w3.org/1999/xlink" class="">
+                                            </use></svg></a>
+                                            <ul class="" style="display:none;">
+                                                <li class="">
+                                                    <a class="">US
+                                                    Edition</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">UK
+                                                    Edition</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">
+                                                    Australia</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">Brasil</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">Canada</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">
+                                                    Deutschland</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">EspaÃ±a</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">EspaÃ±ol</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">France</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">India</a>
+                                                </li>
+                                                <li style="list-style: none" class="">
+                                                li&gt;<a class="">Japan</a>
+                                                </li>
+                                                <li class="">
+                                                    <a class="">MÃ©xico</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="">
+                                    <li class="">
+                                        <a class="">About</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Press</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">RSS</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Privacy</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">User Terms</a>
+                                    </li>
+                                    <!-- hide ad choices for now for jp -->
+                                    <li class="">
+                                        <a class="">Ad
+                                        Choices</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Help</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Contact</a>
+                                    </li>
+                                    <li class="">Â© 2016
+                                    BuzzFeed, Inc</li>
+                                </ul><a class="">Made in NY</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="">
+                <a class="">Get Our
+                App!</a>
+                <div class="">
+                    <div class="">
+                        <span style="vertical-align: bottom; width: 89px; height: 20px;" class=""><iframe allowfullscreen="true" class="" frameborder="0" height="20px" name="f1dc255ac" scrolling="no" src="http://www.facebook.com/v2.2/plugins/like.php?app_id=45075597673&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df2e1484104%26domain%3Dwww.buzzfeed.com%26origin%3Dhttp%253A%252F%252Fwww.buzzfeed.com%252Ffa79d4268%26relation%3Dparent.parent&amp;container_width=0&amp;height=20&amp;href=https%3A%2F%2Fwww.facebook.com%2FBuzzFeed&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=48" style="border: none; visibility: visible; width: 89px; height: 20px;" title="fb:like Facebook Social Plugin" width="48px">&lt;span style=
+                        "vertical-align: bottom; width: 89px; height: 20px;"&gt;&lt;/span&gt;</iframe></span>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <form action="/search" class="" method="get">
+                        <input autocomplete="off" class="" name="q" placeholder="Search" type="text" value="">
+                        <button class=""><svg class="" viewBox="0 0 517 517">
+                        <use xlink:href="#icon-search" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></button>
+                    </form>
+                </div>
+                <div class="">
+                    <div class="">
+                        <a class=""></a>
+                    </div>
+                    <div class="" style="display: none;">
+                        <a class=""><span class="" style="display:none;"><img alt="" height="24" src="https://s3-ak.buzzfed.com/static/images/public/defaults/user.jpg" width="24" class=""></span> <span class="" style="display:none;"></span></a>
+                        <ul class="">
+                            <li class="">
+                                <a class="">NEW POST</a>
+                            </li>
+                            <li class="">
+                                <a class=""><span class="" style="display: none;">MY
+                                PROFILE</span> <span class="">MY POSTS</span> <span class="">0</span></a>
+                            </li>
+                            <li class="">
+                                <a class=""><span class="" style="display: none;">MY
+                                DRAFTS</span><span class="">MY
+                                DRAFTS</span></a>
+                            </li>
+                            <li class="">
+                                <a class=""><span class="" style="display: none;">MY DASHBOARD</span>
+                                <span class="">DASHBOARD</span></a>
+                            </li>
+                            <li style="display:none;" class="">
+                                <a class="" onclick="return false;"><span class="" style="display: none;">SWITCH USER</span>
+                                <span class="">FEEDS/USERS</span>
+                                <div class="" style="display: none;">
+                                </div></a>
+                            </li>
+                            <li style="display:none;" class="">
+                                <a class="">SETTINGS</a>
+                            </li>
+                            <li class="" style="display:none;">
+                                <a class="">SIGN OUT</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="" style="display: none;"></div>
+                </div>
+            </div>
+        </div>        
+        </textarea>
+    </div>
+    <div class="textInput spacer">
+        <h2>New Text</h2>
+        <textarea id="newText">
+            <header class="" role="banner">
+                <div class="">
+                    <div class="" role="alert">
+                        <div class="">
+                            <button class="" type="button"><span aria-hidden="true" class="">Ã—</span><span class="">Close</span></button> We - and our
+                            partners - use cookies to deliver our services and
+                            to show you ads based on your interests. By using
+                            our website, you agree to the use of cookies as
+                            described in our <a class="">Cookie
+                            Policy</a>.
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <button class="" type="button"><span class="">Toggle navigation</span>
+                        <span class=""></span> <span class=""></span> <span class=""></span></button>
+                        <ul class="">
+                            <li class="">
+                                <a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64"></a>
+                                <a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64">
+                                </a>
+                                <ul class="">
+                                    <li class="">
+                                        <a class="">Account</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul><a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64"></a>
+                        <a class=""><span class="">Spotify</span></a>
+                    </div>
+                    <nav class="" role="navigation">
+                        <ul class="">
+                            <li class="">
+                                <a class="">Premium</a>
+                            </li>
+                            <li class="">
+                                <a class="">Help</a>
+                            </li>
+                            <li class="">
+                                <a class="">Download</a>
+                            </li>
+                            <li class="" role="separator"></li>
+                            <li class="">
+                                <a class="">Upgrade</a>
+                            </li>
+                            <li class="">
+                            <a class="">Account</a>
+                            </li>
+                            <li class="">
+                            <a class="">Log
+                                Out</a>
+                            </li>
+                            <li class="">
+                                <a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64">
+                                <span class="">Nicole Zhu</span>
+                                <svg class="">
+                                <use xlink:href="#chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></a>
+                                <ul class="">
+                                    <li class="">
+                                    <a class="">Upgrade</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Account</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="">Log Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </textarea>
+    </div>
+    <div class="viewType">
+        <input type="radio" name="_viewtype" id="sidebyside" onclick="diffUsingJS(0);" /> <label for="sidebyside">Side by Side Diff</label>
+        &nbsp; &nbsp;
+        <input type="radio" name="_viewtype" id="inline" onclick="diffUsingJS(1);" /> <label for="inline">Inline Diff</label>
+    </div>
+    <div id="diffoutput"> </div>
+</body>
+</html>
