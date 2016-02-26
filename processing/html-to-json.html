@@ -1,91 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <title>jsdifflib demo</title>
-    <link rel="stylesheet" type="text/css" href="diff/diffview.css"/>
-    <script type="text/javascript" src="diff/diffview.js"></script>
-    <script type="text/javascript" src="diff/difflib.js"></script>
-<style type="text/css">
-body {
-    font-size: 12px;
-    font-family: Sans-Serif;
-}
-h2 {
-    margin: 0.5em 0 0.1em;
-    text-align: center;
-}
-.top {
-    text-align: center;
-}
-.textInput {
-    display: block;
-    width: 49%;
-    float: left;
-}
-textarea {
-    width:100%;
-    height:300px;
-}
-label:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-.spacer {
-    margin-left: 10px;
-}
-.viewType {
-    font-size: 16px;
-    clear: both;
-    text-align: center;
-    padding: 1em;
-}
-#diffoutput {
-    width: 100%;
-}
-</style>
+    <title>HTML to JSON</title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!--     <script src="../node_modules/domjson/dist/domJSON.min.js"></script -->>
+    <script src="html-to-json.js"></script>
 
-<script type="text/javascript">
-
-function diffUsingJS(viewType) {
-    "use strict";
-    var byId = function (id) { return document.getElementById(id); },
-        base = difflib.stringAsLines(byId("baseText").value),
-        newtxt = difflib.stringAsLines(byId("newText").value),
-        sm = new difflib.SequenceMatcher(base, newtxt),
-        opcodes = sm.get_opcodes(),
-        diffoutputdiv = byId("diffoutput"),
-        contextSize = byId("contextSize").value;
-
-    diffoutputdiv.innerHTML = "";
-    contextSize = contextSize || null;
-
-    diffoutputdiv.appendChild(diffview.buildView({
-        baseTextLines: base,
-        newTextLines: newtxt,
-        opcodes: opcodes,
-        baseTextName: "Base Text",
-        newTextName: "New Text",
-        contextSize: contextSize,
-        viewType: viewType
-    }));
-}
-
-</script>
 </head>
-<body>
-    <h1 class="top"><a href="http://github.com/cemerick/jsdifflib">jsdifflib</a> demo</h1>
-    <div class="top">
-        <strong>Context size (optional):</strong> <input type="text" id="contextSize" value="" />
-        <p>Common tags: ["div", "nav", "ul", "li", "a", "span", "svg", "use", "button", "img"]</p>
-    </div>
-    <div class="textInput">
-        <h2>BuzzFeed</h2>
-        <p>Unique tags used: ["iframe", "form", "input"]</p>
-        <p>Tags used: ["div", "nav", "ul", "li", "a", "span", "svg", "use", "iframe", "form", "input", "button", "img"]</p>
-        <textarea id="baseText">
-            <div class="">
+<body> 
+    <div class="" id="buzzfeed-nav-bar">
             <nav class="">
                 <ul class="">
                     <li class="">
@@ -356,97 +279,11 @@ function diffUsingJS(viewType) {
                 </div>
             </div>
         </div>        
-        </textarea>
-    </div>
-    <div class="textInput spacer">
-        <h2>Spotify</h2>
-        <p>Unique tags used: ["header"]</p>
-        <p>Tags used: ["header", "div", "button", "span", "a", "ul", "li", "img", "nav", "svg", "use"]</p>
-        <textarea id="newText">
-            <header class="" role="banner">
-                <div class="">
-                    <div class="" role="alert">
-                        <div class="">
-                            <button class="" type="button"><span aria-hidden="true" class="">Ã—</span><span class="">Close</span></button> We - and our
-                            partners - use cookies to deliver our services and
-                            to show you ads based on your interests. By using
-                            our website, you agree to the use of cookies as
-                            described in our <a class="">Cookie
-                            Policy</a>.
-                        </div>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="">
-                        <button class="" type="button"><span class="">Toggle navigation</span>
-                        <span class=""></span> <span class=""></span> <span class=""></span></button>
-                        <ul class="">
-                            <li class="">
-                                <a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64"></a>
-                                <a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64">
-                                </a>
-                                <ul class="">
-                                    <li class="">
-                                        <a class="">Account</a>
-                                    </li>
-                                    <li class="">
-                                        <a class="">Log out</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul><a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64"></a>
-                        <a class=""><span class="">Spotify</span></a>
-                    </div>
-                    <nav class="" role="navigation">
-                        <ul class="">
-                            <li class="">
-                                <a class="">Premium</a>
-                            </li>
-                            <li class="">
-                                <a class="">Help</a>
-                            </li>
-                            <li class="">
-                                <a class="">Download</a>
-                            </li>
-                            <li class="" role="separator"></li>
-                            <li class="">
-                                <a class="">Upgrade</a>
-                            </li>
-                            <li class="">
-                            <a class="">Account</a>
-                            </li>
-                            <li class="">
-                            <a class="">Log
-                                Out</a>
-                            </li>
-                            <li class="">
-                                <a class=""><img alt="Nicole Zhu" class="" src="https://graph.facebook.com/898775106/picture?width=64&amp;height=64">
-                                <span class="">Nicole Zhu</span>
-                                <svg class="">
-                                <use xlink:href="#chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></a>
-                                <ul class="">
-                                    <li class="">
-                                    <a class="">Upgrade</a>
-                                    </li>
-                                    <li class="">
-                                        <a class="">Account</a>
-                                    </li>
-                                    <li class="">
-                                        <a class="">Log Out</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-        </textarea>
-    </div>
-    <div class="viewType">
-        <input type="radio" name="_viewtype" id="sidebyside" onclick="diffUsingJS(0);" /> <label for="sidebyside">Side by Side Diff</label>
-        &nbsp; &nbsp;
-        <input type="radio" name="_viewtype" id="inline" onclick="diffUsingJS(1);" /> <label for="inline">Inline Diff</label>
-    </div>
-    <div id="diffoutput"> </div>
 </body>
+<script>
+// var someDOMElement = document.getElementById('buzzfeed-nav-bar');
+// console.log(someDOMElement);
+// var jsonOutput = domJSON.toJSON(someDOMElement);
+//console.log(JSON.stringify(jsonOutput));
+</script>
 </html>

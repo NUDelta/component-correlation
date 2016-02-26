@@ -37,8 +37,8 @@ Array.prototype.intersection = function(a) {
 }
 
 $(document).ready(function() {
-  // var nav_bar = $('.page-nav').find('*');
-  var nav_bar = $('.spotify-header').find('*');
+  var nav_bar = $('.page-nav').find('*');
+  // var nav_bar = $('.spotify-header').find('*');
   var tags = [];
 
   for (var i = 0; i < nav_bar.length; i++) {
@@ -50,8 +50,8 @@ $(document).ready(function() {
       tags.push(tag);
     }
   }
-  console.log($('.spotify-header').html());
-  // console.log($('.page-nav').html());
+  // console.log($('.spotify-header').html());
+  console.log($('.page-nav').html());
 
   // determine common tags
   var buzzfeed_tags = ["div", "nav", "ul", "li", "a", "span", "svg", "use", "iframe", "form", "input", "button", "img"];
