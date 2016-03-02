@@ -16,6 +16,7 @@ var compare = function (a, b) {
 
 
   var allDescendants = function (parentEl, tree) {
+    console.log(parentEl.children);
     //for (var i = 0; i < parentEl.childNodes.length; i++) {
     for (var i = 0; i < parentEl.children.length; i++) {
       var node = parentEl.children[i];
@@ -80,24 +81,38 @@ var compare = function (a, b) {
 };
 
 var a = {
-  label: "a",
-  html: "<html><body><div><ul><li></li><li></li><li></li></ul></div></body></html>"
-};
-var b = {
-  label: "b",
-  html: "<html><body><head><nav><div></div><div></div><div></div></nav></head></body></html>"
-};
-var c = {
-  label: "c",
-  html: "<html><body><div><ol><li></li><li></li><li></li></ol></div></body></html>"
-};
-var d = {
-  label: "d",
-  html: "<html><body><div><ul><li></li><li></li><li></li></ul></div></body></html>"
+  label: "buzzfeed",
+  html: '<html><body><div class=""><nav class=""><ul class=""><li class=""><a class=""></a></li><li class=""><span class=""><svg class="" viewBox="0 0 517 517"><use xlink:href="#icon-caret-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></span><div class=""><div class=""><a class=""></a></div><div class=""><span class=""></span><ul class=""><li class=""><a class=""></a></li></ul></div><div class=""><ul class=""><li class=""><a class=""></a></li><li class=""><div class=""><a class=""><svg class="" viewBox="0 0 170 170.101"><use xlink:href="#globe" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg><svg class="" viewBox="0 0 517 517"><use xlink:href="#icon-caret-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></a><ul class=""><li class=""><a class=""></a></li></ul></div></li></ul><ul class=""><li class=""><a class=""></a></li><li class=""></li></ul><a class=""></a></div></div></li></ul></nav><div class=""><a class=""></a><div class=""><div class=""><span class=""><iframe></iframe></span></div></div></div><div class=""><div class=""><form class="" method="get"><input><button class=""><svg class="" viewBox="0 0 517 517"><use xlink:href="#icon-search" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></button></form></div><div class=""><div class=""><a class=""></a></div><div class=""><a class=""><span class=""><img></span><span class=""></span></a><ul class=""><li class=""><a class=""></a></li></ul></div><div class=""></div></div></div></div></body></html>'
 };
 
+var b = {
+  label: "spotify",
+  html: '<html><body><header class=""><div class=""><div class=""><div class=""><button class=""><span class=""></span></button><a class=""></a></div></div></div><div class=""><div class=""><button class="" type="button"><span class=""></span></button><ul class=""><li class=""><a class=""><img class=""></a><ul class=""><li class=""><a class=""></a></li></ul></li></ul><a class=""><img class=""></a><a class=""><span class=""></span></a></div><nav class="" role="navigation"><ul class=""><li class=""><a class=""></a></li><li class=""><a class=""><img class=""><span class=""></span><svg class=""><use xlink:href="#chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></a><ul class=""><li class=""><a class=""></a></li></ul></li></ul></nav></div></header></body></html>'
+};
+
+// var a = {
+//   label: "a",
+//   html: "<html><body><div><ul><li></li><li></li><li></li></ul></div></body></html>"
+// };
+// var b = {
+//   label: "b",
+//   html: "<html><body><head><nav><div></div><div></div><div></div></nav></head></body></html>"
+// };
+// var c = {
+//   label: "c",
+//   html: "<html><body><div><ol><li></li><li></li><li></li></ol></div></body></html>"
+// };
+// var d = {
+//   label: "d",
+//   html: "<html><body><div><ul><li></li><li></li><li></li></ul></div></body></html>"
+// };
+
+// var htmlDomSet = [
+//   a, b, c, d
+// ];
+
 var htmlDomSet = [
-  a, b, c, d
+  a, b
 ];
 
 for (var i = 0; i < htmlDomSet.length; i++) {

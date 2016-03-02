@@ -16,14 +16,17 @@ function cleanHTML(node) {
     node = $(node).removeAttr("data-" + keys[i].replace( rmultiDash, "$1-$2" ).toLowerCase());
   }
 
-  // remove hrefs
+  // empty hrefs
   var attr = $(node).attr('href');
   if (typeof attr !== typeof undefined && attr !== false) {
     node = $(node).attr("href", "");
   }
 
-  // remove classes and ids
-  node = $(node).removeClass().removeAttr("id").removeAttr("href");
+  // remove innerhtml of tags
+  console.log($(node).text());
+
+  // remove classes, ids, hrefs (instead of emptying, remove them), inline styles, form actions
+  node = $(node).removeClass().removeAttr("id").removeAttr("href").removeAttr("style").removeAttr("action").removeAttr("alt").removeAttr("role").removeAttr("type");
 
   return node;
 }
@@ -37,8 +40,8 @@ Array.prototype.intersection = function(a) {
 }
 
 $(document).ready(function() {
-  var nav_bar = $('.page-nav').find('*');
-  // var nav_bar = $('.spotify-header').find('*');
+  // var nav_bar = $('.page-nav').find('*');
+  var nav_bar = $('.spotify-header').find('*');
   var tags = [];
 
   for (var i = 0; i < nav_bar.length; i++) {
@@ -50,8 +53,8 @@ $(document).ready(function() {
       tags.push(tag);
     }
   }
-  // console.log($('.spotify-header').html());
-  console.log($('.page-nav').html());
+  console.log($('.spotify-header').html());
+  // console.log($('.page-nav').html());
 
   // determine common tags
   var buzzfeed_tags = ["div", "nav", "ul", "li", "a", "span", "svg", "use", "iframe", "form", "input", "button", "img"];
