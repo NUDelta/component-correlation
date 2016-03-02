@@ -13,6 +13,7 @@ function cleanHTML(node) {
 
   // Loop through the keys, remove the attribute if the key contains "data-".
   for(i = 0; i < keys.length; i++) {
+    node = $(node).text("");
     node = $(node).removeAttr("data-" + keys[i].replace( rmultiDash, "$1-$2" ).toLowerCase());
   }
 
@@ -21,9 +22,6 @@ function cleanHTML(node) {
   if (typeof attr !== typeof undefined && attr !== false) {
     node = $(node).attr("href", "");
   }
-
-  // remove innerhtml of tags
-  console.log($(node).text());
 
   // remove classes, ids, hrefs (instead of emptying, remove them), inline styles, form actions
   node = $(node).removeClass().removeAttr("id").removeAttr("href").removeAttr("style").removeAttr("action").removeAttr("alt").removeAttr("role").removeAttr("type");
