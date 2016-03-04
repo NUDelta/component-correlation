@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NYT Navigation Bar</title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="../processing/cleanhtml.js"></script>
+<!--     <link rel="stylesheet" href="spotify.css" /> -->
+</head>
+<body>
+    <header id="masthead" class="masthead theme-pinned-masthead" role="banner">
+
+    <div id="announcements-container" class="announcements-container"></div>
+
+    <div id="Header1" class="ad header1-ad"></div>
+
+    <div class="masthead-cap-container">
+
+        <div id="masthead-cap" class="masthead-cap">
+
+            <div class="quick-navigation button-group">
+
+                <button class="button sections-button enable-a11y">
+                    <i class="icon sprite-icon"></i><span class="button-text">Sections</span>
+                </button>
+                <button class="button search-button">
+                    <i class="icon sprite-icon"></i><span class="button-text">Search</span>
+                </button>
+                <a class="button skip-button skip-to-content visually-hidden focusable" href="#top-news">Skip to content</a>
+                <a class="button skip-button skip-to-navigation visually-hidden focusable" href="#site-index-navigation">Skip to navigation</a>
+            </div><!-- close quick-navigation -->
+
+            <div class="user-tools">
+
+                <div id="Bar1" class="ad bar1-ad"></div>
+
+                <div class="user-tools-button-group button-group">
+                    <button class="button subscribe-button hidden" data-href="http://www.nytimes.com/subscriptions/Multiproduct/lp3004.html">Subscribe Now</button>
+                    <button class="button login-button login-modal-trigger hidden">Log In</button>
+                    <button class="button notifications-button hidden"><i class="icon sprite-icon"></i><span class="button-text">0</span></button>
+                    <button class="button user-settings-button">
+                        <i class="icon sprite-icon"></i><span class="button-text">Settings</span>
+                    </button>
+                </div>
+
+            </div><!-- close user-tools -->
+
+        </div><!-- close masthead-cap -->
+
+    </div><!-- close masthead-cap-container -->
+
+    <div class="masthead-meta">
+
+        <div class="editions tab">
+
+            <ul class="editions-menu">
+                                    <li class="edition-domestic-toggle active">U.S.</li>
+                    <li class="edition-international-toggle"><a href="http://international.nytimes.com" data-edition="global">International</a></li>
+                
+                <li class="edition-chinese-toggle"><a href="http://cn.nytimes.com" target="_blank" data-edition="chinese">中文</a></li>
+            </ul>
+
+        </div><!-- close editions -->
+
+        <div id="TopLeft" class="ad top-left-ad"></div>
+        <div id="TopRight" class="ad top-right-ad"></div>
+
+        <h2 class="branding"><a href="http://www.nytimes.com/">
+    <svg class="nyt-logo" width="379" height="64" role="img" aria-label="The New York Times">
+        <image width="379" height="64" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://a1.nyt.com/assets/homepage/20160229-124600/images/foundation/logos/nyt-logo-379x64.svg" src="http://a1.nyt.com/assets/homepage/20160229-124600/images/foundation/logos/nyt-logo-379x64.png" alt="The New York Times" border="0"></image>
+    </svg>
+
+</a></h2>
+        <ul class="masthead-menu">
+            <li class="date">Friday, March 4, 2016</li><li class="todays-paper"><a href="http://www.nytimes.com/pages/todayspaper/index.html" data-collection="todays-paper"><i class="icon sprite-icon"></i>Today’s Paper</a></li><li class="video"><a href="http://www.nytimes.com/video" data-collection="video"><i class="icon sprite-icon"></i>Video</a></li><li id="weather" class="weather hidden" data-collection="weather"></li><li id="markets" class="markets hidden" data-collection="markets"></li>
+        </ul>
+
+    </div><!-- close masthead-meta -->
+
+    <nav id="mini-navigation" class="mini-navigation">
+    <h2 class="visually-hidden">Quick Site Sections Navigation</h2>
+    <ul class="mini-navigation-menu">
+        <li>
+            <button class="button sections-button">
+                <i class="icon sprite-icon"></i>
+                <span class="button-text">Sections</span>
+            </button>
+        </li><li>
+            <button class="button search-button">
+                <i class="icon sprite-icon"></i>
+                <span class="button-text">Search</span>
+            </button>
+        </li>
+            
+                <li class="shortcuts-9A43D8FC-F4CF-44D9-9B34-138D30468F8F ">
+                    <a href="http://www.nytimes.com/pages/world/index.html">World</a>
+                </li>
+
+            
+                <li class="shortcuts-23FD6C8B-62D5-4CEA-A331-6C2A9A1223BE ">
+                    <a href="http://www.nytimes.com/pages/national/index.html">U.S.</a>
+                </li>
+
+            
+                <li class="shortcuts-80E6DEE6-87E4-4AD0-9152-14FA6B07E5AB ">
+                    <a href="http://www.nytimes.com/pages/politics/index.html">Politics</a>
+                </li>
+
+            
+                <li class="shortcuts-C4DC8C0C-E148-4201-BF10-82F1C903DBFB ">
+                    <a href="http://www.nytimes.com/pages/nyregion/index.html">N.Y.</a>
+                </li>
+
+            
+                <li class="shortcuts-104D1E63-9701-497B-8CF4-A4D120C9014E domestic">
+                    <a href="http://www.nytimes.com/pages/business/index.html">Business</a>
+                </li>
+
+            
+                <li class="shortcuts-A257D89A-0D3C-40AF-9C34-1A25A7947D94 international">
+                    <a href="http://www.nytimes.com/pages/business/international/index.html">Business</a>
+                </li>
+
+            
+                <li class="shortcuts-AD8090D7-4137-4D71-84C8-70DA3BD89778 domestic">
+                    <a href="http://www.nytimes.com/pages/opinion/index.html">Opinion</a>
+                </li>
+
+            
+                <li class="shortcuts-09736473-CB3F-4B2F-9772-3AF128ABE12D international">
+                    <a href="http://www.nytimes.com/pages/opinion/international/index.html">Opinion</a>
+                </li>
+
+            
+                <li class="shortcuts-78FBAD45-31A9-4EC7-B172-7D62A2B9955E ">
+                    <a href="http://www.nytimes.com/pages/technology/index.html">Tech</a>
+                </li>
+
+            
+                <li class="shortcuts-A4B35924-DB6C-4EA3-997D-450810F4FEE6 ">
+                    <a href="http://www.nytimes.com/section/science">Science</a>
+                </li>
+
+            
+                <li class="shortcuts-7D6BE1AF-8CD8-430B-8B2A-17CD0EAA99AC ">
+                    <a href="http://www.nytimes.com/pages/health/index.html">Health</a>
+                </li>
+
+            
+                <li class="shortcuts-DE2B278B-2783-4506-AAD5-C15A5BB6DA1A domestic">
+                    <a href="http://www.nytimes.com/pages/sports/index.html">Sports</a>
+                </li>
+
+            
+                <li class="shortcuts-BE66F420-C51B-461D-B487-CACF62E94AAE international">
+                    <a href="http://www.nytimes.com/pages/sports/international/index.html">Sports</a>
+                </li>
+
+            
+                <li class="shortcuts-C5BFA7D5-359C-427B-90E6-6B7245A6CDD8 domestic">
+                    <a href="http://www.nytimes.com/pages/arts/index.html">Arts</a>
+                </li>
+
+            
+                <li class="shortcuts-0202D0E4-C59B-479A-BD42-6F1766459781 international">
+                    <a href="http://www.nytimes.com/pages/arts/international/index.html">Arts</a>
+                </li>
+
+            
+                <li class="shortcuts-B3DFBD82-F298-43B3-9458-219B4F6AA2A5 domestic">
+                    <a href="http://www.nytimes.com/pages/fashion/index.html">Style</a>
+                </li>
+
+            
+                <li class="shortcuts-CC9E2674-F6C4-4A39-813B-F5AB0C515CEA international">
+                    <a href="http://www.nytimes.com/pages/style/international/index.html">Style</a>
+                </li>
+
+            
+                <li class="shortcuts-D9C94A2B-0364-4D25-8383-592CC66F82D4 domestic">
+                    <a href="http://www.nytimes.com/pages/dining/index.html">Food</a>
+                </li>
+
+            
+                <li class="shortcuts-FDEFB811-B483-4C3D-A25A-FD07BE5EAD96 international">
+                    <a href="http://www.nytimes.com/pages/dining/international/index.html">Food</a>
+                </li>
+
+            
+                <li class="shortcuts-FDA10AC4-4738-4099-91E8-15584765C8D7 ">
+                    <a href="http://www.nytimes.com/section/travel">Travel</a>
+                </li>
+
+            
+                <li class="shortcuts-E57A148E-0CB9-4C02-966D-28B119710151 ">
+                    <a href="http://www.nytimes.com/pages/magazine/index.html">Magazine</a>
+                </li>
+
+            
+                <li class="shortcuts-052C33AD-1404-4DB6-AA70-0901DB1AD95B ">
+                    <a href="http://www.nytimes.com/section/t-magazine">T Magazine</a>
+                </li>
+
+            
+                <li class="shortcuts-92720057-BCB6-4BDB-9351-12F29393259F ">
+                    <a href="http://www.nytimes.com/pages/realestate/index.html">Real Estate</a>
+                </li>
+
+                        <li><button class="button all-sections-button">all</button></li>
+    </ul>
+</nav>
+    <div class="search-flyout-panel flyout-panel">
+    <button class="button close-button" type="button"><i class="icon"></i><span class="visually-hidden">Close search</span></button>
+    <div class="ad">
+        <div id="SponsorAd" class="sponsor-ad">
+            <small class="ad-sponsor">search sponsored by</small>
+        </div>
+    </div>
+    <nav class="search-form-control form-control layout-horizontal">
+    <h2 class="visually-hidden">Site Search Navigation</h2>
+    <form class="search-form" role="search">
+        <div class="control">
+            <div class="label-container visually-hidden">
+                                <label for="search-input">Search NYTimes.com</label>
+                            </div>
+            <div class="field-container">
+                                <input id="search-input" name="search-input" type="text" class="search-input text" autocomplete="off" placeholder="Search NYTimes.com">
+                
+                <button type="button" class="button clear-button" tabindex="-1" aria-describedby="clear-search-input"><i class="icon"></i><span id="clear-search-input" class="visually-hidden">Clear this text input</span></button>
+                <div class="auto-suggest" style="display: none;">
+                    <ol></ol>
+                </div>
+                <button class="button submit-button" type="submit">Go</button>
+            </div>
+        </div><!-- close control -->
+    </form>
+</nav>
+
+
+</div><!-- close flyout-panel -->
+    <div id="notification-modals" class="notification-modals"></div>
+
+</header>
+</body>
+</html>

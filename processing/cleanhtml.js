@@ -1,13 +1,18 @@
+// console.log($('.spotify-header').html());
+// console.log($('.page-nav').html());
+// console.log($('.global-nav').html());
+
 function cleanHTML(node) {
   // http://stackoverflow.com/questions/8968767/remove-multiple-html5-data-attributes-with-jquery
   var data = $(node).data(),
       i;
 
-  var attributes = $.map(node.attributes, function(el) { return el });
+  // aria attributes
+  var arias = ["controls", "expanded", "label", "haspopup", "describedby"];
 
+  var attributes = $.map(node.attributes, function(el) { return el });
   // Fetch all the key-names
   var keys = $.map(data, function(value, key) { return key; });
-
   // camel case hack - apparently map function automatically makes attributes camel case
   var rmultiDash = /([a-z])([A-Z])/g;
 
@@ -17,6 +22,10 @@ function cleanHTML(node) {
     node = $(node).removeAttr("data-" + keys[i].replace( rmultiDash, "$1-$2" ).toLowerCase());
   }
 
+  for (j=0; j < arias.length; j++) {
+    node = $(node).removeAttr("aria-" + arias[j]);
+  }
+
   // empty hrefs
   var attr = $(node).attr('href');
   if (typeof attr !== typeof undefined && attr !== false) {
@@ -24,7 +33,7 @@ function cleanHTML(node) {
   }
 
   // remove classes, ids, hrefs (instead of emptying, remove them), inline styles, form actions
-  node = $(node).removeClass().removeAttr("id").removeAttr("href").removeAttr("style").removeAttr("action").removeAttr("alt").removeAttr("role").removeAttr("type");
+  node = $(node).removeClass().removeAttr("id").removeAttr("href").removeAttr("style").removeAttr("action").removeAttr("alt").removeAttr("role").removeAttr("type").removeAttr("title").removeAttr("name").removeAttr("onclick").removeAttr("onsubmit").removeAttr("autocomplete").removeAttr("tabindex").removeAttr("for").removeAttr("placeholder");
 
   return node;
 }
@@ -38,8 +47,12 @@ Array.prototype.intersection = function(a) {
 }
 
 $(document).ready(function() {
+  var page = $('.spotify-header');
+  var nav_bar = page.find('*');
   // var nav_bar = $('.page-nav').find('*');
-  var nav_bar = $('.spotify-header').find('*');
+  // var nav_bar = $('.spotify-header').find('*');
+  // var nav_bar = $('.global-nav').find('*');
+  // var nav_bar = $('#yt-masthead').find('*');
   var tags = [];
 
   for (var i = 0; i < nav_bar.length; i++) {
@@ -51,8 +64,8 @@ $(document).ready(function() {
       tags.push(tag);
     }
   }
-  console.log($('.spotify-header').html());
-  // console.log($('.page-nav').html());
+
+  console.log(page.html());
 
   // determine common tags
   var buzzfeed_tags = ["div", "nav", "ul", "li", "a", "span", "svg", "use", "iframe", "form", "input", "button", "img"];

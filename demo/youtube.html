@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Youtube Navigation Bar</title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="../processing/cleanhtml.js"></script>
+<!--     <link rel="stylesheet" href="spotify.css" /> -->
+</head>
+<body>
+  <div id="yt-masthead">
+        <div class="yt-masthead-logo-container">
+            <button aria-controls="appbar-guide-menu" aria-expanded="true"
+            aria-label="Guide" class=
+            "yt-uix-button yt-uix-button-size-default yt-uix-button-text yt-uix-button-empty yt-uix-button-has-icon appbar-guide-toggle appbar-guide-clickable-ancestor"
+            id="appbar-guide-button" onclick=";return false;" type=
+            "button"><span class="yt-uix-button-icon-wrapper"><span class=
+            "yt-uix-button-icon yt-uix-button-icon-appbar-guide yt-sprite"></span></span></button>
+            <div id="appbar-main-guide-notification-container"></div><span id=
+            "yt-masthead-logo-fragment"><a class=
+            "yt-uix-sessionlink masthead-logo-renderer spf-link"
+            data-sessionlink="itct=CAUQsV4iEwiZn4mu8qfLAhUMEE4KHa_KB78ojh4"
+            href="/" id="logo-container" title="YouTube Home"><span class=
+            "logo masthead-logo-renderer-logo yt-sprite" title=
+            "YouTube Home"></span></a></span>
+        </div>
+        <div class="yt-uix-clickcard" id="yt-masthead-user">
+            <a class=
+            "yt-uix-button yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default"
+            data-sessionlink="ei=G_PZVtmlDoyguAKvlZ_4Cw&amp;feature=mhsb"
+            data-upsell="upload" href="//www.youtube.com/upload" id=
+            "upload-btn"><span class="yt-uix-button-content">Upload</span></a>
+            <div class="notifications-container">
+                <button aria-haspopup="true" aria-label="Notifications" class=
+                "yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-has-icon sb-notif-off yt-uix-gen204"
+                data-gen204="bell=jingled" id="sb-button-notify" onclick=
+                ";return false;" type="button"><span class=
+                "yt-uix-button-icon-wrapper"><span class=
+                "yt-uix-button-icon yt-uix-button-icon-bell yt-sprite"></span></span><span class="yt-uix-button-content">0</span></button>
+            </div><span class="yt-uix-clickcard" data-card-action=
+            "yt.www.masthead.handleAccountPickerClick" data-card-class=
+            "yt-masthead-account-picker-card yt-masthead-multilogin" id=
+            "yt-masthead-account-picker"><button aria-haspopup="true"
+            aria-label=
+            "Account profile photo that opens list of alternate accounts"
+            class="yt-uix-button yt-uix-button-size-default yt-masthead-user-icon yt-uix-clickcard-target"
+            data-force-position="true" data-orientation="vertical"
+            data-position="bottomleft" data-position-fixed="true" onclick=
+            ";return false;" type="button"><span class="yt-uix-clickcard"
+            data-card-action="yt.www.masthead.handleAccountPickerClick"
+            data-card-class=
+            "yt-masthead-account-picker-card yt-masthead-multilogin" id=
+            "yt-masthead-account-picker"><span class=
+            "yt-uix-button-content"><span class=
+            "video-thumb yt-thumb yt-thumb-27"><span class=
+            "yt-thumb-square"><span class="yt-thumb-clip"><img alt=""
+            aria-hidden="true" height="27" src=
+            "https://yt3.ggpht.com/-jXq3iKY2Q6Q/AAAAAAAAAAI/AAAAAAAAAAA/GAxCCKvKZ8w/s88-c-k-no/photo.jpg"
+            width="27"> <span class=
+            "vertical-align"></span></span></span></span></span></span>
+            <div class="yt-masthead-account-picker yt-uix-clickcard-content">
+                <a class=
+                "yt-masthead-picker-header yt-masthead-picker-active-account"
+                href=
+                "https://www.google.com/settings/u/0/personalinfo">nzhu94@gmail.com</a>
+                <div id="yt-unlimited-member"></div>
+                <div class="yt-masthead-picker-body">
+                    <a class="yt-masthead-picker-photo-wrapper" href=
+                    "https://aboutme.google.com/u/0#profile_photo"><span class=
+                    "video-thumb yt-thumb yt-thumb-64"><span class=
+                    "yt-thumb-square"><span class="yt-thumb-clip"><img alt=""
+                    aria-hidden="true" height="64" src=
+                    "https://yt3.ggpht.com/-jXq3iKY2Q6Q/AAAAAAAAAAI/AAAAAAAAAAA/GAxCCKvKZ8w/s88-c-k-no/photo.jpg"
+                    width="64"> <span class=
+                    "vertical-align"></span></span></span></span> <span class=
+                    "yt-masthead-picker-photo-change">Change</span></a>
+                    <div class="yt-masthead-picker-info">
+                        <div class="yt-masthead-picker-name" dir="ltr">
+                            Nicole Zhu
+                        </div>
+                        <div class="yt-masthead-picker-account-subtitle" id=
+                        "yt-subscriber-count">
+                            ​
+                        </div><a class=
+                        "yt-uix-button yt-masthead-picker-button yt-masthead-picker-button-primary yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default"
+                        data-sessionlink="ei=G_PZVtmlDoyguAKvlZ_4Cw" href=
+                        "/dashboard?o=U"><span class=
+                        "yt-uix-button-content">Creator
+                        Studio</span></a><a class=
+                        "yt-uix-button yt-masthead-picker-button yt-masthead-picker-settings-button yt-uix-tooltip yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default yt-uix-button-has-icon yt-uix-tooltip yt-uix-button-empty"
+                        data-sessionlink="ei=G_PZVtmlDoyguAKvlZ_4Cw" href=
+                        "/account" title="YouTube settings"><span class=
+                        "yt-uix-button-icon-wrapper"><span class=
+                        "yt-uix-button-icon yt-uix-button-icon-icon-account-settings yt-sprite"></span></span></a>
+                    </div>
+                </div>
+                <div class="yt-masthead-multilogin-users" id=
+                "yt-masthead-multilogin">
+                    <div id="yt-delegate-accounts"></div>
+                    <div class="yt-masthead-multilogin-users-header">
+                        Other accounts
+                    </div><a class=
+                    "yt-masthead-account-picker-option yt-masthead-account-picker-user-option"
+                    href=
+                    "/signin?feature=masthead_switcher&amp;next=%2F&amp;skip_identity_prompt=False&amp;authuser=3&amp;action_handle_signin=true"><span class="video-thumb yt-masthead-picker-photo-wrapper yt-thumb yt-thumb-36"><span class="yt-thumb-square"><span class="yt-thumb-clip"><img alt="hunnymagazine@gmail.com"
+                    height="36" src=
+                    "https://yt3.ggpht.com/-YK9CVsIcEXE/AAAAAAAAAAI/AAAAAAAAAAA/5X5LONEXdaM/s88-c-k-no/photo.jpg"
+                    width="36"> <span class=
+                    "vertical-align"></span></span></span></span>
+                    <div class="yt-masthead-picker-info">
+                        <div class="yt-masthead-picker-name" dir="ltr">
+                            hunnymagazine@gmail.com
+                        </div>
+                        <div class="yt-masthead-picker-account-subtitle">
+                            hunnymagazine@gmail.com
+                        </div>
+                    </div></a>
+                </div>
+                <div class="clearfix" id="yt-channel-switcher-link"></div>
+                <div class="yt-masthead-picker-footer clearfix">
+                    <a class=
+                    "yt-uix-button yt-masthead-picker-button yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default"
+                    data-sessionlink="ei=G_PZVtmlDoyguAKvlZ_4Cw" href=
+                    "https://accounts.google.com/AddSession?uilel=0&amp;service=youtube&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Den%26app%3Ddesktop%26next%3D%252F%26action_handle_signin%3Dtrue&amp;passive=false&amp;hl=en">
+                    <span class="yt-uix-button-content">Add account</span></a>
+                    <a class=
+                    "yt-uix-button yt-masthead-picker-button yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default"
+                    data-sessionlink="ei=G_PZVtmlDoyguAKvlZ_4Cw" href=
+                    "/logout"><span class="yt-uix-button-content">Sign
+                    out</span></a>
+                </div>
+            </div></button></span>
+        </div>
+        <div id="yt-masthead-content">
+            <form action="/results" class="search-form consolidated-form"
+            data-clicktracking="CAEQ7VAiEwiZn4mu8qfLAhUMEE4KHa_KB78ojh4" id=
+            "masthead-search" name="masthead-search" onsubmit=
+            "if (document.getElementById('masthead-search-term').value == '') return false;">
+            <button class=
+            "yt-uix-button yt-uix-button-size-default yt-uix-button-default search-btn-component search-button"
+                dir="ltr" id="search-btn" onclick=
+                "if (document.getElementById('masthead-search-term').value == '') return false; document.getElementById('masthead-search').submit(); return false;;return true;"
+                tabindex="2" type="submit"><span class=
+                "yt-uix-button-content">Search</span></button>
+                <div class="masthead-search-terms-border" dir="ltr" id=
+                "masthead-search-terms">
+                    <input aria-label="Search" autocomplete="off" autofocus=""
+                    class=
+                    "search-term masthead-search-renderer-input yt-uix-form-input-bidi"
+                    id="masthead-search-term" name="search_query" onkeydown=
+                    "if (!this.value &amp;&amp; (event.keyCode == 40 || event.keyCode == 32 || event.keyCode == 34)) {this.onkeydown = null; this.blur();}"
+                    placeholder="" tabindex="1" title="Search" type="text"
+                    value="">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
