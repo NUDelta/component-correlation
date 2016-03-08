@@ -8,7 +8,7 @@ function cleanHTML(node) {
       i;
 
   // aria attributes
-  var arias = ["controls", "expanded", "label", "haspopup", "describedby"];
+  var arias = ["controls", "expanded", "label", "haspopup", "describedby", "hidden"];
 
   var attributes = $.map(node.attributes, function(el) { return el });
   // Fetch all the key-names
@@ -33,7 +33,7 @@ function cleanHTML(node) {
   }
 
   // remove classes, ids, hrefs (instead of emptying, remove them), inline styles, form actions
-  node = $(node).removeClass().removeAttr("id").removeAttr("href").removeAttr("style").removeAttr("action").removeAttr("alt").removeAttr("role").removeAttr("type").removeAttr("title").removeAttr("name").removeAttr("onclick").removeAttr("onsubmit").removeAttr("autocomplete").removeAttr("tabindex").removeAttr("for").removeAttr("placeholder");
+  node = $(node).removeClass().removeAttr("id").removeAttr("href").removeAttr("style").removeAttr("action").removeAttr("alt").removeAttr("role").removeAttr("type").removeAttr("title").removeAttr("name").removeAttr("onclick").removeAttr("onsubmit").removeAttr("autocomplete").removeAttr("tabindex").removeAttr("for").removeAttr("placeholder").removeAttr("method").removeAttr("value");
 
   return node;
 }
@@ -47,7 +47,7 @@ Array.prototype.intersection = function(a) {
 }
 
 $(document).ready(function() {
-  var page = $('.spotify-header');
+  var page = $('._onabe');
   var nav_bar = page.find('*');
   // var nav_bar = $('.page-nav').find('*');
   // var nav_bar = $('.spotify-header').find('*');

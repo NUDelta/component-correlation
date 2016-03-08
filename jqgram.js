@@ -16,7 +16,7 @@ var compare = function (a, b) {
 
 
   var allDescendants = function (parentEl, tree) {
-    console.log(parentEl.children);
+    // console.log(parentEl.children);
     //for (var i = 0; i < parentEl.childNodes.length; i++) {
     for (var i = 0; i < parentEl.children.length; i++) {
       var node = parentEl.children[i];
@@ -82,12 +82,12 @@ var compare = function (a, b) {
 
 var a = {
   label: "buzzfeed",
-  html: '<html><body><div class=""><nav class=""><ul class=""><li class=""><a class=""></a></li><li class=""><span class=""><svg class="" viewBox="0 0 517 517"><use xlink:href="#icon-caret-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></span><div class=""><div class=""><a class=""></a></div><div class=""><span class=""></span><ul class=""><li class=""><a class=""></a></li></ul></div><div class=""><ul class=""><li class=""><a class=""></a></li><li class=""><div class=""><a class=""><svg class="" viewBox="0 0 170 170.101"><use xlink:href="#globe" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg><svg class="" viewBox="0 0 517 517"><use xlink:href="#icon-caret-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></a><ul class=""><li class=""><a class=""></a></li></ul></div></li></ul><ul class=""><li class=""><a class=""></a></li><li class=""></li></ul><a class=""></a></div></div></li></ul></nav><div class=""><a class=""></a><div class=""><div class=""><span class=""><iframe></iframe></span></div></div></div><div class=""><div class=""><form class="" method="get"><input><button class=""><svg class="" viewBox="0 0 517 517"><use xlink:href="#icon-search" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></button></form></div><div class=""><div class=""><a class=""></a></div><div class=""><a class=""><span class=""><img></span><span class=""></span></a><ul class=""><li class=""><a class=""></a></li></ul></div><div class=""></div></div></div></div></body></html>'
+  html: '<html><body><div class=""><nav class=""><ul class=""><li class=""><a class=""></a></li><li class=""><span class=""><svg class=""></svg></span><div class=""><div class=""><a class=""></a></div><div class=""><span class=""></span><ul class=""><li class=""><a class=""></a></li></ul></div><div class=""><ul class=""><li class=""><a class=""></a></li><li class=""><div class=""><a class=""><svg class=""></svg><svg class=""></svg></a><ul class=""><li class=""><a class=""></a></li></ul></div></li></ul><ul class=""><li class=""><a class=""></a></li><li class=""></li></ul><a class=""></a></div></div></li></ul></nav><div class=""><a class=""></a><div class=""><div class=""><span class=""><iframe></iframe></span></div></div></div><div class=""><div class=""><form class=""><input><button class=""><svg class=""></svg></button></form></div><div class=""><div class=""><a class=""></a></div><div class=""><a class=""><span class=""><img></span><span class=""></span></a><ul class=""><li class=""><a class=""></a></li></ul></div><div class=""></div></div></div></div></body></html>'
 };
 
 var b = {
   label: "spotify",
-  html: '<html><body><header class=""><div class=""><div class=""><div class=""><button class=""><span class=""></span></button><a class=""></a></div></div></div><div class=""><div class=""><button class="" type="button"><span class=""></span></button><ul class=""><li class=""><a class=""><img class=""></a><ul class=""><li class=""><a class=""></a></li></ul></li></ul><a class=""><img class=""></a><a class=""><span class=""></span></a></div><nav class="" role="navigation"><ul class=""><li class=""><a class=""></a></li><li class=""><a class=""><img class=""><span class=""></span><svg class=""><use xlink:href="#chevron-down" xmlns:xlink="http://www.w3.org/1999/xlink" class=""></use></svg></a><ul class=""><li class=""><a class=""></a></li></ul></li></ul></nav></div></header></body></html>'
+  html: '<html><body><header class=""><div class=""><div class=""><div class=""><button class=""><span class=""></span></button><a class=""></a></div></div></div><div class=""><div class=""><button class="" type="button"><span class=""></span></button><ul class=""><li class=""><a class=""><img class=""></a><ul class=""><li class=""><a class=""></a></li></ul></li></ul><a class=""><img class=""></a><a class=""><span class=""></span></a></div><nav class="" role="navigation"><ul class=""><li class=""><a class=""></a></li><li class=""><a class=""><img class=""><span class=""></span><svg class=""></svg></a><ul class=""><li class=""><a class=""></a></li></ul></li></ul></nav></div></header></body></html>'
 };
 
 var c = {
@@ -103,6 +103,31 @@ var d = {
 var e = {
   label: "nyt",
   html: '<html><body><div class=""></div><div class=""></div><div class=""><div class=""><div class=""><button class=""><i class=""></i><span class=""></span></button><a class=""></a></div><div class=""><div class=""></div><div class=""><button class=""></button><button class=""></button><button class=""><i class=""></i><span class=""></span></button><button class=""><i class=""></i><span class=""></span></button></div></div></div></div><div class=""><div class=""><ul class=""><li class=""></li><li class=""><a class=""></a></li><li class=""><a class=""></a></li></ul></div><div class=""></div><div class=""></div><h2 class=""><a class=""><svg class=""><image class=""></image></svg></a></h2><ul class=""><li class=""></li><li class=""><a class=""></a></li><li class=""><a class=""></a></li><li class=""></li><li class=""></li></ul></div><nav class=""><h2 class=""></h2><ul class=""><li class=""><button class=""><i class=""></i><span class=""></span></button></li><li class=""><button class=""><i class=""></i><span class=""></span></button></li><li class=""><a class=""></a></li><li class=""><button class=""></button></li></ul></nav><div class=""><button class=""><i class=""></i><span class=""></span></button><div class=""><div class=""><small class=""></small></div></div><nav class=""><h2 class=""></h2><form class=""><div class=""><div class=""><label class=""></label></div><div class=""><input class=""><button class=""><i class=""></i><span class=""></span></button><div class=""><ol class=""></ol></div><button class=""></button></div></div></form></nav></div><div class=""></div></body></html>'
+};
+
+var f = {
+  label: "etsy",
+  html: '<html><body><div class=""><div class=""><a class=""></a></div><a class=""><span class=""></span></a><div class=""><div class=""><form class=""><div class=""><label class=""></label><div class=""><input class=""><div class=""></div></div><div class=""><button class=""></button></div></div><input class=""></form></div></div><a class=""></a><ul class=""><li class=""><a class=""><span class=""></span></a></li><li class=""></li></ul></div></body></html>'
+};
+
+var g = {
+  label: "kayak",
+  html: '<html><body><header class=""><div class=""><div class=""><a class=""></a></div><div class=""><nav class=""><div class=""><div class=""><a class=""></a></div><div class=""><div class=""><a class=""><span class=""></span><span class=""><span class=""></span></span></a><div class=""><div class=""></div><div class=""><div class=""><a class=""><span class=""></span><span class=""></span></a></div></div></div></div></div></div></nav></div><div class=""><div class=""><div class=""><div class=""><a class=""></a></div><div class=""><div class=""><a class=""><span class=""></span><span class=""><span class=""><span class=""></span></span></span></a><div class=""><div class=""></div><div class=""><div class=""><a class=""><span class=""><span class=""></span></a></div></div></div></div></div><div class=""><a class=""><span class=""></span></a><div class=""><div class=""></div><div class=""><div class=""><nav class=""><div class=""><div class=""><a class=""></a></div></div></nav></div></div></div></div></div></div></div></div></header></body></html>'
+};
+
+var h = {
+  label: "pinterest",
+  html: '<html><body><div class=""><div class=""><div class=""><div class=""><div class=""><button class=""><em></em><span class=""></span><span class=""></span></button></div><button class=""><div class=""><div class=""><div class=""><img src=""></div></div><span class=""></span></div></button></div></div><div class=""><a class="" href=""><em></em><span class=""></span></a><div class=""><form><div class=""><div class=""><div class=""><div class=""><ul class=""><li class=""><input class=""></li></ul></div><a class=""><em></em></a></div></div><div class=""><ul class=""></ul></div></div></form></div></div></div></div></body></html>'
+};
+
+var i = {
+  label: "github",
+  html: '<html><body><div class=""><a class=""></a><div class=""><form class=""></form></div><ul class=""><li class=""><a class=""></a></li></ul><ul class=""><li class=""><span class=""></span></li><li class=""><a class=""></a><div class=""><ul class=""><a class=""></a><a class=""></a></ul></div></li><li class=""><a class=""></a><div class=""><div class=""><div class=""><strong class=""></strong></div><div class=""></div><a class=""></a><div class=""></div><a class=""></a><form class=""></form></div></div></li></ul></div></body></html>'
+}
+
+var j = {
+  label: "instagram",
+  html: '<html><body><nav class=""><div class=""><a class=""></a><div class=""><div class=""><input class=""><div class=""><div class=""><span class=""></span></div></div></div><a class=""></a></div></div></nav></body></html>'
 };
 
 // var a = {
@@ -127,7 +152,7 @@ var e = {
 // ];
 
 var htmlDomSet = [
-  a, b, c, d, e
+  a, b, c, d, e, f, g, h, i, j
 ];
 
 for (var i = 0; i < htmlDomSet.length; i++) {
