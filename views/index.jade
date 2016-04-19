@@ -2,5 +2,31 @@ doctype html
 html(lang="en")
   head
     title=title
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="codemirror.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
-    h1 Test
+    nav
+        div.nav-wrapper.grey.darken-3
+            a.brand-logo(href='/') Cool Name TBD
+            ul.right.hide-on-med-and-down#nav-mobile
+                li
+                    a(href="/add") Add
+                li
+                    a(href="/") Search
+    div.container
+        div.search-wrapper
+            h3 What component are you looking for?
+            div.row.center
+                form.col.s12
+                    div.row
+                        div.input-field.col.s4.offset-s4
+                            select#component-search
+                                option(value="" disabled selected) Choose a component
+                                option(value="nav") Navigation Bar
+                    div.row.center
+                        button.btn.waves-effect.green.waves-light(type="submit") Search
+    script(src='/jquery.min.js')
+    script(src="codemirror.js")
+    script(src='/js/materialize/bin/materialize.min.js')

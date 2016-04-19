@@ -47,7 +47,7 @@ Array.prototype.intersection = function(a) {
 }
 
 $(document).ready(function() {
-  var page = $('._onabe');
+  var page = $('.page-nav').find('*');
   var nav_bar = page.find('*');
   // var nav_bar = $('.page-nav').find('*');
   // var nav_bar = $('.spotify-header').find('*');
