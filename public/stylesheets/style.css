@@ -8728,6 +8728,9 @@ body {
 p {
   font-weight: 400; }
 
+img {
+  max-width: 100%; }
+
 .search-wrapper h3 {
   text-align: center; }
 
@@ -8753,8 +8756,7 @@ select {
     font-weight: 600; }
 
 .CodeMirror {
-  max-width: 48%;
-  float: left; }
+  font-size: 0.8em; }
 
 .crop {
   height: 200px;

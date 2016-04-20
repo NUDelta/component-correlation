@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title="Comparing Components"
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="codemirror.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    nav
+        div.nav-wrapper.green.accent-4
+            a.brand-logo(href='/') Cool Name TBD
+            ul.right.hide-on-med-and-down#nav-mobile
+                li
+                    a(href="/add") Add
+                li
+                    a(href="/") Search
+    div.container
+        div.row
+            div.col.s6
+                h4 Etsy
+                img(src="/img/etsy.png")
+                textarea(id="etsy")
+                    | <div class="gnav-header global-nav clear gnav-3 button-text" id="gnav-header"> <header class= "body-max-width gnav-header-inner clear apply-nav-height col-group" id= "gnav-header-inner" role="banner"> <div class="col-xs-12"> <div class="apply-nav-height" id="etsy-logo"> <a aria-label="Etsy Logo" href="/?ref=lgo">Etsy</a> </div><a aria-label='search' class= "search-browse-nav nav-link apply-nav-height" href= "#"><span class="screen-reader-only">Search</span> <span aria-hidden="true" class= "nav-icon gnav-ss-icon gnav-ss-search"></span></a> <div class="search-browse-wrapper"> <div class="search-browse-inner with-pointer"> <form action="/search.php" class= "search-nav expanded-search apply-nav-height" id= "gnav-search" method="get" name="gnav-search" role= "search"> <div class="gnav-search-inner clearable"> <label class="screen-reader-only" for= "search-query">Search for items or shops</label> <div class= "search-input-wrapper text-field-wrapper"> <input aria-label= "Search for items or shops" autocomplete= "off" class= "search-input dropdown-relative-positioned rounded" id="search-query" name="search_query" placeholder="Search for items or shops" type="text" value=""> <div id="search-suggestions"></div> </div> <div class="search-button-wrapper hide"> <button class="btn btn-primary" type= "submit" value="Search">Search</button> </div> </div><input id="search-js-router-enabled" type= "hidden" value="true"><input id="search-type" name= "search_type" type="hidden" value="all"> </form> </div> </div><a class="apply-nav-height header__skip-to-content screen-reader-only focusable" href="#content">Skip to Content</a> <ul class="account-nav apply-nav-height"> <li class="sell-on-etsy-link"> <a class="sell-on-etsy-trigger" href= "/sell?ref=hdr&from_page=https%3A%2F%2Fwww.etsy.com%2F" id="sell-on-etsy" title="Sell on Etsy"> <span class="sell-copy">Sell on Etsy</span> </a> </li> <li class="register-link"> <a class="inline-overlay-trigger register-header-action select-register" href="/join?ref=hdr&from_page=https%3A%2F%2Fwww.etsy.com%2F" id="register" role="button" title="Register">Register</a> </li> <li class="sign-in-link"> <a class="inline-overlay-trigger signin-header-action select-signin" href="/signin?ref=hdr&from_action=signin-header&from_page=https%3A%2F%2Fwww.etsy.com%2F" id="sign-in" role="button" title='Sign in'>Sign in</a> </li> <li class="cart" data-sub-nav="cart" id="cart"> <a aria-labelledby="gnav-account-cart-description" class="nav-link" href="/cart?ref=hdr" title='Cart'> <span aria-hidden="true" class="nav-icon gnav-ss-icon gnav-ss-cart"></span> <span class="text-link"> <span class="text-link-copy" id="gnav-account-cart-description">Cart</span> </span> </a> </li> </ul> </div> </header> </div>
+            div.col.s6
+                h4 Instagram
+                img(src="/img/instagram.png")
+                textarea(id="instagram")
+                    | <nav class="_onabe" data-reactid=".0.2" role="navigation"> <div class="_fjpuc _sq03j" data-reactid=".0.2.0"> <div class="_6v8vp" data-reactid=".0.2.0.0"> <a class="_1b8in _345gm coreSpriteNavigationBrandSmall" data-reactid=".0.2.0.0.0" href="/">Instagram</a> <div class="_nhei4" data-reactid=".0.2.0.0.1"> <div class="_9pxkq _icv3j" data-reactid=".0.2.0.0.1.0"> <input class="_9x5sw _qy55y" data-reactid= ".0.2.0.0.1.0.0" placeholder="Search" type="text" value=""> <div class="_t1y9a _98hun" data-reactid= ".0.2.0.0.1.0.1"> <div class="_etslc" data-reactid= ".0.2.0.0.1.0.1.0"> <span class="_oqxv9 coreSpriteSearchIcon" data-reactid= ".0.2.0.0.1.0.1.0.0"></span><span class= "_9ea4j" data-reactid= ".0.2.0.0.1.0.1.0.1">Search</span> </div> </div> </div> <div class="_pq5am" data-reactid=".0.2.0.0.1.1"> <div class="_7smet" data-reactid=".0.2.0.0.1.1.0"> <a class="_bddja _345gm coreSpriteExplore" data-reactid=".0.2.0.0.1.1.0.0" href= "/explore/">Find People</a> </div> <div class="_7smet" data-reactid=".0.2.0.0.1.1.1"> <a class="_im3et coreSpriteActivity _345gm" data-reactid=".0.2.0.0.1.1.1.0" href="#">Activity Feed</a> </div> <div class="_7smet" data-reactid=".0.2.0.0.1.1.2"> <a class="_345gm coreSpriteProfile" data-reactid= ".0.2.0.0.1.1.2.0" href="/nicolelzhu/">Profile</a> </div> </div> </div> </div> </div> </nav>
+    script(src='/jquery.min.js')
+    script(src='/js/script.js')
+    script(src="codemirror.js")
+    script(src='/js/materialize/bin/materialize.min.js')

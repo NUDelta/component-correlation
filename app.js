@@ -40,6 +40,10 @@ app.get('/compare', function(req, res) {
 	res.render('compare');
 });
 
+app.get('/comparison', function(req, res) {
+	res.render('comparison');
+});
+
 app.get('/scrape', function(req, res){
 	var newyorkercss, nytcss, nprcss;
 	// (1) first 3 requests get html for nav bars using cheerio
