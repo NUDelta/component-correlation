@@ -1,14 +1,14 @@
 doctype html
 html(lang="en")
   head
-    title=title
+    title="Comparing Components"
     meta(charset='utf-8')
     link(rel="stylesheet", href="codemirror.css")
     link(rel="stylesheet", href="/stylesheets/style.css")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
     nav
-        div.nav-wrapper.grey.darken-3
+        div.nav-wrapper.green.accent-4
             a.brand-logo(href='/') Cool Name TBD
             ul.right.hide-on-med-and-down#nav-mobile
                 li
@@ -26,7 +26,125 @@ html(lang="en")
                                 option(value="" disabled selected) Choose a component
                                 option(value="nav") Navigation Bar
                     div.row.center
-                        button.btn.waves-effect.green.waves-light(type="submit") Search
+                        a.btn.waves-effect.green.waves-light#search-components Search
+        div.results-wrapper
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/buzzfeed.png")
+                            span.card-title BuzzFeed
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/spotify.png")
+                            span.card-title Spotify
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/etsy.png")
+                            span.card-title Etsy
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/instagram.png")
+                            span.card-title Instagram
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/twitter.png")
+                            span.card-title Twitter
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/youtube.png")
+                            span.card-title Youtube
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/nyt.png")
+                            span.card-title The New York Times
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/pinterest.png")
+                            span.card-title Pinterest
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/github.png")
+                            span.card-title GitHub
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/kayak.png")
+                            span.card-title Kayak
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/wikipedia.png")
+                            span.card-title Wikipedia
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/bing.png")
+                            span.card-title Bing
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/reddit.png")
+                            span.card-title Reddit
+                        div.card-action
+                            a(href="#") Link
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/wordpress.png")
+                            span.card-title Wordpress
+                        div.card-action
+                            a(href="#") Link
+            div.row
+                div.col.s6
+                    div.card
+                        div.card-image
+                            img(src="img/yahoo.png")
+                            span.card-title Yahoo
+                        div.card-action
+                            a(href="#") Link
+            div.row.center
+                a(href="compare")
+                    button.btn.waves-effect.green.waves-light Compare Components
     script(src='/jquery.min.js')
+    script(src='/js/script.js')
     script(src="codemirror.js")
     script(src='/js/materialize/bin/materialize.min.js')

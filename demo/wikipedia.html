@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wikipedia Navigation Bar</title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="../processing/cleanhtml.js"></script>
+<!--     <link rel="stylesheet" href="spotify.css" /> -->
+</head>
+<body>
+  <div id="mw-head">
+        <div aria-labelledby="p-personal-label" class="" id="p-personal" role=
+        "navigation">
+            <h3 id="p-personal-label">Personal tools</h3>
+            <ul>
+                <li id="pt-anonuserpage">Not logged in</li>
+                <li id="pt-anontalk">
+                    <a accesskey="n" href="/wiki/Special:MyTalk" title=
+                    "Discussion about edits from this IP address [ctrl-option-n]">
+                    Talk</a>
+                </li>
+                <li id="pt-anoncontribs">
+                    <a accesskey="y" href="/wiki/Special:MyContributions"
+                    title="A list of edits made from this IP address [ctrl-option-y]">
+                    Contributions</a>
+                </li>
+                <li id="pt-createaccount">
+                    <a href=
+                    "/w/index.php?title=Special:UserLogin&amp;returnto=Main+Page&amp;type=signup"
+                    title=
+                    "You are encouraged to create an account and log in; however, it is not mandatory">
+                    Create account</a>
+                </li>
+                <li id="pt-login">
+                    <a accesskey="o" href=
+                    "/w/index.php?title=Special:UserLogin&amp;returnto=Main+Page"
+                    title=
+                    "You're encouraged to log in; however, it's not mandatory. [ctrl-option-o]">
+                    Log in</a>
+                </li>
+            </ul>
+        </div>
+        <div id="left-navigation">
+            <div aria-labelledby="p-namespaces-label" class="vectorTabs" id=
+            "p-namespaces" role="navigation">
+                <h3 id="p-namespaces-label">Namespaces</h3>
+                <ul>
+                    <li class="selected" id="ca-nstab-main"><span><a accesskey=
+                    "c" href="/wiki/Main_Page" title=
+                    "View the content page [ctrl-option-c]">Main
+                    Page</a></span></li>
+                    <li id="ca-talk"><span><a accesskey="t" href=
+                    "/wiki/Talk:Main_Page" rel="discussion" title=
+                    "Discussion about the content page [ctrl-option-t]">Talk</a></span></li>
+                </ul>
+            </div>
+            <div aria-labelledby="p-variants-label" class=
+            "vectorMenu emptyPortlet" id="p-variants" role="navigation">
+                <h3 id="p-variants-label" tabindex="0">
+                <span>Variants</span><a href="#" tabindex="-1"></a></h3>
+                <div class="menu">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+        <div id="right-navigation">
+            <div aria-labelledby="p-views-label" class="vectorTabs" id=
+            "p-views" role="navigation">
+                <h3 id="p-views-label">Views</h3>
+                <ul>
+                    <li class="selected" id="ca-view"><span><a href=
+                    "/wiki/Main_Page">Read</a></span></li>
+                    <li id="ca-viewsource"><span><a accesskey="e" href=
+                    "/w/index.php?title=Main_Page&amp;action=edit" title=
+                    "This page is protected. You can view its source [ctrl-option-e]">
+                    View source</a></span></li>
+                    <li class="collapsible" id="ca-history"><span><a accesskey=
+                    "h" href="/w/index.php?title=Main_Page&amp;action=history"
+                    title="Past revisions of this page [ctrl-option-h]">View
+                    history</a></span></li>
+                </ul>
+            </div>
+            <div aria-labelledby="p-cactions-label" class=
+            "vectorMenu emptyPortlet" id="p-cactions" role="navigation">
+                <h3 id="p-cactions-label" tabindex="0">
+                <span>More</span><a href="#" tabindex="-1"></a></h3>
+                <div class="menu">
+                    <ul></ul>
+                </div>
+            </div>
+            <div id="p-search" role="search">
+                <h3><label for="searchInput">Search</label></h3>
+                <form action="/w/index.php" id="searchform" name="searchform">
+                    <div id="simpleSearch">
+                        <input accesskey="f" autocomplete="off" id=
+                        "searchInput" name="search" placeholder="Search"
+                        tabindex="1" title="Search Wikipedia [ctrl-option-f]"
+                        type="search"><input name="title" type="hidden" value=
+                        "Special:Search"><input class="searchButton" id=
+                        "searchButton" name="go" title=
+                        "Go to a page with this exact name if it exists" type=
+                        "submit" value="Go">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Youtube Navigation Bar</title>
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="../processing/cleanhtml.js"></script>
+    <!--     <link rel="stylesheet" href="spotify.css" /> -->
+    </head>
+    <body>
+      <div class="hp_hor_hdr" data-bm="19" id="hp_sw_hdr">
+            <div class="sw_tb">
+                <ul class="sc_hl1 hp_head_nav" id="sc_hdu" role="navigation">
+                    <li class="" data-bm="0" id="scpt0">
+                        <a aria-controls="scpc0" aria-expanded="false" aria-owns=
+                        "scpc0" href="/images?FORM=Z9LH" id="scpl0" onclick=
+                        "selectScope(this, 'images');">Images</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="scpl0" id="scpc0" role="group">
+                            <div class="sc_pc" id="images">
+                                <ul class="sc_hl1">
+                                    <li>
+                                        <a href=
+                                        "/images?saf=1&amp;tab=FAV&amp;form=HPSFLT">
+                                        Image favorites</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/images/search?q=national+parks&amp;form=HPSFLT">
+                                        Search for national parks</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/images/search?q=baby+elephants&amp;qft=+filterui:photo-animatedgif&amp;form=HPSFLT">
+                                        Search for funny GIFs</a>
+                                    </li>
+                                </ul>
+                                <div class="sc_sct" style="height: 147px;"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="" data-bm="1" id="scpt1">
+                        <a aria-controls="scpc1" aria-expanded="false" aria-owns=
+                        "scpc1" href="/videos?FORM=Z9LH1" id="scpl1" onclick=
+                        "selectScope(this, 'video');">Videos</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="scpl1" id="scpc1" role="group">
+                            <div class="sc_pc" id="video">
+                                <ul class="sc_hl1">
+                                    <li>
+                                        <a href=
+                                        "/videos?b=music&amp;form=HPSFLT">Top music
+                                        videos</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/videos?b=movie&amp;form=HPSFLT">In
+                                        theater movies</a>
+                                    </li>
+                                    <li>
+                                        <a href="/videos?b=tv&amp;form=HPSFLT">Most
+                                        watched TV shows</a>
+                                    </li>
+                                </ul>
+                                <div class="sc_sct" style="height: 147px;"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="" data-bm="2" id="scpt2">
+                        <a aria-controls="scpc2" aria-expanded="false" aria-owns=
+                        "scpc2" href="/maps/?FORM=Z9LH2" id="scpl2" onclick=
+                        "selectScope(this, 'local');">Maps</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="scpl2" id="scpc2" role="group">
+                            <div class="sc_pc" id="local">
+                                <ul class="sc_hl1">
+                                    <li>
+                                        <a href=
+                                        "/mapspreview?v=2&amp;rtp=~&amp;form=HPSFLT">
+                                        Directions</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/mapspreview?v=2&amp;trfc=1&amp;form=HPSFLT">
+                                        View traffic</a>
+                                    </li>
+                                </ul>
+                                <div class="sc_sct" style="height: 105px;"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="" data-bm="3" id="scpt3">
+                        <a aria-controls="scpc3" aria-expanded="false" aria-owns=
+                        "scpc3" href="/news?FORM=Z9LH3" id="scpl3" onclick=
+                        "selectScope(this, 'news');">News</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="scpl3" id="scpc3" role="group">
+                            <div class="sc_pc" id="news">
+                                <ul class="sc_hl1">
+                                    <li>
+                                        <a href=
+                                        "/news?q=local&amp;form=HPSFLT">Search
+                                        local news</a>
+                                    </li>
+                                    <li>
+                                        <a href="/news?q=US&amp;form=HPSFLT">Search
+                                        US news</a>
+                                    </li>
+                                    <li>
+                                        <a href=
+                                        "/news?q=entertainment&amp;form=HPSFLT">Find
+                                        entertainment news</a>
+                                    </li>
+                                </ul>
+                                <div class="sc_sct" style="height: 147px;"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="" data-bm="4" id="scpt4">
+                        <a aria-controls="scpc4" aria-expanded="false" aria-owns=
+                        "scpc4" href="/explore?FORM=Z9LH4" id="scpl4" onclick=
+                        "selectScope(this, 'seeall');">Explore</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="scpl4" id="scpc4" role="group"></div>
+                    </li>
+                    <li class="" data-bm="5" id="scpt5">
+                        <a aria-controls="scpc5" aria-expanded="false" aria-owns=
+                        "scpc5" href="/profile/history?FORM=Z9LH5" id="scpl5"
+                        onclick="selectScope(this, 'history');">Search History</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="scpl5" id="scpc5" role="group"></div>
+                    </li>
+                    <li data-bm="6" id="hdr_spl">|</li>
+                    <li data-bm="7" id="msn">
+                        <a aria-controls="off_menu_cont" aria-expanded="false"
+                        aria-owns="off_menu_cont" href="http://www.msn.com/" id=
+                        "off_link" target="_blank">MSN</a>
+                    </li>
+                    <li data-bm="8" id="office">
+                        <a aria-controls="off_menu_cont" aria-expanded="false"
+                        aria-owns="off_menu_cont" href=
+                        "http://www.office.com?WT.mc_id=O16_BingHP" id="off_link"
+                        target="_blank">Office Online</a>
+                        <div aria-expanded="false" aria-hidden="true"
+                        aria-labelledby="off_link" class="sc_pc"
+                        data-officemenuroot="office" id="off_menu_cont" style=
+                        "left: 600px; display: block; visibility: hidden;">
+                            <ul class="om" style="display: block;">
+                                <li>
+                                    <a href=
+                                    "https://office.live.com/start/Word.aspx?WT.mc_id=O16_BingHP"
+                                    id="officemenu_word" target="_blank" title=
+                                    "Word Online">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_word_img"></div>
+                                        <div class="itm_desc">
+                                            Word Online
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://office.live.com/start/Excel.aspx?WT.mc_id=O16_BingHP"
+                                    id="officemenu_excel" target="_blank" title=
+                                    "Excel Online">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_excel_img"></div>
+                                        <div class="itm_desc">
+                                            Excel Online
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://office.live.com/start/PowerPoint.aspx?WT.mc_id=O16_BingHP"
+                                    id="officemenu_powerpoint" target="_blank"
+                                    title="PowerPoint Online">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_powerpoint_img"></div>
+                                        <div class="itm_desc">
+                                            PowerPoint Online
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://www.onenote.com/notebooks?WT.mc_id=O16_BingHP"
+                                    id="officemenu_onenote" target="_blank" title=
+                                    "OneNote Online">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_onenote_img"></div>
+                                        <div class="itm_desc">
+                                            OneNote Online
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://www.sway.com?WT.mc_id=O16_BingHP&amp;utm_source=O16Bing&amp;utm_medium=Nav&amp;utm_campaign=HP"
+                                    id="officemenu_sway" target="_blank" title=
+                                    "Sway">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_sway_img"></div>
+                                        <div class="itm_desc">
+                                            Sway
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://www.docs.com?WT.mc_id=O16_BingHP" id=
+                                    "officemenu_docscom" target="_blank" title=
+                                    "Docs.com">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_docscom_img"></div>
+                                        <div class="itm_desc">
+                                            Docs.com
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://onedrive.live.com/?gologin=1&amp;WT.mc_id=O16_BingHP"
+                                    id="officemenu_onedrive" target="_blank" title=
+                                    "OneDrive">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_onedrive_img"></div>
+                                        <div class="itm_desc">
+                                            OneDrive
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://calendar.live.com/?WT.mc_id=O16_BingHP"
+                                    id="officemenu_calendar" target="_blank" title=
+                                    "Calendar">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_calendar_img"></div>
+                                        <div class="itm_desc">
+                                            Calendar
+                                        </div>
+                                    </div></a>
+                                </li>
+                                <li>
+                                    <a href=
+                                    "https://people.live.com/?WT.mc_id=O16_BingHP"
+                                    id="officemenu_people" target="_blank" title=
+                                    "People">
+                                    <div>
+                                        <div class="oml_img" id=
+                                        "officemenu_people_img"></div>
+                                        <div class="itm_desc">
+                                            People
+                                        </div>
+                                    </div></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-bm="9" id="outlook" style="visibility: visible;">
+                        <a aria-controls="off_menu_cont" aria-expanded="false"
+                        aria-owns="off_menu_cont" href=
+                        "https://outlook.com/?WT.mc_id=O16_BingHP?mkt=en-US" id=
+                        "off_link" target="_blank">Outlook.com</a>
+                    </li>
+                </ul>
+                <div id="hp_id_hdr">
+                    <div data-bm="10" id="id_h" role="complementary" style=
+                    "display: block;">
+                        <a class="id_button" href="javascript:void(0);" id=
+                        "id_l"><span id="id_s">Sign in</span><span class=
+                        "sw_spd id_avatar" id="id_a"></span><span id="id_n" style=
+                        "display:none"></span><img class="b_icon id_avatar"
+                        data-bm="25" id="id_p" onerror=
+                        "FallBackToDefaultProfilePic(this)" src=
+                        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+                        style="display:none"></a><a class="id_button" href=
+                        "javascript:void(0)" id="id_rh"><span id=
+                        "id_rc">0</span><span class="id_avatar sw_meIc" title=
+                        "Bing Rewards"></span></a><a class="b_hide" href=
+                        "/rewards/dashboard" id="id_rwl"></a><span id=
+                        "nc_iid"></span><a class="sw_pref" href=
+                        "javascript:void(0);" id="id_sc" title=
+                        "Preferences"></a><span class="b_hide" id="id_scfo"></span>
+                        <div class="b_hide" id="bepfo"></div><span id=
+                        "id_d"></span>
+                    </div>
+                    <div data-bm="11" id="sw_tfbb"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
