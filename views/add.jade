@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    title="Comparing Components"
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="codemirror.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  body
+    nav
+        div.nav-wrapper.green.accent-4
+            a.brand-logo(href='/') Cool Name TBD
+            ul.right.hide-on-med-and-down#nav-mobile
+                li
+                    a(href="/add") Add
+                li
+                    a(href="/") Search
+    div.container
+        h3 Add a code example from a website
+        div.row
+            form.col.s12
+                div.row
+                    div.input-field.col.s12
+                        select#example_type
+                            option(value="" disabled selected) Choose a component
+                            option(value="nav") Navigation Bar
+                div.row
+                    div.input-field.col.s6
+                        input(id="example_name" type="text" name="name")
+                        label(for="example_name") Website Name
+                    div.input-field.col.s6
+                        input(id="example_url" type="text" name="example_url")
+                        label(for="example_url") Website URL
+                div.row
+                    div.input-field.col.s12
+                        input(id="example_image" type="text" name="example_image")
+                        label(for="example_image") Image (Link)
+                div.row
+                    div.input-field.col.s12
+                        textarea(id="example_code" class="materialize-textarea")
+                        label(for="example_code") Code
+                button.btn.waves-effect.green.waves-light(type="submit") Submit
+
+    script(src='/jquery.min.js')
+    script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
+    script(src='/js/add.js')
+    script(src="codemirror.js")
+    script(src='/js/materialize/bin/materialize.min.js')

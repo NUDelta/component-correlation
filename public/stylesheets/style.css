@@ -8737,9 +8737,6 @@ img {
 .results-wrapper {
   display: none; }
 
-select {
-  display: block !important; }
-
 .card-title {
   background-color: #333;
   padding: 0px 20px !important; }

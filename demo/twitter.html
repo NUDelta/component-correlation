@@ -2,179 +2,294 @@
 <html>
 <head>
     <title>Twitter Navigation Bar</title>
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="../processing/cleanhtml.js"></script>
-<!--     <link rel="stylesheet" href="spotify.css" /> -->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js">
+    </script>
+    <script src="../processing/cleanhtml.js">
+    </script><!--     <link rel="stylesheet" href="spotify.css" /> -->
 </head>
 <body>
-<div class="global-nav" data-section-term="top_nav">
-    <div class="global-nav-inner">
-      <div class="container">
-        
-<h1 class="Icon Icon--bird bird-topbar-etched" style="display: inline-block; width: 24px; height: 21px;">
-  <span class="visuallyhidden">Twitter</span>
-</h1><div class="pushstate-spinner"></div>
-
-  
-  <div role="navigation" style="display: inline-block;"><ul class="nav js-global-actions" id="global-actions"><li id="global-nav-home" class="home active new" data-global-action="home">
-        <a class="js-nav js-tooltip js-dynamic-tooltip" data-placement="bottom" href="/" data-component-context="home_nav" data-nav="home">
-          <span class="Icon Icon--home Icon--large"></span>
-          <span class="text">Home</span>
-        </a>
-      </li><li class="moments js-moments-tab " data-global-action="moments">
-        <a role="button" href="/i/moments" class="js-nav js-tooltip js-dynamic-tooltip" data-component-context="moments_nav" data-nav="moments" data-placement="bottom">
-          <span class="Icon Icon--lightning Icon--large"></span>
-          <span class="text">Moments</span>
-        </a>
-      </li><li class="people notifications" data-global-action="connect">
-        <a class="js-nav js-tooltip js-dynamic-tooltip" data-placement="bottom" href="/i/notifications" data-component-context="connect_nav" data-nav="connect">
-          <span class="Icon Icon--notifications Icon--large"></span>
-          <span class="text">Notifications</span>
-            <span class="count">
-              <span class="count-inner">0</span>
-            </span>
-        </a>
-      </li><li class="dm-nav">
-        <a role="button" href="#" class="js-tooltip js-dynamic-tooltip global-dm-nav" data-placement="bottom" data-original-title="">
-          <span class="Icon Icon--dm Icon--large"></span>
-          <span class="text">Messages</span>
-          <span class="dm-new"><span class="count-inner"></span></span>
-        </a>
-      </li></ul>
-  </div>
-
-
-  <div class="pull-right" style="display: inline-block;"><div role="search">
-  <form class="t1-form form-search js-search-form" action="/search" id="global-nav-search">
-    <label class="visuallyhidden" for="search-query">Search query</label>
-    <input class="search-input" type="text" id="search-query" placeholder="Search Twitter" name="q" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-1">
-    <span class="search-icon js-search-action">
-      <button type="submit" class="Icon Icon--search nav-search" tabindex="-1">
-        <span class="visuallyhidden">Search Twitter</span>
-      </button>
-    </span>
-      <div role="listbox" class="dropdown-menu typeahead" id="typeahead-dropdown-1">
-  <div aria-hidden="true" class="dropdown-caret">
-    <div class="caret-outer"></div>
-    <div class="caret-inner"></div>
-  </div>
-  <div role="presentation" class="dropdown-inner js-typeahead-results"><div role="presentation" class="typeahead-recent-searches block0">
-  <h3 id="recent-searches-heading" class="typeahead-category-title recent-searches-title">Recent searches</h3><button type="button" tabindex="-1" class="btn-link clear-recent-searches">Clear All</button>
-  <ul role="presentation" class="typeahead-items recent-searches-list">
-    
-    <li role="presentation" class="typeahead-item typeahead-recent-search-item">
-      <span class="Icon Icon--close" aria-hidden="true"><span class="visuallyhidden">Remove</span></span>
-      <a role="option" aria-describedby="recent-searches-heading" class="js-nav" href="" data-search-query="" data-query-source="" data-ds="recent_search" tabindex="-1"></a>
-    </li>
-  </ul>
-</div><div role="presentation" class="typeahead-saved-searches block1">
-  <h3 id="saved-searches-heading" class="typeahead-category-title saved-searches-title">Saved searches</h3>
-  <ul role="presentation" class="typeahead-items saved-searches-list">
-    
-    <li role="presentation" class="typeahead-item typeahead-saved-search-item">
-      <span class="Icon Icon--close" aria-hidden="true"><span class="visuallyhidden">Remove</span></span>
-      <a role="option" aria-describedby="saved-searches-heading" class="js-nav" href="" data-search-query="" data-query-source="" data-ds="saved_search" tabindex="-1"></a>
-    </li>
-  </ul>
-</div><ul role="presentation" class="typeahead-items typeahead-topics block2" style="display: none;">
-  
-  <li role="presentation" class="typeahead-item typeahead-topic-item">
-    <a role="option" class="js-nav" href="" data-search-query="" data-query-source="typeahead_click" data-ds="topics" tabindex="-1"></a>
-  </li>
-</ul><ul role="presentation" class="typeahead-items typeahead-accounts social-context js-typeahead-accounts block3" style="display: none;">
-  
-  <li role="presentation" data-user-id="" data-user-screenname="" data-remote="true" data-score="" class="typeahead-item typeahead-account-item js-selectable">
-    
-    <a role="option" class="js-nav" data-query-source="typeahead_click" data-search-query="" data-ds="account">
-      <img class="avatar size32" alt="">
-      <span class="typeahead-user-item-info">
-        <span class="fullname"></span>
-        <span class="js-verified hidden"><span class="Icon Icon--verified Icon--small">
-  <span class="u-hiddenVisually">Verified account</span>
-</span></span>
-        <span class="username"><s>@</s><b></b></span>
-      </span>
-      <span class="typeahead-social-context"></span>
-    </a>
-  </li>
-  <li role="presentation" class="js-selectable typeahead-accounts-shortcut js-shortcut"><a role="option" class="js-nav" href="" data-search-query="" data-query-source="typeahead_click" data-shortcut="true" data-ds="account_search"></a></li>
-</ul></div>
-</div>
-
-  </form>
-</div>
-<ul class="nav right-actions"><li class="me dropdown session js-session" data-global-action="t1me" id="user-dropdown">
-        <a href="/settings/account" class="btn js-tooltip settings dropdown-toggle js-dropdown-toggle" id="user-dropdown-toggle" title="Profile and settings" data-placement="bottom" role="button" aria-haspopup="true"><img class="avatar size32" src="https://pbs.twimg.com/profile_images/624988001555357696/OmDogfNi_normal.jpg" alt="Profile and settings" data-user-id="242308086"></a>
-        <div class="dropdown-menu">
-    <div class="dropdown-caret">
-      <span class="caret-outer"></span>
-      <span class="caret-inner"></span>
+    <div class="global-nav" data-section-term="top_nav">
+        <div class="global-nav-inner">
+            <div class="container">
+                <h1 class="Icon Icon--bird bird-topbar-etched" style=
+                "display: inline-block; width: 24px; height: 21px;">
+                <span class="visuallyhidden">Twitter</span></h1>
+                <div class="pushstate-spinner"></div>
+                <div role="navigation" style="display: inline-block;">
+                    <ul class="nav js-global-actions" id="global-actions">
+                        <li class="home active new" data-global-action="home"
+                        id="global-nav-home">
+                            <a class="js-nav js-tooltip js-dynamic-tooltip"
+                            data-component-context="home_nav" data-nav="home"
+                            data-placement="bottom" href="/"><span class=
+                            "Icon Icon--home Icon--large"></span> <span class=
+                            "text">Home</span></a>
+                        </li>
+                        <li class="moments js-moments-tab" data-global-action=
+                        "moments">
+                            <a class="js-nav js-tooltip js-dynamic-tooltip"
+                            data-component-context="moments_nav" data-nav=
+                            "moments" data-placement="bottom" href="/i/moments"
+                            role="button"><span class=
+                            "Icon Icon--lightning Icon--large"></span>
+                            <span class="text">Moments</span></a>
+                        </li>
+                        <li class="people notifications" data-global-action=
+                        "connect">
+                            <a class="js-nav js-tooltip js-dynamic-tooltip"
+                            data-component-context="connect_nav" data-nav=
+                            "connect" data-placement="bottom" href=
+                            "/i/notifications"><span class=
+                            "Icon Icon--notifications Icon--large"></span>
+                            <span class="text">Notifications</span>
+                            <span class="count"><span class=
+                            "count-inner">0</span></span></a>
+                        </li>
+                        <li class="dm-nav">
+                            <a class=
+                            "js-tooltip js-dynamic-tooltip global-dm-nav"
+                            data-original-title="" data-placement="bottom"
+                            href="#" role="button"><span class=
+                            "Icon Icon--dm Icon--large"></span> <span class=
+                            "text">Messages</span> <span class=
+                            "dm-new"><span class=
+                            "count-inner"></span></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pull-right" style="display: inline-block;">
+                    <div role="search">
+                        <form action="/search" class=
+                        "t1-form form-search js-search-form" id=
+                        "global-nav-search" name="global-nav-search">
+                            <label class="visuallyhidden" for=
+                            "search-query">Search query</label>
+                            <input aria-autocomplete="list" aria-expanded=
+                            "false" aria-owns="typeahead-dropdown-1"
+                            autocomplete="off" class="search-input" id=
+                            "search-query" name="q" placeholder=
+                            "Search Twitter" spellcheck="false" type="text">
+                            <span class=
+                            "search-icon js-search-action"><button class=
+                            "Icon Icon--search nav-search" tabindex="-1" type=
+                            "submit"><span class=
+                            "search-icon js-search-action"><span class=
+                            "visuallyhidden">Search
+                            Twitter</span></span></button></span>
+                            <div class="dropdown-menu typeahead" id=
+                            "typeahead-dropdown-1" role="listbox">
+                                <div aria-hidden="true" class="dropdown-caret">
+                                    <div class="caret-outer"></div>
+                                    <div class="caret-inner"></div>
+                                </div>
+                                <div class=
+                                "dropdown-inner js-typeahead-results" role=
+                                "presentation">
+                                    <div class=
+                                    "typeahead-recent-searches block0" role=
+                                    "presentation">
+                                        <h3 class=
+                                        "typeahead-category-title recent-searches-title"
+                                        id="recent-searches-heading">Recent
+                                        searches</h3><button class=
+                                        "btn-link clear-recent-searches"
+                                        tabindex="-1" type="button">Clear
+                                        All</button>
+                                        <ul class=
+                                        "typeahead-items recent-searches-list"
+                                        role="presentation">
+                                            <li class=
+                                            "typeahead-item typeahead-recent-search-item"
+                                            role="presentation">
+                                                <span aria-hidden="true" class=
+                                                "Icon Icon--close"><span class=
+                                                "visuallyhidden">Remove</span></span>
+                                                <a aria-describedby=
+                                                "recent-searches-heading"
+                                                class="js-nav" data-ds=
+                                                "recent_search"
+                                                data-query-source=""
+                                                data-search-query="" href=""
+                                                role="option" tabindex=
+                                                "-1"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class=
+                                    "typeahead-saved-searches block1" role=
+                                    "presentation">
+                                        <h3 class=
+                                        "typeahead-category-title saved-searches-title"
+                                        id="saved-searches-heading">Saved
+                                        searches</h3>
+                                        <ul class=
+                                        "typeahead-items saved-searches-list"
+                                        role="presentation">
+                                            <li class=
+                                            "typeahead-item typeahead-saved-search-item"
+                                            role="presentation">
+                                                <span aria-hidden="true" class=
+                                                "Icon Icon--close"><span class=
+                                                "visuallyhidden">Remove</span></span>
+                                                <a aria-describedby=
+                                                "saved-searches-heading" class=
+                                                "js-nav" data-ds="saved_search"
+                                                data-query-source=""
+                                                data-search-query="" href=""
+                                                role="option" tabindex=
+                                                "-1"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class=
+                                    "typeahead-items typeahead-topics block2"
+                                    role="presentation" style="display: none;">
+                                        <li class=
+                                        "typeahead-item typeahead-topic-item"
+                                        role="presentation">
+                                            <a class="js-nav" data-ds="topics"
+                                            data-query-source="typeahead_click"
+                                            data-search-query="" href="" role=
+                                            "option" tabindex="-1"></a>
+                                        </li>
+                                    </ul>
+                                    <ul class=
+                                    "typeahead-items typeahead-accounts social-context js-typeahead-accounts block3"
+                                    role="presentation" style="display: none;">
+                                        <li class=
+                                        "typeahead-item typeahead-account-item js-selectable"
+                                        data-remote="true" data-score=""
+                                        data-user-id="" data-user-screenname=""
+                                        role="presentation">
+                                            <a class="js-nav" data-ds="account"
+                                            data-query-source="typeahead_click"
+                                            data-search-query="" role=
+                                            "option"><img alt="" class=
+                                            "avatar size32"> <span class=
+                                            "typeahead-user-item-info"><span class="fullname">
+                                            </span> <span class=
+                                            "js-verified hidden"><span class=
+                                            "Icon Icon--verified Icon--small"><span class="u-hiddenVisually">
+                                            Verified
+                                            account</span></span></span>
+                                            <span class=
+                                            "username"><s>@</s><b></b></span></span>
+                                            <span class=
+                                            "typeahead-social-context"></span></a>
+                                        </li>
+                                        <li class=
+                                        "js-selectable typeahead-accounts-shortcut js-shortcut"
+                                        role="presentation">
+                                            <a class="js-nav" data-ds=
+                                            "account_search" data-query-source=
+                                            "typeahead_click"
+                                            data-search-query="" data-shortcut=
+                                            "true" href="" role="option"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="nav right-actions">
+                        <li class="me dropdown session js-session"
+                        data-global-action="t1me" id="user-dropdown">
+                            <a aria-haspopup="true" class=
+                            "btn js-tooltip settings dropdown-toggle js-dropdown-toggle"
+                            data-placement="bottom" href="/settings/account"
+                            id="user-dropdown-toggle" role="button" title=
+                            "Profile and settings"><img alt=
+                            "Profile and settings" class="avatar size32"
+                            data-user-id="242308086" src=
+                            "https://pbs.twimg.com/profile_images/624988001555357696/OmDogfNi_normal.jpg"></a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-caret">
+                                    <span class="caret-outer"></span>
+                                    <span class="caret-inner"></span>
+                                </div>
+                                <ul>
+                                    <li class="current-user" data-name=
+                                    "profile">
+                                        <a class=
+                                        "account-summary account-summary-small js-nav"
+                                        data-nav="view_profile" href=
+                                        "/nicolelzhu">
+                                        <div class="content">
+                                            <div class=
+                                            "account-group js-mini-current-user"
+                                            data-screen-name="nicolelzhu"
+                                            data-user-id="242308086">
+                                                <b class="fullname">Nicole
+                                                Zhu</b><span class=
+                                                "screen-name hidden" dir=
+                                                "ltr">@nicolelzhu</span><small class="metadata">View
+                                                profile</small>
+                                            </div>
+                                        </div></a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li data-name="lists">
+                                        <a data-nav="all_lists" href=
+                                        "/nicolelzhu/lists">Lists</a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li>
+                                        <a data-nav="help_center" href=
+                                        "//support.twitter.com">Help</a>
+                                    </li>
+                                    <li class="js-keyboard-shortcut-trigger"
+                                    data-nav="shortcuts"><button class=
+                                    "dropdown-link" type="button">Keyboard
+                                    shortcuts</button></li>
+                                    <li>
+                                        <a data-nav="ads" href=
+                                        "https://ads.twitter.com/start?ref=gl-tw-tw-twitter-ads"
+                                        target="_blank">Twitter Ads</a>
+                                    </li>
+                                    <li>
+                                        <a class="user-dropdown-analytics"
+                                        data-nav="user_dropdown_analytics"
+                                        href="https://analytics.twitter.com/"
+                                        target="_blank">Analytics</a>
+                                    </li>
+                                    <li class="dropdown-divider"></li>
+                                    <li>
+                                        <a class="js-nav" data-nav="settings"
+                                        href="/settings/account">Settings</a>
+                                    </li>
+                                    <li class="js-signout-button" data-nav=
+                                    "logout" id="signout-button">
+                                        <button class="dropdown-link" type=
+                                        "button">Log out</button>
+                                        <form action="/logout" class=
+                                        "t1-form dropdown-link-form signout-form"
+                                        id="signout-form" method="post" name=
+                                        "signout-form">
+                                            <input class="authenticity_token"
+                                            name="authenticity_token" type=
+                                            "hidden" value=
+                                            "c4db12abbe6de2b3f6eb5a70c9c3b5283d45b2ef">
+                                            <input class="js-reliability-event"
+                                            name="reliability_event" type=
+                                            "hidden"> <input name="scribe_log"
+                                            type="hidden">
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li aria-labelledby="global-new-tweet-button" class=
+                        "topbar-tweet-btn" role="complementary"><button class=
+                        "js-global-new-tweet js-tooltip btn primary-btn tweet-btn js-dynamic-tooltip"
+                        data-component-context="new_tweet_button"
+                        data-placement="bottom" id="global-new-tweet-button"
+                        type="button"><span class=
+                        "Icon Icon--tweet Icon--large"></span> <span class=
+                        "text">Tweet</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul>
-      
-      <li class="current-user" data-name="profile">
-        
-
-<a href="/nicolelzhu" class="account-summary account-summary-small js-nav" data-nav="view_profile"><div class="content"><div class="account-group js-mini-current-user" data-user-id="242308086" data-screen-name="nicolelzhu"><b class="fullname">Nicole Zhu</b><span class="screen-name hidden" dir="ltr">@nicolelzhu</span><small class="metadata">View profile</small></div></div></a>
-
-      </li>
-
-      <li class="dropdown-divider"></li>
-      
-      <li data-name="lists"><a href="/nicolelzhu/lists" data-nav="all_lists">Lists</a></li>
-      <li class="dropdown-divider"></li>
-
-      
-
-      
-      <li><a href="//support.twitter.com" data-nav="help_center">Help</a></li>
-
-        
-        <li class="js-keyboard-shortcut-trigger" data-nav="shortcuts">
-          <button type="button" class="dropdown-link">Keyboard shortcuts</button>
-        </li>
-
-      
-        <li><a href="https://ads.twitter.com/start?ref=gl-tw-tw-twitter-ads" target="_blank" data-nav="ads">Twitter Ads</a></li>
-
-      
-        <li><a class="user-dropdown-analytics" href="https://analytics.twitter.com/" target="_blank" data-nav="user_dropdown_analytics">Analytics</a></li>
-
-      
-
-      
-
-      
-
-
-      <li class="dropdown-divider"></li>
-
-      
-      <li><a href="/settings/account" data-nav="settings" class="js-nav">Settings</a></li>
-
-      
-      <li class="js-signout-button" id="signout-button" data-nav="logout">
-        <button type="button" class="dropdown-link">Log out</button>
-        <form class="t1-form dropdown-link-form signout-form" id="signout-form" action="/logout" method="POST">
-          <input type="hidden" value="c4db12abbe6de2b3f6eb5a70c9c3b5283d45b2ef" name="authenticity_token" class="authenticity_token">
-          <input type="hidden" name="reliability_event" class="js-reliability-event">
-          <input type="hidden" name="scribe_log">
-        </form>
-      </li>
-
-    </ul>
-  </div>
-
-      </li><li role="complementary" aria-labelledby="global-new-tweet-button" class="topbar-tweet-btn">
-        <button id="global-new-tweet-button" type="button" class="js-global-new-tweet js-tooltip btn primary-btn tweet-btn js-dynamic-tooltip" data-placement="bottom" data-component-context="new_tweet_button">
-          <span class="Icon Icon--tweet Icon--large"></span>
-          <span class="text">Tweet</span>
-        </button>
-      </li></ul></div>
-
-
-      </div>
-    </div>
-  </div>
 </body>
 </html>

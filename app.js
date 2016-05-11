@@ -22,6 +22,7 @@ var beautify_html = require('js-beautify').html;
 var phridge = require('phridge');
 var https = require('https');
 var fs = require('fs');
+var Firebase = require('firebase');
 // set options for SSL server
 var options = {
     key: fs.readFileSync('key.pem'),
@@ -42,6 +43,10 @@ app.get('/compare', function(req, res) {
 
 app.get('/comparison', function(req, res) {
 	res.render('comparison');
+});
+
+app.get('/add', function(req, res) {
+	res.render('add');
 });
 
 app.get('/scrape', function(req, res){
