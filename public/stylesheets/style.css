@@ -8752,6 +8752,9 @@ img {
   .block p {
     font-weight: 600; }
 
+#examples {
+  width: 80%; }
+
 .CodeMirror {
   font-size: 0.8em; }
 

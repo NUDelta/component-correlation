@@ -49,6 +49,10 @@ app.get('/add', function(req, res) {
 	res.render('add');
 });
 
+app.get('/contribute', function(req, res) {
+	res.render('contribute');
+});
+
 app.get('/scrape', function(req, res){
 	var newyorkercss, nytcss, nprcss;
 	// (1) first 3 requests get html for nav bars using cheerio
