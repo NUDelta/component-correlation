@@ -42,45 +42,52 @@ $(document).ready(function() {
       var e1Tags = event.currentTarget.ex1_tags.value.split(", ");
       var e2Tags = event.currentTarget.ex2_tags.value.split(", ");
 
-      console.log(e1Tags);
       var examples = [];
       for (var i=0; i < $('.example').length; i++) {
         var name = $($('.example')[i]).attr('id');
-        console.log(name);
-
-        examplesRef.orderByChild("name").equalTo(name).on("child_added", function(snapshot) {
-          var ex = snapshot.val();
-          var tagsRef = examplesRef.child(snapshot.key());
-          console.log(tagsRef);
-          
-          if (i == 0) {
-            tagsRef.update({
-              tags: event.currentTarget.ex1_tags.value
-            });
-          } else {
-            tagsRef.update({
-              tags: event.currentTarget.ex2_tags.value
-            });
-          }
-          // if (i == 0) {
-          //   tagsRef.update({
-          //     tags: e1Tags
-          //   });
-          // } else {
-          //   tagsRef.update({
-          //     tags: e2Tags
-          //   });
-          // }
-          // for (var j=0; j < e1Tags.length; j++) {
-          //   var tag = e1Tags[j];
-          //   tagsRef.child('tags').update({
-          //     tag: 1
-          //   });
-          // }
-        });
+        examples.push(name);
       }
+
+      console.log(examples);
+      console.log(e1Tags);
+      saveTags(examples[0], e1Tags);
+      saveTags(examples[1], e2Tags);
   });
 });
+
+function saveTags(website, tags) {
+  examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
+    var ex = snapshot.val();
+    var tagsRef = examplesRef.child(snapshot.key()).child("tags");
+    console.log(tagsRef);
+
+    for (var i=0; i < tags.length; i++) {
+      console.log(tags[i]);
+      countRef = tagsRef.child(tags[i])
+      countRef.transaction(function(currentData) {
+        console.log("current data", currentData);
+        if (currentData === null) {
+          var newTag = {};
+          newTag[tags[i]] = 1;
+          tagsRef.update(newTag);
+        } else {
+          return currentData+1;
+          console.log('Tag already exists');
+          return; // Abort the transaction.
+        }
+      }, function(error, committed, snapshot) {
+        if (error) {
+          console.log('Transaction failed abnormally!', error);
+        } else if (!committed) {
+          console.log('We aborted the transaction (because data already exists).');
+        } else {
+          console.log('Tag added!');
+        }
+        // console.log("The data: ", snapshot.val());
+      });
+    }
+  });
+}
 
 function pickRandomProperty(obj) {
     var result;
