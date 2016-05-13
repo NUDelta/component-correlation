@@ -21,8 +21,8 @@ $(document).ready(function() {
 
     var el1 = '<div class="col s6"><h4>' + ex1.name + '</h4><img src="' + ex1.image + '" /><textarea class="example" id="' + ex1.name + '" val="' + ex1.code + '"></textarea></div>';
     var el2 = '<div class="col s6"><h4>' + ex2.name + '</h4><img src="' + ex2.image + '" /><textarea class="example" id="' + ex2.name + '" val="' + ex2.code + '"></textarea></div>';
-    $('.container').prepend('<div class="row">' + el1 + '</div>');
-    $('.row').first().prepend(el2);
+    $('#examples').prepend('<div class="row">' + el1 + '</div>');
+    $('#examples .row').first().prepend(el2);
 
     // dynamically load codemirror
     var examples = $('.example');
@@ -36,7 +36,7 @@ $(document).ready(function() {
     }
   }
 
-  $('form').submit(function(event) {
+  $('#tags').submit(function(event) {
       event.preventDefault();
 
       var e1Tags = event.currentTarget.ex1_tags.value.split(", ");
@@ -52,6 +52,10 @@ $(document).ready(function() {
       console.log(e1Tags);
       saveTags(examples[0], e1Tags);
       saveTags(examples[1], e2Tags);
+  });
+
+  $('#explanations').submit(function(event) {
+    event.preventDefault();
   });
 });
 
@@ -86,7 +90,19 @@ function saveTags(website, tags) {
         // console.log("The data: ", snapshot.val());
       });
     }
+
+    loadTags(website, tags);
   });
+}
+
+function loadTags(website, tags) {
+  for (var i=0; i < tags.length; i++) {
+    var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip">' + tags[i] + '</div></div>';
+    var form_field ='<div class="input-field col s12"><input id="tag-' + tags[i] + '" type="text" name="tag-' + tags[i] + '"><label for="tag-' + tags[i] + '">Write one sentence explaining why you chose this tag.</label></div>';
+    $('#freeform-submit').before('<div class="row">' + form_tag + form_field + '</div>');
+  }
+
+  $('#freeform').show();
 }
 
 function pickRandomProperty(obj) {

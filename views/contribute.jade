@@ -19,7 +19,7 @@ html(lang="en")
                     a(href="/contribute") Contribute
     div.container#examples
         div.row
-            form.col.s12
+            form.col.s12#tags
                 div.row
                     h4 Add tags comparing the code of these two navigation bars
                     div.input-field.col.s6
@@ -29,6 +29,12 @@ html(lang="en")
                         input(id="ex2_tags" type="text" name="ex2_tags")
                         label(for="ex2_tags") Add tags separated by commas
                 button.btn.waves-effect.green.waves-light(type="submit") Submit
+    div.container#freeform
+        div.row
+            form.col.s12#explanations
+                div.row
+                    h4 Justify
+                button.btn.waves-effect.green.waves-light(type="submit")#freeform-submit Submit
     script(src='/jquery.min.js')
     script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
     script(src='/js/contribute.js')

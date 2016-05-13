@@ -8752,8 +8752,18 @@ img {
   .block p {
     font-weight: 600; }
 
-#examples {
+#examples, #freeform {
   width: 80%; }
+
+#freeform {
+  display: none; }
+
+.chip-wrapper {
+  padding: 0 0.75rem; }
+
+.site {
+  display: inline-block;
+  margin-right: 10px; }
 
 .CodeMirror {
   font-size: 0.8em; }
