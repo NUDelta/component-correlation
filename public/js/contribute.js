@@ -100,13 +100,13 @@ function saveTags(website, tags) {
 
     for (var i=0; i < tags.length; i++) {
       // console.log(tags[i]);
-      countRef = tagsRef.child(tags[i])
+      countRef = tagsRef.child(tags[i]).child("count");
       countRef.transaction(function(currentData) {
         // console.log("current data", currentData);
         if (currentData === null) {
-          var newTag = {};
-          newTag[tags[i]] = 1;
-          tagsRef.update(newTag);
+          // var newTag = {};
+          // newTag[tags[i]] = { count: 1 };
+          tagsRef.child(tags[i]).child("count").set(1);
         } else {
           return currentData+1;
           console.log('Tag already exists');
