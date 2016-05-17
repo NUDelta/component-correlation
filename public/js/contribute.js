@@ -24,6 +24,7 @@ $(document).ready(function() {
     $('#examples').prepend('<div class="row">' + el1 + '</div>');
     $('#examples .row').first().prepend(el2);
 
+    var editors = [];
     // dynamically load codemirror
     var examples = $('.example');
     for (var i=0; i < examples.length; i++) {
@@ -32,9 +33,24 @@ $(document).ready(function() {
         lineWrapping: true,
         lineNumbers: true,
         indentWithTabs: true,
+        readOnly: true,
         mode: "htmlmixed"
       });
+
+      editors.push(example_name);
     }
+
+    var editor1 = editors[0];
+    editor1.on("cursorActivity", function() {
+      var selection = editor1.getCursor(true);
+      console.log(selection);
+    });
+
+    var editor2 = editors[1];
+    editor2.on("cursorActivity", function() {
+      var selection = editor2.getCursor(true);
+      console.log(selection);
+    });
   }
 
   $('#tags').submit(function(event) {
@@ -75,7 +91,6 @@ $(document).ready(function() {
 
       saveComments(site, tag, comment, submitter);
     }
-
   });
 });
 
@@ -84,7 +99,7 @@ function saveTags(website, tags) {
   examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
     var ex = snapshot.val();
     var tagsRef = examplesRef.child(snapshot.key()).child("tags");
-    console.log(tagsRef);
+    // console.log(tagsRef);
 
     for (var i=0; i < tags.length; i++) {
       // console.log(tags[i]);
