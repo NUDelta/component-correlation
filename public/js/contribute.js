@@ -31,6 +31,7 @@ $(document).ready(function() {
       example_name = CodeMirror.fromTextArea(examples[i], {
         lineWrapping: true,
         lineNumbers: true,
+        indentWithTabs: true,
         mode: "htmlmixed"
       });
     }
@@ -48,17 +49,37 @@ $(document).ready(function() {
         examples.push(name);
       }
 
-      console.log(examples);
-      console.log(e1Tags);
+      // console.log(examples);
+      // console.log(e1Tags);
       saveTags(examples[0], e1Tags);
       saveTags(examples[1], e2Tags);
   });
 
   $('#explanations').submit(function(event) {
     event.preventDefault();
+
+    // get submitter name, set to "Anonymous" if there it's empty
+    var submitter = event.currentTarget.commenter_name.value;
+    if (submitter == "") {
+      submitter = "Anonymous";
+    }
+
+    var comments = $('#explanations .comment-wrapper');
+
+    // get sites, tags, and justifications
+    for (var j=0; j < comments.length; j++) {
+      var site = $(comments[j]).find('.site').text();
+      var tag = $(comments[j]).find('.chip').text();
+      var comment_tag = '#tag-' + tag;
+      var comment = $(comments[j]).find(comment_tag).val();
+
+      saveComments(site, tag, comment, submitter);
+    }
+
   });
 });
 
+// save tags for a specific website
 function saveTags(website, tags) {
   examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
     var ex = snapshot.val();
@@ -66,10 +87,10 @@ function saveTags(website, tags) {
     console.log(tagsRef);
 
     for (var i=0; i < tags.length; i++) {
-      console.log(tags[i]);
+      // console.log(tags[i]);
       countRef = tagsRef.child(tags[i])
       countRef.transaction(function(currentData) {
-        console.log("current data", currentData);
+        // console.log("current data", currentData);
         if (currentData === null) {
           var newTag = {};
           newTag[tags[i]] = 1;
@@ -95,11 +116,25 @@ function saveTags(website, tags) {
   });
 }
 
+// save comments for a specific tag for a specific website
+function saveComments(website, tag, comment_text, username) {
+  var commentObj = {
+      name: username,
+      comment: comment_text
+  };
+  
+  examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
+    var tagRef = examplesRef.child(snapshot.key()).child("tags").child(tag);
+    tagRef.push(commentObj);
+  });
+}
+
+// load tags that a user just added for both websites
 function loadTags(website, tags) {
   for (var i=0; i < tags.length; i++) {
     var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip">' + tags[i] + '</div></div>';
     var form_field ='<div class="input-field col s12"><input id="tag-' + tags[i] + '" type="text" name="tag-' + tags[i] + '"><label for="tag-' + tags[i] + '">Write one sentence explaining why you chose this tag.</label></div>';
-    $('#freeform-submit').before('<div class="row">' + form_tag + form_field + '</div>');
+    $('#freeform-submit').before('<div class="row comment-wrapper">' + form_tag + form_field + '</div>');
   }
 
   $('#freeform').show();

@@ -33,7 +33,11 @@ html(lang="en")
         div.row
             form.col.s12#explanations
                 div.row
-                    h4 Justify
+                    h4 Add comments explaining your tag choices
+                div.row
+                    div.input-field.col.s12
+                        input(id="commenter_name" type="text" name="commenter_name")
+                        label(for="commenter_name") Your name as you want it to appear on the site (leave blank if submitting anonymously)
                 button.btn.waves-effect.green.waves-light(type="submit")#freeform-submit Submit
     script(src='/jquery.min.js')
     script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
