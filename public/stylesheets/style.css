@@ -8765,6 +8765,9 @@ img {
   display: inline-block;
   margin-right: 10px; }
 
+.highlight {
+  background-color: yellow; }
+
 .CodeMirror {
   font-size: 0.8em; }
 

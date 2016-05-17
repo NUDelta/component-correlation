@@ -21,7 +21,7 @@ html(lang="en")
         div.row
             form.col.s12#tags
                 div.row
-                    h4 Add tags comparing the code of these two navigation bars
+                    h4#test-lines Add tags comparing the code of these two navigation bars
                     div.input-field.col.s6
                         input(id="ex1_tags" type="text" name="ex1_tags")
                         label(for="ex1_tags") Add tags separated by commas
@@ -39,6 +39,12 @@ html(lang="en")
                         input(id="commenter_name" type="text" name="commenter_name")
                         label(for="commenter_name") Your name as you want it to appear on the site (leave blank if submitting anonymously)
                 button.btn.waves-effect.green.waves-light(type="submit")#freeform-submit Submit
+    div.container#highlighting
+        div.row
+            form.col.s12#line-numbers
+                div.row
+                    h4 Highlight the line numbers in the code that support the tags you've chosen, then click the tags to save your selections
+                button.btn.waves-effect.green.waves-light(type="submit")#highlighting-submit Submit
     script(src='/jquery.min.js')
     script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
     script(src='/js/contribute.js')

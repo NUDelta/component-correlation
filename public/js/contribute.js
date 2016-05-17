@@ -40,17 +40,7 @@ $(document).ready(function() {
       editors.push(example_name);
     }
 
-    var editor1 = editors[0];
-    editor1.on("cursorActivity", function() {
-      var selection = editor1.getCursor(true);
-      console.log(selection);
-    });
-
-    var editor2 = editors[1];
-    editor2.on("cursorActivity", function() {
-      var selection = editor2.getCursor(true);
-      console.log(selection);
-    });
+    selectLines(editors);
   }
 
   $('#tags').submit(function(event) {
@@ -127,7 +117,8 @@ function saveTags(website, tags) {
       });
     }
 
-    loadTags(website, tags);
+    loadTagsForHighlighting(website, tags);
+    // loadTags(website, tags);
   });
 }
 
@@ -153,6 +144,53 @@ function loadTags(website, tags) {
   }
 
   $('#freeform').show();
+}
+
+function loadTagsForHighlighting(website, tags) {
+  for (var i=0; i < tags.length; i++) {
+    var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip" id="highlight-' + tags[i] + '">' + tags[i] + '</div></div>';
+    $('#highlighting-submit').before('<div class="row highlighter-wrapper">' + form_tag + '</div>');
+  }
+
+  loadHighlightHandlers();
+
+  // $('#highlighting').show();
+}
+
+function loadHighlightHandlers() {
+  $('.chip').click(function(event) {
+    event.preventDefault();
+    var site = '#' + $(this).prev().text();
+    var tag = $(this).text();
+    console.log(site);
+    console.log(tag);
+    var editor = $(site).next('.CodeMirror')[0].CodeMirror;
+    var selection_from = editor.getCursor(true).line;
+    var selection_to = editor.getCursor(false).line + 1;
+    editor.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: 'highlight'});
+    console.log(selection_from, selection_to);
+    var result = '<div class="lines-selected">Lines ' + selection_from + ' to ' + selection_to + '</div>';
+    $(this).after(result);
+  });
+}
+
+
+function selectLines(editors) {
+  // code highlighting
+  var editor1 = editors[0];
+  editor1.on("cursorActivity", function() {
+    // var selection_from = editor1.getCursor(true);
+    // var selection_to = editor1.getCursor(false);
+    // console.log(selection_from.line + 1);
+    // console.log(selection_to.line + 1);
+  });
+
+  var editor2 = editors[1];
+  $("#test-lines").on('click', function() {
+    var selection_from = editor2.getCursor(true).line;
+    var selection_to = editor2.getCursor(false).line + 1;
+    editor2.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: 'highlight'});
+  });
 }
 
 function pickRandomProperty(obj) {
