@@ -1,5 +1,6 @@
 var ref = new Firebase("https://comparing-layouts.firebaseio.com/");
 var examplesRef = ref.child('examples');
+var site1, site2;
 
 $(document).ready(function() {
   examplesRef.once("value", function(snapshot) {
@@ -24,7 +25,6 @@ $(document).ready(function() {
     $('#examples').prepend('<div class="row">' + el1 + '</div>');
     $('#examples .row').first().prepend(el2);
 
-    var editors = [];
     // dynamically load codemirror
     var examples = $('.example');
     for (var i=0; i < examples.length; i++) {
@@ -36,11 +36,7 @@ $(document).ready(function() {
         readOnly: true,
         mode: "htmlmixed"
       });
-
-      editors.push(example_name);
     }
-
-    selectLines(editors);
   }
 
   $('#tags').submit(function(event) {
@@ -55,10 +51,16 @@ $(document).ready(function() {
         examples.push(name);
       }
 
-      // console.log(examples);
-      // console.log(e1Tags);
       saveTags(examples[0], e1Tags);
       saveTags(examples[1], e2Tags);
+      site1 = {
+        name: examples[0],
+        tags: e1Tags
+      };
+      site2 = {
+        name: examples[1],
+        tags: e2Tags
+      };
   });
 
   $('#explanations').submit(function(event) {
@@ -81,6 +83,11 @@ $(document).ready(function() {
 
       saveComments(site, tag, comment, submitter);
     }
+
+    $('#freeform').hide();
+
+    loadTagsForHighlighting(site1.name, site1.tags);
+    loadTagsForHighlighting(site2.name, site2.tags);
   });
 });
 
@@ -117,8 +124,8 @@ function saveTags(website, tags) {
       });
     }
 
-    loadTagsForHighlighting(website, tags);
-    // loadTags(website, tags);
+    $('#tags-wrapper').hide();
+    loadTags(website, tags);
   });
 }
 
@@ -130,7 +137,7 @@ function saveComments(website, tag, comment_text, username) {
   };
   
   examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
-    var tagRef = examplesRef.child(snapshot.key()).child("tags").child(tag);
+    var tagRef = examplesRef.child(snapshot.key()).child("tags").child(tag).child("comments");
     tagRef.push(commentObj);
   });
 }
@@ -147,49 +154,50 @@ function loadTags(website, tags) {
 }
 
 function loadTagsForHighlighting(website, tags) {
+  console.log(website);
+  console.log(tags);
   for (var i=0; i < tags.length; i++) {
     var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip" id="highlight-' + tags[i] + '">' + tags[i] + '</div></div>';
-    $('#highlighting-submit').before('<div class="row highlighter-wrapper">' + form_tag + '</div>');
+    $('#highlighting h4').append('<div class="row highlighter-wrapper">' + form_tag + '</div>');
   }
 
+  $('#highlighting').show();
   loadHighlightHandlers();
-
-  // $('#highlighting').show();
 }
 
 function loadHighlightHandlers() {
-  $('.chip').click(function(event) {
-    event.preventDefault();
-    var site = '#' + $(this).prev().text();
-    var tag = $(this).text();
-    console.log(site);
-    console.log(tag);
+  $('.chip').click(function(e) {
+    e.stopImmediatePropagation();
+    var node = this;
+
+    var site_name = $(node).prev().text();
+    var site = '#' + site_name;
+    var tag = $(node).text();
     var editor = $(site).next('.CodeMirror')[0].CodeMirror;
+
     var selection_from = editor.getCursor(true).line;
     var selection_to = editor.getCursor(false).line + 1;
+
+    var highlightObj = {
+      start: selection_from,
+      end: selection_to
+    };
+
+    saveHighlights(site_name, tag, highlightObj);
+
     editor.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: 'highlight'});
-    console.log(selection_from, selection_to);
-    var result = '<div class="lines-selected">Lines ' + selection_from + ' to ' + selection_to + '</div>';
-    $(this).after(result);
+
+    var result = '<div class="lines-selected">Lines ' + (selection_from+1) + ' to ' + selection_to + '</div>';
+    $(node).after(result);
   });
 }
 
-
-function selectLines(editors) {
-  // code highlighting
-  var editor1 = editors[0];
-  editor1.on("cursorActivity", function() {
-    // var selection_from = editor1.getCursor(true);
-    // var selection_to = editor1.getCursor(false);
-    // console.log(selection_from.line + 1);
-    // console.log(selection_to.line + 1);
-  });
-
-  var editor2 = editors[1];
-  $("#test-lines").on('click', function() {
-    var selection_from = editor2.getCursor(true).line;
-    var selection_to = editor2.getCursor(false).line + 1;
-    editor2.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: 'highlight'});
+function saveHighlights(website, tag, obj) {
+  examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
+    console.log('here');
+    var highlightRef = examplesRef.child(snapshot.key()).child("tags").child(tag).child("highlights");
+    console.log(highlightRef);
+    highlightRef.push(obj);
   });
 }
 

@@ -65,11 +65,11 @@ img {
 	}
 }
 
-#examples, #freeform {
+#examples, #freeform, #highlighting {
     width: 80%;
 }
 
-#freeform {
+#freeform, #highlighting {
     display: none;
 }
 
@@ -80,6 +80,11 @@ img {
 .site {
     display: inline-block;
     margin-right: 10px;
+    font-size: 0.75em;
+}
+
+.lines-selected {
+    font-size: 0.5em;
 }
 
 .highlight {

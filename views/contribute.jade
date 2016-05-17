@@ -18,7 +18,7 @@ html(lang="en")
                 li
                     a(href="/contribute") Contribute
     div.container#examples
-        div.row
+        div.row#tags-wrapper
             form.col.s12#tags
                 div.row
                     h4#test-lines Add tags comparing the code of these two navigation bars
@@ -44,7 +44,6 @@ html(lang="en")
             form.col.s12#line-numbers
                 div.row
                     h4 Highlight the line numbers in the code that support the tags you've chosen, then click the tags to save your selections
-                button.btn.waves-effect.green.waves-light(type="submit")#highlighting-submit Submit
     script(src='/jquery.min.js')
     script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
     script(src='/js/contribute.js')
