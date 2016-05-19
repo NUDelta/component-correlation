@@ -8752,7 +8752,7 @@ img {
   .block p {
     font-weight: 600; }
 
-#examples, #freeform, #highlighting {
+#examples, #freeform, #highlighting, #annotations {
   width: 80%; }
 
 #freeform, #highlighting {
@@ -8764,7 +8764,10 @@ img {
 .site {
   display: inline-block;
   margin-right: 10px;
-  font-size: 0.75em; }
+  font-size: 1em; }
+
+.tag-count {
+  margin-left: 10px; }
 
 .lines-selected {
   font-size: 0.5em; }
@@ -8789,3 +8792,6 @@ img {
 
 .id-highlight {
   background-color: #D3FF6A; }
+
+.CodeMirror {
+  max-widthheight: auto; }
