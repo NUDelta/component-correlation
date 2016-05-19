@@ -13,7 +13,6 @@ $(document).ready(function() {
   function loadExamples(ex) {
     var ex1 = ex[pickRandomProperty(ex)];
     var ex2 = ex[pickRandomProperty(ex)];
-    console.log(ex1);
 
     // make sure we don't compare the same examples
     while (ex1 == ex2) {
@@ -35,7 +34,8 @@ $(document).ready(function() {
         lineNumbers: true,
         indentWithTabs: true,
         readOnly: true,
-        mode: "html"
+        mode: "xml",
+        htmlMode: true
       });
     }
     
@@ -49,9 +49,15 @@ function loadTags(website, tags) {
   var site = '#' + website;
   var editor = $(site).next('.CodeMirror')[0].CodeMirror;
   var tag_names = "";
+  var colors = ['red', 'pink', 'yellow', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'amber', 'orange', 'deep-orange', 'brown', 'blue-grey'];
 
   for (var tag in tags) {
-    var website_tag = '<div class="chip-wrapper"><div class="chip">' + tag + '<span class="tag-count">' + tags[tag].count + '</span></div></div>';
+    var ri = Math.floor(Math.random() * colors.length);
+    var rs = colors.splice(ri, 1);
+    var random_color = rs + ' lighten-4';
+
+    var website_tag = '<div class="chip-wrapper"><div class="chip ' + random_color + '">' + tag + '<span class="tag-count">' + tags[tag].count + '</span></div></div>';
+    
     var comments = tags[tag].comments;
     var tag_comments = "";
     for (var c in comments) {
@@ -60,15 +66,16 @@ function loadTags(website, tags) {
 
     var highlights = tags[tag].highlights;
     for (var h in highlights) {
-      loadHighlight(editor, highlights[h]);
+      
+      loadHighlight(editor, highlights[h], random_color);
     }
     tag_names += '<div class="tag-wrapper">' + website_tag + tag_comments + '</div>';
   }
   $('#annotations .row').append('<div class="col s6"><div class="card"><div class="card-content"><span class="card-header">Other users have tagged this code as:</span><div class="card-content">' + tag_names + '</div></div></div></div>');
 }
 
-function loadHighlight(editor, highlight) {
-  editor.markText({line: highlight.start, ch: 0}, {line: highlight.end, ch: 0}, {className: 'highlight'});
+function loadHighlight(editor, highlight, color) {
+  editor.markText({line: highlight.start-1, ch: 0}, {line: highlight.end, ch: 0}, {className: color});
 }
 
 function loadHighlightHandlers() {
@@ -105,4 +112,13 @@ function pickRandomProperty(obj) {
         if (Math.random() < 1/++count)
            result = prop;
     return result;
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
