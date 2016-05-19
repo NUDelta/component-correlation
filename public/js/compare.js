@@ -35,7 +35,7 @@ $(document).ready(function() {
         lineNumbers: true,
         indentWithTabs: true,
         readOnly: true,
-        mode: "htmlmixed"
+        mode: "html"
       });
     }
     
@@ -46,6 +46,8 @@ $(document).ready(function() {
 
 // load tags that a user just added for both websites
 function loadTags(website, tags) {
+  var site = '#' + website;
+  var editor = $(site).next('.CodeMirror')[0].CodeMirror;
   var tag_names = "";
 
   for (var tag in tags) {
@@ -53,12 +55,20 @@ function loadTags(website, tags) {
     var comments = tags[tag].comments;
     var tag_comments = "";
     for (var c in comments) {
-      console.log(comments[c]);
       tag_comments += '<div class="comment"><p>"' + comments[c].comment + '" - ' + comments[c].name + '</p></div>';
     }
-    tag_names += '<div class="row tag-wrapper">' + website_tag + tag_comments + '</div>';
+
+    var highlights = tags[tag].highlights;
+    for (var h in highlights) {
+      loadHighlight(editor, highlights[h]);
+    }
+    tag_names += '<div class="tag-wrapper">' + website_tag + tag_comments + '</div>';
   }
-  $('#annotations .row').append('<div class="col s6">' + tag_names + '</div>');
+  $('#annotations .row').append('<div class="col s6"><div class="card"><div class="card-content"><span class="card-header">Other users have tagged this code as:</span><div class="card-content">' + tag_names + '</div></div></div></div>');
+}
+
+function loadHighlight(editor, highlight) {
+  editor.markText({line: highlight.start, ch: 0}, {line: highlight.end, ch: 0}, {className: 'highlight'});
 }
 
 function loadHighlightHandlers() {

@@ -73,6 +73,7 @@ img {
     display: none;
 }
 
+/* chips */
 .chip-wrapper {
     padding: 0 0.75rem;
 }
@@ -81,10 +82,6 @@ img {
     display: inline-block;
     margin-right: 10px;
     font-size: 1em;
-}
-
-.tag-count {
-    margin-left: 10px;
 }
 
 .lines-selected {
@@ -119,5 +116,35 @@ img {
 }
 
 .CodeMirror {
-	max-widthheight: auto;
+	max-height: auto;
+}
+
+/* COMPARISON */
+.tag-count {
+    margin-left: 10px;
+}
+
+.comment {
+    padding: 0 0.75rem;
+    p {
+        margin-top: 10px;
+    }
+}
+
+.tag-wrapper {
+    margin-bottom: 10px;
+}
+
+.card-header {
+    line-height: 48px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #333;
+    padding: 0px 20px !important
+}
+
+.chip {
+    &:hover {
+        cursor: pointer;
+    }
 }
