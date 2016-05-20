@@ -8801,10 +8801,10 @@ img {
 .comment {
   padding: 0 0.75rem; }
   .comment p {
-    margin-top: 10px; }
+    margin-top: 10px !important; }
 
 .tag-wrapper {
-  margin-bottom: 10px; }
+  margin-bottom: 1.5em; }
 
 .card-header {
   line-height: 48px;

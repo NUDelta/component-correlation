@@ -30,12 +30,11 @@ $(document).ready(function() {
     for (var i=0; i < examples.length; i++) {
       var example_name = $(examples[i]).attr('id').toLowerCase();
       example_name = CodeMirror.fromTextArea(examples[i], {
-        lineWrapping: true,
+        mode: 'xml',
+        htmlMode: true,
+        // lineWrapping: true,
         lineNumbers: true,
-        indentWithTabs: true,
-        readOnly: true,
-        mode: "xml",
-        htmlMode: true
+        readOnly: true
       });
     }
     
