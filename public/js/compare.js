@@ -20,10 +20,13 @@ $(document).ready(function() {
       var ex2 = ex[pickRandomProperty(ex)];
     }
 
-    var el1 = '<div class="col s6"><h4>' + ex1.name + '</h4><img src="' + ex1.image + '" /><textarea class="example" id="' + ex1.name + '" val="' + ex1.code + '"></textarea></div>';
-    var el2 = '<div class="col s6"><h4>' + ex2.name + '</h4><img src="' + ex2.image + '" /><textarea class="example" id="' + ex2.name + '" val="' + ex2.code + '"></textarea></div>';
+    var el1 = '<div class="col s6" id="site1"><h4>' + ex1.name + '</h4><img src="' + ex1.image + '" /><textarea class="example" id="' + ex1.name + '"></textarea></div>';
+    var el2 = '<div class="col s6" id="site2"><h4>' + ex2.name + '</h4><img src="' + ex2.image + '" /><textarea class="example" id="' + ex2.name + '"></textarea></div>';
+    
     $('#examples').prepend('<div class="row">' + el1 + '</div>');
     $('#examples .row').first().prepend(el2);
+    $('#site1 textarea').val(ex1.code);
+    $('#site2 textarea').val(ex2.code);
 
     // dynamically load codemirror
     var examples = $('.example');
@@ -32,16 +35,33 @@ $(document).ready(function() {
       example_name = CodeMirror.fromTextArea(examples[i], {
         mode: 'xml',
         htmlMode: true,
-        // lineWrapping: true,
+        lineWrapping: true,
         lineNumbers: true,
-        readOnly: true
+        readOnly: true,
+        smartIndent: true
       });
+
+      // trimChars(example_name);
+      autoFormat(example_name);
     }
     
     loadTags(ex2.name, ex2.tags);
     loadTags(ex1.name, ex1.tags);
   }
 });
+
+function autoFormat(editor) {
+    var totalLines = editor.lineCount();
+    var totalChars = editor.getTextArea().value.length;
+    editor.autoFormatRange({line:0, ch:0}, {line:totalLines, ch:totalChars});
+    editor.setCursor(0,0);
+}
+
+function trimChars(editor) {
+  var val = editor.getValue();
+  val = val.slice(0, -2);
+  editor.setValue(val);
+}
 
 // load tags that a user just added for both websites
 function loadTags(website, tags) {

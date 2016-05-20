@@ -7,79 +7,51 @@
 <!--     <link rel="stylesheet" href="spotify.css" /> -->
 </head>
 <body>
-    <header class="body-max-width gnav-header-inner clear apply-nav-height col-group" id=
-    "gnav-header-inner" role="banner">
-        <div class="col-xs-12">
-            <div class="apply-nav-height" id="etsy-logo">
-                <a aria-label="Etsy Logo" href="/?ref=lgo">Etsy</a>
-            </div><a aria-label="search" class=
-            "search-browse-nav nav-link apply-nav-height" href="#"><span class=
-            "screen-reader-only">Search</span> <span aria-hidden="true" class=
-            "nav-icon gnav-ss-icon gnav-ss-search"></span></a>
-            <div class="search-browse-wrapper">
-                <div class="search-browse-inner with-pointer">
-                    <form action="/search.php" class=
-                    "search-nav expanded-search apply-nav-height" id=
-                    "gnav-search" method="get" name="gnav-search" role=
-                    "search">
-                        <div class="gnav-search-inner clearable">
-                            <label class="screen-reader-only" for=
-                            "search-query">Search for items or shops</label>
-                            <div class=
-                            "search-input-wrapper text-field-wrapper">
-                                <input aria-label="Search for items or shops"
-                                autocomplete="off" class=
-                                "search-input dropdown-relative-positioned rounded"
-                                id="search-query" name="search_query"
-                                placeholder="Search for items or shops" type=
-                                "text" value="">
-                                <div id="search-suggestions" style=
-                                "display: none;"></div>
-                            </div>
-                            <div class="search-button-wrapper hide">
-                                <button class="btn btn-primary" type="submit"
-                                value="Search">Search</button>
-                            </div>
-                        </div><input id="search-js-router-enabled" type=
-                        "hidden" value="true"> <input id="search-type" name=
-                        "search_type" type="hidden" value="all">
-                    </form>
-                </div>
-            </div><a class=
-            "apply-nav-height header__skip-to-content screen-reader-only focusable"
-            href="#content">Skip to Content</a>
-            <ul class="account-nav apply-nav-height">
-                <li class="sell-on-etsy-link">
-                    <a class="sell-on-etsy-trigger" href=
-                    "/sell?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F"
-                    id="sell-on-etsy" title="Sell on Etsy"><span class=
-                    "sell-copy">Sell on Etsy</span> <span class=
-                    "sell-copy short">Sell</span></a>
-                </li>
-                <li class="register-link">
-                    <a class=
-                    "inline-overlay-trigger register-header-action select-register"
-                    data-downtime-overlay-type="register" href=
-                    "/join?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F"
-                    id="register" role="button" title="Register">Register</a>
-                </li>
-                <li class="sign-in-link">
-                    <a class=
-                    "inline-overlay-trigger signin-header-action select-signin"
-                    href=
-                    "/signin?ref=hdr&amp;from_action=signin-header&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F"
-                    id="sign-in" role="button" title="Sign in">Sign in</a>
-                </li>
-                <li class="cart" data-sub-nav="cart">
-                    <a aria-labelledby="gnav-account-cart-description" class=
-                    "nav-link" href="/cart?ref=hdr" title=
-                    "Cart"><span aria-hidden="true" class=
-                    "nav-icon gnav-ss-icon gnav-ss-cart"></span> <span class=
-                    "text-link"><span class="text-link-copy" id=
-                    "gnav-account-cart-description">Cart</span></span></a>
-                </li>
-            </ul>
+<header class="body-max-width gnav-header-inner clear apply-nav-height col-group" id="gnav-header-inner" role="banner">
+    <div class="col-xs-12">
+        <div class="apply-nav-height" id="etsy-logo">
+            <a aria-label="Etsy Logo" href="/?ref=lgo">Etsy</a>
+        </div><a aria-label="search" class="search-browse-nav nav-link apply-nav-height" href="#"><span class="screen-reader-only">Search</span> <span aria-hidden="true" class="nav-icon gnav-ss-icon gnav-ss-search"></span></a>
+        <div class="search-browse-wrapper">
+            <div class="search-browse-inner with-pointer">
+                <form action="/search.php" class="search-nav expanded-search apply-nav-height" id="gnav-search" method="get" name="gnav-search" role="search">
+                    <div class="gnav-search-inner clearable">
+                        <label class="screen-reader-only" for="search-query">Search for items or shops</label>
+                        <div class="search-input-wrapper text-field-wrapper">
+                            <input aria-label="Search for items or shops" autocomplete="off" class="search-input dropdown-relative-positioned rounded"
+                            id="search-query" name="search_query"
+                            placeholder="Search for items or shops" type="text" value="">
+                            <div id="search-suggestions" style="display: none;"></div>
+                        </div>
+                        <div class="search-button-wrapper hide">
+                            <button class="btn btn-primary" type="submit" value="Search">Search</button>
+                        </div>
+                    </div>
+                        <input id="search-js-router-enabled" type="hidden" value="true"> <input id="search-type" name="search_type" type="hidden" value="all">
+                </form>
+            </div>
         </div>
-    </header>
+        <a class="apply-nav-height header__skip-to-content screen-reader-only focusable" href="#content">Skip to Content</a>
+        <ul class="account-nav apply-nav-height">
+            <li class="sell-on-etsy-link">
+                <a class="sell-on-etsy-trigger" href="/sell?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F" id="sell-on-etsy" title="Sell on Etsy"><span class="sell-copy">Sell on Etsy</span> <span class="sell-copy short">Sell</span></a>
+            </li>
+            <li class="register-link">
+                <a class="inline-overlay-trigger register-header-action select-register" data-downtime-overlay-type="register" href="/join?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F" id="register" role="button" title="Register">Register</a>
+            </li>
+            <li class="sign-in-link">
+                <a class="inline-overlay-trigger signin-header-action select-signin" href="/signin?ref=hdr&amp;from_action=signin-header&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F" id="sign-in" role="button" title="Sign in">Sign in</a>
+            </li>
+            <li class="cart" data-sub-nav="cart">
+                <a aria-labelledby="gnav-account-cart-description" class="nav-link" href="/cart?ref=hdr" title="Cart">
+                    <span aria-hidden="true" class="nav-icon gnav-ss-icon gnav-ss-cart"></span>
+                    <span class="text-link">
+                        <span class="text-link-copy" id="gnav-account-cart-description">Cart</span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
 </body>
 </html>
