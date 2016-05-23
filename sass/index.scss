@@ -1,0 +1,150 @@
+// UI Patterns and Modules
+@import "materialize";
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700);
+
+$font-stack: 'Source Sans Pro', sans-serif; 
+
+body {
+    font-family: $font-stack;
+}
+
+.brand-logo {
+    margin-left: 15px;
+}
+
+.logo {
+    h1 {
+        font-weight: 400;
+    }
+}
+
+p {
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+}
+
+.search-wrapper {
+    h3 {
+        text-align: center;
+    }
+}
+
+.results-wrapper {
+    display: none;
+}
+
+// select {
+//     display: block !important;
+// }
+
+.card-title {
+    background-color: #333;
+    padding: 0px 20px !important;
+}
+
+.footer-copyright {
+    a {
+        color: #b9f6ca;
+    }
+}
+
+.block {
+    width: 100%;
+    float: left;
+
+    &:first-of-type {
+        margin-right:2%;
+    }
+
+    p {
+        font-weight: 600;
+    }
+}
+
+#examples, #freeform, #highlighting, #annotations {
+    width: 80%;
+}
+
+#freeform, #highlighting {
+    display: none;
+}
+
+/* chips */
+.chip-wrapper {
+    padding: 0 0.75rem;
+}
+
+.site {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.lines-selected {
+    font-size: 0.5em;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.CodeMirror {
+    font-size: 0.8em;
+}
+
+.crop {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 1em;
+    text-align: center;
+
+    img {
+        width: 100%;
+    }
+}
+
+.class-highlight {
+    background-color: #F3F315;/* #A9E8FA;*/
+}
+
+.id-highlight {
+    background-color: #D3FF6A;
+}
+
+.CodeMirror {
+    max-height: auto;
+}
+
+/* COMPARISON */
+.tag-count {
+    margin-left: 10px;
+}
+
+.comment {
+    padding: 0 0.75rem;
+    p {
+        margin-top: 10px !important;
+    }
+}
+
+.tag-wrapper {
+    margin-bottom: 1.5em;
+}
+
+.card-header {
+    line-height: 48px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #333;
+    padding: 0px 20px !important
+}
+
+.chip {
+    &:hover {
+        cursor: pointer;
+    }
+}
