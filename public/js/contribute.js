@@ -168,10 +168,14 @@ function loadTags(website, tags) {
 }
 
 function loadTagsForHighlighting(website, tags) {
-  console.log(website);
-  console.log(tags);
+  var colors = ['red', 'pink', 'yellow', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'amber', 'orange', 'deep-orange', 'brown', 'blue-grey'];
+
   for (var i=0; i < tags.length; i++) {
-    var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip" id="highlight-' + tags[i] + '">' + tags[i] + '</div></div>';
+    var ri = Math.floor(Math.random() * colors.length);
+    var rs = colors.splice(ri, 1);
+    var random_color = rs + ' lighten-4';
+
+    var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip ' + random_color + '" id="highlight-' + tags[i] + '">' + tags[i] + '</div></div>';
     $('#highlighting h4').append('<div class="row highlighter-wrapper">' + form_tag + '</div>');
   }
 
@@ -180,6 +184,8 @@ function loadTagsForHighlighting(website, tags) {
 }
 
 function loadHighlightHandlers() {
+  
+
   $('.chip').click(function(e) {
     e.stopImmediatePropagation();
     var node = this;
@@ -188,6 +194,9 @@ function loadHighlightHandlers() {
     var site = '#' + site_name;
     var tag = $(node).text();
     var editor = $(site).next('.CodeMirror')[0].CodeMirror;
+
+    var classes = $(node).attr('class').split(' ');
+    var color = classes[1] + ' lighten-4';
 
     var selection_from = editor.getCursor(true).line;
     var selection_to = editor.getCursor(false).line + 1;
@@ -199,7 +208,7 @@ function loadHighlightHandlers() {
 
     saveHighlights(site_name, tag, highlightObj);
 
-    editor.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: 'highlight'});
+    editor.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: color});
 
     var result = '<div class="lines-selected">Lines ' + (selection_from+1) + ' to ' + selection_to + '</div>';
     $(node).after(result);
@@ -208,9 +217,7 @@ function loadHighlightHandlers() {
 
 function saveHighlights(website, tag, obj) {
   examplesRef.orderByChild("name").equalTo(website).on("child_added", function(snapshot) {
-    console.log('here');
     var highlightRef = examplesRef.child(snapshot.key()).child("tags").child(tag).child("highlights");
-    console.log(highlightRef);
     highlightRef.push(obj);
   });
 }
