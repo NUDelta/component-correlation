@@ -12,6 +12,19 @@ $(document).ready(function() {
     console.log("The read failed: " + errorObject.code);
   });
 
+  // contribute.jade
+  $('#see-contributions').on('click', function(event) {
+    event.preventDefault();
+    $('#websites').remove();
+    $('#highlighting').remove();
+
+    var current_examples = $('.site');
+    var site1 = $(current_examples[0]).text();
+    var site2 = $(current_examples[1]).text();
+    loadExamples(site1, site2, examples);
+  });
+
+  // compare.jade
   function loadForm(sites) {
     var select = '<option value="" disabled selected>Choose your option</option>';
     for (var s in sites) {
@@ -24,7 +37,7 @@ $(document).ready(function() {
     $('select').material_select();
   }
 
-  $('form').submit(function(event) {
+  $('#compare-form').submit(function(event) {
     event.preventDefault();
     $('#examples').empty();
     $('#annotations .row').empty();
@@ -66,8 +79,8 @@ $(document).ready(function() {
       autoFormat(example_name);
     }
     
-    loadTags(ex2.name, ex2.tags);
-    loadTags(ex1.name, ex1.tags);
+    loadAllTags(ex2.name, ex2.tags);
+    loadAllTags(ex1.name, ex1.tags);
   }
 });
 
@@ -85,7 +98,7 @@ function trimChars(editor) {
 }
 
 // load tags that a user just added for both websites
-function loadTags(website, tags) {
+function loadAllTags(website, tags) {
   var site = '#' + website;
   var editor = $(site).next('.CodeMirror')[0].CodeMirror;
   var tag_names = "";
@@ -106,7 +119,8 @@ function loadTags(website, tags) {
 
     var highlights = tags[tag].highlights;
     for (var h in highlights) {
-      
+      console.log(editor);
+      // console.log(highlights);
       loadHighlight(editor, highlights[h], random_color);
     }
     tag_names += '<div class="tag-wrapper">' + website_tag + tag_comments + '</div>';
@@ -115,34 +129,11 @@ function loadTags(website, tags) {
 }
 
 function loadHighlight(editor, highlight, color) {
+  console.log(highlight);
   editor.markText({line: highlight.start-1, ch: 0}, {line: highlight.end, ch: 0}, {className: color});
-}
-
-function loadHighlightHandlers() {
-  $('.chip').click(function(e) {
-    e.stopImmediatePropagation();
-    var node = this;
-
-    var site_name = $(node).prev().text();
-    var site = '#' + site_name;
-    var tag = $(node).text();
-    var editor = $(site).next('.CodeMirror')[0].CodeMirror;
-
-    var selection_from = editor.getCursor(true).line;
-    var selection_to = editor.getCursor(false).line + 1;
-
-    var highlightObj = {
-      start: selection_from,
-      end: selection_to
-    };
-
-    saveHighlights(site_name, tag, highlightObj);
-
-    editor.markText({line: selection_from, ch: 0}, {line: selection_to, ch: 0}, {className: 'highlight'});
-
-    var result = '<div class="lines-selected">Lines ' + (selection_from+1) + ' to ' + selection_to + '</div>';
-    $(node).after(result);
-  });
+  // for (var hi in highlight) {
+  //   editor.markText({line: hi.start-1, ch: 0}, {line: hi.end, ch: 0}, {className: color});
+  // }
 }
 
 function pickProperty(obj, ex) {

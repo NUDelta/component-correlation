@@ -23,8 +23,8 @@ $(document).ready(function() {
     var el1 = '<div class="col s6" id="site1"><h4>' + ex1.name + '</h4><img src="' + ex1.image + '" /><textarea class="example" id="' + ex1.name + '"></textarea></div>';
     var el2 = '<div class="col s6" id="site2"><h4>' + ex2.name + '</h4><img src="' + ex2.image + '" /><textarea class="example" id="' + ex2.name + '"></textarea></div>';
     
-    $('#examples').prepend('<div class="row">' + el1 + '</div>');
-    $('#examples .row').first().prepend(el2);
+    $('#websites').prepend('<div class="row">' + el1 + '</div>');
+    $('#websites .row').first().prepend(el2);
     $('#site1 textarea').val(ex1.code);
     $('#site2 textarea').val(ex2.code);
 
@@ -184,8 +184,6 @@ function loadTagsForHighlighting(website, tags) {
 }
 
 function loadHighlightHandlers() {
-  
-
   $('.chip').click(function(e) {
     e.stopImmediatePropagation();
     var node = this;

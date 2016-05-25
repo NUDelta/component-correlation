@@ -14,10 +14,10 @@ html(lang="en")
                 li
                     a(href="/add") Add
                 li
-                    a(href="/") Search
+                    a(href="/compare") Compare
                 li
                     a(href="/contribute") Contribute
-    div.container#examples
+    div.container#websites
         div.row#tags-wrapper
             form.col.s12#tags
                 div.row
@@ -44,10 +44,15 @@ html(lang="en")
             form.col.s12#line-numbers
                 div.row
                     h4 Highlight the line numbers in the code that support the tags you've chosen, then click the tags to save your selections
+                    a.btn.waves-effect.green.waves-light#see-contributions See your contributions
+    div.container#examples
+    div.container#annotations
+        div.row
     script(src='/jquery.min.js')
     script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
     script(src="codemirror.js")
     script(src="/mode/xml/xml.js")
     script(src="/mode/formatting.js")
     script(src='/js/contribute.js')
+    script(src="/js/index.js")
     script(src='/js/materialize/bin/materialize.min.js')

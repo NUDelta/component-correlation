@@ -14,27 +14,18 @@ html(lang="en")
                 li
                     a(href="/add") Add
                 li
-                    a(href="/") Search
+                    a(href="/compare") Compare
                 li
                     a(href="/contribute") Contribute
-    div.container#search
+    div.container
         div.row
-            form.col.s12
-                h3.center Select two websites to compare
-                div.row
-                    div.input-field.col.s12.m6
-                        select.icons#compare1
-                    div.input-field.col.s12.m6
-                        select.icons#compare2
-                div.center
-                    button.btn.waves-effect.green.waves-light(type="submit")#search-submit Submit
-    div.container#examples
-    div.container#annotations
-        div.row
+                h3.center Welcome to TBD
+                h5.center a site that compares common practices and approaches for writing front-end components across professional websites
+        div.row.center
+            a(href="/add").waves-effect.waves-light.btn-large Add a website example
+        div.row.center
+            a(href="/compare").waves-effect.waves-light.btn-large Compare a component across websites
+        div.row.center
+            a(href="/contribute").waves-effect.waves-light.btn-large Contribute analysis of component implementations
     script(src="/jquery.min.js")
-    script(src="https://cdn.firebase.com/js/client/2.2.1/firebase.js")
-    script(src="codemirror.js")
-    script(src="/mode/xml/xml.js")
-    script(src="/mode/formatting.js")
-    script(src="/js/index.js")
     script(src="/js/materialize/bin/materialize.min.js")
