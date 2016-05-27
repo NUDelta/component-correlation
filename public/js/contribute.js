@@ -92,7 +92,8 @@ $(document).ready(function() {
     for (var j=0; j < comments.length; j++) {
       var site = $(comments[j]).find('.site').text();
       var tag = $(comments[j]).find('.chip').text();
-      var comment_tag = '#tag-' + tag;
+      var condensed_tag = tag.replace(/\s+/g, '');
+      var comment_tag = '#tag-' + condensed_tag;
       var comment = $(comments[j]).find(comment_tag).val();
 
       saveComments(site, tag, comment, submitter);
@@ -159,8 +160,9 @@ function saveComments(website, tag, comment_text, username) {
 // load tags that a user just added for both websites
 function loadTags(website, tags) {
   for (var i=0; i < tags.length; i++) {
+    var condensed_tag = tags[i].replace(/\s+/g, '');
     var form_tag = '<div class="chip-wrapper"><p class="site">' + website + '</p><div class="chip">' + tags[i] + '</div></div>';
-    var form_field ='<div class="input-field col s12"><input id="tag-' + tags[i] + '" type="text" name="tag-' + tags[i] + '"><label for="tag-' + tags[i] + '">Write one sentence explaining why you chose this tag.</label></div>';
+    var form_field ='<div class="input-field col s12"><input id="tag-' + condensed_tag + '" type="text" name="tag-' + condensed_tag + '"><label for="tag-' + condensed_tag + '">Write one sentence explaining why you chose this tag.</label></div>';
     $('#freeform-submit').before('<div class="row comment-wrapper">' + form_tag + form_field + '</div>');
   }
 
