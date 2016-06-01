@@ -125,7 +125,7 @@ function loadAllTags(website, tags) {
     }
     tag_names += '<div class="tag-wrapper">' + website_tag + tag_comments + '</div>';
   }
-  $('#annotations .row').append('<div class="col s6"><div class="card"><div class="card-content"><span class="card-header">Other users have tagged this code as:</span><div class="card-content">' + tag_names + '</div></div></div></div>');
+  $('#annotations .row').append('<div class="col s6"><div class="card"><div class="card-content"><span class="card-header" id="card-header">Experts have added the following "tags" to describe aspects of this code (i.e. HTML structure as a whole, as well as specific parts of the code):</span><div class="card-content">' + tag_names + '</div></div></div></div>');
 }
 
 function loadHighlight(editor, highlight, color) {

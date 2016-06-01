@@ -8807,11 +8807,9 @@ img {
   margin-bottom: 1.5em; }
 
 .card-header {
-  line-height: 48px;
   font-size: 24px;
   font-weight: 300;
-  color: #333;
-  padding: 0px 20px !important; }
+  color: #333; }
 
 .chip:hover {
   cursor: pointer; }
