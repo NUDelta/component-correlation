@@ -12,17 +12,18 @@
 
 ### File structure:
 
-* /clustering: uses the node k-means module to run a k-means clustering on sample nav bar comparisons, results file
-* /demo: HTML of different navigation bars on various Alexa Top 100 Websites used in a demo of DOM diff algorithm
-* /dom-diff: DOM diff algorithm files
-* /processing: files for simplifying HTML for comparison
-* /public: static assets for CodeMirror, compiled JavaScript files and stylesheets, and images
-* /sass: CSS
-* /user-test: results of June 2016 user study where 6 users were asked to write the HTML for a navigation bar using this system
-* /views: Jade templates
-* app.js: scraping and page rendering
-* gruntfile.js: grunt tasks that auto-compiles Sass
-* screencapture.js: Phantom script that takes a screenshot of navigation bars appearing on real websites
+* `/clustering`: uses the node k-means module to run a k-means clustering on sample nav bar comparisons, results file
+* `/demo`: HTML of different navigation bars on various Alexa Top 100 Websites used in a demo of DOM diff algorithm
+* `demo-db.json`: backup JSON of Firebase database (June 2016)
+* `/dom-diff`: DOM diff algorithm files
+* `/processing`: files for simplifying HTML for comparison
+* `/public`: static assets for CodeMirror, compiled JavaScript files and stylesheets, and images
+* `/sass`: CSS
+* `/user-test`: results of June 2016 user study where 6 users were asked to write the HTML for a navigation bar using this system
+* `/views`: Jade templates
+* `app.js`: scraping and page rendering
+* `gruntfile.js`: grunt tasks that auto-compiles Sass
+* `screencapture.js`: Phantom script that takes a screenshot of navigation bars appearing on real websites
 
 ### Running the DOM diff algorithm:
 

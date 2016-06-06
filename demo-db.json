@@ -1,0 +1,613 @@
+{
+  "examples" : {
+    "-KHT29x_KxQAVnaKRcDU" : {
+      "code" : "<header>\n    <div>\n    </div>\n    <div class=\"page-nav\">\n        <div class=\"page-nav__content\" data-bfa=\"@l:Nav-Menu\">\n            <nav class=\"page-nav__nav rel:bf_bucket=\">\n                <ul class=\"page-nav__link-container\">\n                    <li class=\"page-nav__item\">\n                        <a class=\"page-nav__link\" data-bfa=\n                        \"@a:Main-Nav; @d:News;\" href=\"/news\">News</a>\n                    </li>\n                    <li class=\"page-nav__item\">\n                        <a class=\"page-nav__link\" data-bfa=\n                        \"@a:Main-Nav; @d:Buzz;\" href=\"/buzz\">Buzz</a>\n                    </li>\n                    <li class=\"page-nav__item\">\n                        <a class=\"page-nav__link\" data-bfa=\n                        \"@a:Main-Nav; @d:Life;\" href=\"/life\">Life</a>\n                    </li>\n                    <li class=\"page-nav__item\">\n                        <a class=\"page-nav__link\" data-bfa=\n                        \"@a:Main-Nav; @d:Quizzes;\" href=\"/quizzes\">Quizzes</a>\n                    </li>\n                    <li class=\"page-nav__item\">\n                        <a class=\"page-nav__link\" data-bfa=\n                        \"@a:Main-Nav; @d:Videos;\" href=\"/videos\">Videos</a>\n                    </li>\n                    <li class=\"page-nav__item page-nav__item--dropdown\">\n                        <span class=\"page-nav__link\">More <svg class=\n                        \"page-nav__more-icon\" viewbox=\"0 0 517 517\">\n                        <use xlink:href=\"#icon-caret-down\" xmlns:xlink=\n                        \"http://www.w3.org/1999/xlink\"></use></svg></span>\n                        <div class=\"more-menu\">\n                            <div class=\"more-menu__community\">\n                                <a class=\n                                \"more-menu__community-link\" data-bfa=\n                                \"@a:Main-Nav;@d:BuzzFeed-Community;\" href=\n                                \"/community\">BuzzFeed Community</a> <a class=\n                                \"btn--buzz btn--buzz--inline btn--buzz--small more-menu__make-post-link btn-action\"\n                                data-bfa=\"@a:Main-Nav;@d:Make-A-Post;\" href=\n                                \"/post\">Make A Post!</a>\n                            </div>\n                            <div class=\"more-menu__sections\">\n                                <span class=\n                                \"more-menu__sections-header\">SECTIONS</span>\n                                <ul class=\"more-menu__sections-link-container\">\n                                    <li class=\"more-menu__section-link\" id=\n                                    \"nav_menu_books\">\n                                        <a data-bfa=\"@a:Main-Nav;@d:Books;\"\n                                        href=\"/books\">Books</a>\n                                    </li>\n                                    <li class=\"more-menu__section-link\" id=\n                                    \"nav_menu_business\">\n                                        <a data-bfa=\"@a:Main-Nav;@d:Business;\"\n                                        href=\"/business\">Business</a>\n                                    </li>\n                                    <li class=\"more-menu__section-link\" id=\n                                    \"nav_menu_celebrity\">\n                                        <a data-bfa=\"@a:Main-Nav;@d:Celebrity;\"\n                                        href=\"/celebrity\">Celebrity</a>\n                                    </li>\n                                </ul>\n                            </div>\n                            <div class=\"more-menu__footer\">\n                                <ul class=\"more-menu__footer-main-content\">\n                                    <li>\n                                        <a data-bfa=\"@a:Main-Nav;@d:Advertise;\"\n                                        href=\"/advertise\">Advertise</a>\n                                    </li>\n                                    <li>\n                                        <a data-bfa=\"@a:Main-Nav;@d:Jobs;\"\n                                        href=\"/about/jobs\">Jobs</a>\n                                    </li>\n                                    <li>\n                                        <a data-bfa=\n                                        \"@a:Main-Nav;@d:Newsletters;\" href=\n                                        \"/tools/email\">Newsletters</a>\n                                    </li>\n                                    <li class=\"country-switch-parent--top\">\n                                        <div class=\n                                        \"js_country_switch country-switch bf_dom\"\n                                        data-bfa=\"@a:Main-Nav;@d:Edition;\">\n                                            <a class=\"country-switch__button\"\n                                            href=\"javascript:;\"><svg class=\n                                            \"country-switch__svg country-switch__globe\"\n                                            data-bfa=\"@a:Main-Nav;@d:Edition;\"\n                                            viewbox=\"0 0 170 170.101\">\n                                            <use xlink:href=\"#globe\"\n                                            xmlns:xlink=\n                                            \"http://www.w3.org/1999/xlink\">\n                                            </use></svg> US Edition <svg class=\n                                            \"country-switch__svg country-switch__arrow\"\n                                            viewbox=\"0 0 517 517\">\n                                            <use xlink:href=\"#icon-caret-down\"\n                                            xmlns:xlink=\n                                            \"http://www.w3.org/1999/xlink\">\n                                            </use></svg></a>\n                                            <ul class=\n                                            \"country-switch__menu js_country_switch_menu\"\n                                            style=\"display:none;\">\n                                                <li>\n                                                    <a class=\"bf_dom\" data-bfa=\n                                                    \"@a:Main-Nav;@d:US;\">US\n                                                    Edition</a>\n                                                </li>\n                                                <li>\n                                                    <a class=\"bf_dom\" data-bfa=\n                                                    \"@a:Main-Nav;@d:UK;\">UK\n                                                    Edition</a>\n                                                </li>\n                                                <li>\n                                                    <a class=\"bf_dom\" data-bfa=\n                                                    \"@a:Main-Nav;@d:Mexico;\">México</a>\n                                                </li>\n                                            </ul>\n                                        </div>\n                                    </li>\n                                </ul>\n                                <ul class=\"more-menu__footer-sub-content\">\n                                    <li>\n                                        <a data-bfa=\"@a:Main-Nav;@d:About;\"\n                                        href=\"/about\">About</a>\n                                    </li>\n                                    <li>\n                                        <a data-bfa=\n                                        \"@a:Main-Nav;@d:User-Terms;\" href=\n                                        \"/about/useragreement\">User Terms</a>\n                                    </li>\n                                    <li>\n                                        <a data-bfa=\"@a:Main-Nav;@d:Contact;\"\n                                        href=\"/about/contact\">Contact</a>\n                                    </li>\n                                    <li class=\"more-menu__copyright\">© 2016\n                                    BuzzFeed, Inc</li>\n                                </ul><a class=\"made-in-nyc\" data-bfa=\n                                \"@a:Main-Nav;@d:Made-In-NY;\" href=\n                                \"http://wearemadeinny.com/\">Made in NY</a>\n                            </div>\n                        </div>\n                    </li>\n                </ul>\n            </nav>\n            <div class=\"page-nav__actions bf_dom\">\n                <a class=\"page-nav__action page-nav__action--app\" data-bfa=\n                \"@a:Main-Nav; @d:Get-Our-App;\" href=\"/tools/mobile-ios\">Get Our\n                App!</a>\n                <div class=\"page-nav__action page-nav__action--fb-share\">\n                    <div class=\"fb-like fb_iframe_widget\" data-bfa=\n                    \"@a:Main-Nav; @d:Facebook-Like;\" data-height=\"20\"\n                    data-href=\"https://www.facebook.com/BuzzFeed\" data-layout=\n                    \"button_count\" data-send=\"false\" data-show-faces=\"false\"\n                    data-width=\"48\">\n                        <span style=\n                        \"vertical-align: bottom; width: 89px; height: 20px;\"><iframe allowfullscreen=\"true\"\n                        class=\"\" frameborder=\"0\" height=\"20px\" id=\"f1dc255ac\"\n                        name=\"f1dc255ac\" scrolling=\"no\" src=\n                        \"http://www.facebook.com/v2.2/plugins/like.php?app_id=45075597673&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df2e1484104%26domain%3Dwww.buzzfeed.com%26origin%3Dhttp%253A%252F%252Fwww.buzzfeed.com%252Ffa79d4268%26relation%3Dparent.parent&amp;container_width=0&amp;height=20&amp;href=https%3A%2F%2Fwww.facebook.com%2FBuzzFeed&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=48\"\n                        style=\n                        \"border: none; visibility: visible; width: 89px; height: 20px;\"\n                        title=\"fb:like Facebook Social Plugin\" width=\n                        \"48px\"><span style=\n                        \"vertical-align: bottom; width: 89px; height: 20px;\"></span></iframe></span>\n                    </div>\n                </div>\n            </div>\n            <div class=\n            \"page-nav__utilities country-switch-parent--foreign--front\">\n                <div class=\"page-search inactive\">\n                    <form action=\"/search\" class=\"page-search__form\" method=\n                    \"get\">\n                        <input autocomplete=\"off\" class=\"page-search__input\"\n                        name=\"q\" placeholder=\"Search\" type=\"text\" value=\"\">\n                        <button class=\"page-search__search-button\" data-bfa=\n                        \"@a:Main-Nav; @d:Search;\"><svg class=\n                        \"page-search__search-icon\" viewbox=\"0 0 517 517\">\n                        <use xlink:href=\"#icon-search\" xmlns:xlink=\n                        \"http://www.w3.org/1999/xlink\"></use></svg></button>\n                    </form>\n                </div>\n                <div class=\"nav-signin\" id=\"nav-signin\">\n                    <div id=\"usernav-signin\">\n                        <a class=\"nav-signin-icon fa fa-user bf_dom\" data-bfa=\n                        \"@a:Main-Nav;@d:Sign-In;\" id=\"header-signin\"></a>\n                    </div>\n                    <div class=\"header_dropdown\" id=\"usernav-profile\" style=\n                    \"display: none;\">\n                        <a class=\"bf_dom dropdown_heading\" data-bfa=\n                        \"@a:Main-Nav;@d:Username\" href=\"javascript:;\" id=\n                        \"usernav-profile-link\"><span class=\"image\" id=\n                        \"usernav-image\" style=\"display:none;\"><img alt=\"\"\n                        height=\"24\" src=\n                        \"https://s3-ak.buzzfed.com/static/images/public/defaults/user.jpg\"\n                        width=\"24\"></span> <span class=\n                        \"image fa fa-user default-user-image\" id=\n                        \"default-user-image\" style=\"display:none;\"></span></a>\n                        <ul class=\"menu\" id=\"usernav-menu\">\n                            <li class=\"SL_hide\" id=\"usernav-new-post\">\n                                <a data-bfa=\"@a:Main-Nav;@d:New-Post;\" href=\n                                \"/post\">NEW POST</a>\n                            </li>\n                            <li id=\"usernav-my-feed\">\n                                <a class=\"bf_dom\" data-bfa=\n                                \"@a:Main-Nav;@d:My-Feed;\" href=\"javascript:;\"\n                                id=\"usernav-profile-link2\"><span class=\n                                \"dashboard_nav_text\" style=\"display: none;\">MY\n                                PROFILE</span> <span class=\n                                \"regular_nav_text\">MY POSTS</span> <span class=\n                                \"bf_dom new-messages-top hidden\">0</span></a>\n                            </li>\n                            <li id=\"usernav-my-drafts\">\n                                <a class=\"bf_dom\" data-bfa=\n                                \"@a:Main-Nav;@d:My-Feed;\" href=\"javascript:;\"\n                                id=\"usernav-my-drafts-link\"><span class=\n                                \"dashboard_nav_text\" style=\"display: none;\">MY\n                                DRAFTS</span><span class=\"regular_nav_text\">MY\n                                DRAFTS</span></a>\n                            </li>\n                            <li class=\"hidden SL_hide\" id=\"usernav-dashboard\">\n                                <a data-bfa=\"@a:Main-Nav;@d:Dashboard;\" href=\n                                \"/dashboard\"><span class=\"dashboard_nav_text\"\n                                style=\"display: none;\">MY DASHBOARD</span>\n                                <span class=\n                                \"regular_nav_text\">DASHBOARD</span></a>\n                            </li>\n                            <li id=\"usernav-switch\" style=\"display:none;\">\n                                <a class=\"menu-item-with-spinner\" data-bfa=\n                                \"@a:Main-Nav;@d:Feeds-Users;\" href=\n                                \"javascript:;\" id=\"usernav-switch-link\"\n                                onclick=\"return false;\"><span class=\n                                \"dashboard_nav_text\" style=\n                                \"display: none;\">SWITCH USER</span>\n                                <span class=\"regular_nav_text\">FEEDS/USERS</span>\n                                <div class=\"loader loader--small\" id=\n                                \"switch-list-spinner\" style=\"display: none;\">\n                                </div></a>\n                            </li>\n                            <li id=\"usernav-settings\" style=\"display:none;\">\n                                <a data-bfa=\"@a:Main-Nav;@d:Settings;\" href=\n                                \"/settings\" id=\n                                \"usernav-settings-link\">SETTINGS</a>\n                            </li>\n                            <li class=\"last\" id=\"usernav-signout\" style=\n                            \"display:none;\">\n                                <a data-bfa=\"@a:Main-Nav;@d:Sign-Out;\" href=\n                                \"javascript:;\">SIGN OUT</a>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class=\"SwitchUser list-users\" id=\"usernav-switch-list\"\n                    style=\"display: none;\"></div>\n                </div>\n            </div>\n        </div>",
+      "image" : "img/buzzfeed.png",
+      "name" : "BuzzFeed",
+      "tags" : {
+        "clear structure" : {
+          "comments" : {
+            "-KInn_nfbzE03TG65iPX" : {
+              "comment" : "HTML structure is easily readable and doesn't appear to have unnecessarily nested elements",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInnkztpDb2Q7Qwz0Qb" : {
+              "end" : 141,
+              "start" : 130
+            }
+          }
+        },
+        "long" : {
+          "comments" : {
+            "-KInn_ndAjviQLPRnDjs" : {
+              "comment" : "Many lines of code to produce this navigation bar, but makes sense for how many sections BuzzFeed has as a website and the inclusion of a dropdown menu",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInniLQ3wJv6flL3O0F" : {
+              "end" : 327,
+              "start" : 323
+            }
+          }
+        },
+        "semantic" : {
+          "comments" : {
+            "-KInn_nhjuYXurX6c-ht" : {
+              "comment" : "HTML tags used are semantic and describe the content it wraps, classes and IDs are also named in ways that correspond to their purpose",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInno069a0XnX1ZwxNW" : {
+              "end" : 11,
+              "start" : 3
+            },
+            "-KInnpIGMP7d-s90CNO8" : {
+              "end" : 22,
+              "start" : 17
+            }
+          }
+        }
+      },
+      "type" : "nav",
+      "url" : "https://www.buzzfeed.com/"
+    },
+    "-KHT2KJrd99u1b1Xa1XO" : {
+      "code" : "<div class=\"global-nav\" data-section-term=\"top_nav\">\n        <div class=\"global-nav-inner\">\n            <div class=\"container\">\n                <h1 class=\"Icon Icon--bird bird-topbar-etched\" style=\n                \"display: inline-block; width: 24px; height: 21px;\">\n                <span class=\"visuallyhidden\">Twitter</span></h1>\n                <div class=\"pushstate-spinner\"></div>\n                <div role=\"navigation\" style=\"display: inline-block;\">\n                    <ul class=\"nav js-global-actions\" id=\"global-actions\">\n                        <li class=\"home active new\" data-global-action=\"home\"\n                        id=\"global-nav-home\">\n                            <a class=\"js-nav js-tooltip js-dynamic-tooltip\"\n                            data-component-context=\"home_nav\" data-nav=\"home\"\n                            data-placement=\"bottom\" href=\"/\"><span class=\n                            \"Icon Icon--home Icon--large\"></span> <span class=\n                            \"text\">Home</span></a>\n                        </li>\n                        <li class=\"moments js-moments-tab\" data-global-action=\n                        \"moments\">\n                            <a class=\"js-nav js-tooltip js-dynamic-tooltip\"\n                            data-component-context=\"moments_nav\" data-nav=\n                            \"moments\" data-placement=\"bottom\" href=\"/i/moments\"\n                            role=\"button\"><span class=\n                            \"Icon Icon--lightning Icon--large\"></span>\n                            <span class=\"text\">Moments</span></a>\n                        </li>\n                        <li class=\"people notifications\" data-global-action=\n                        \"connect\">\n                            <a class=\"js-nav js-tooltip js-dynamic-tooltip\"\n                            data-component-context=\"connect_nav\" data-nav=\n                            \"connect\" data-placement=\"bottom\" href=\n                            \"/i/notifications\"><span class=\n                            \"Icon Icon--notifications Icon--large\"></span>\n                            <span class=\"text\">Notifications</span>\n                            <span class=\"count\"><span class=\n                            \"count-inner\">0</span></span></a>\n                        </li>\n                        <li class=\"dm-nav\">\n                            <a class=\n                            \"js-tooltip js-dynamic-tooltip global-dm-nav\"\n                            data-original-title=\"\" data-placement=\"bottom\"\n                            href=\"#\" role=\"button\"><span class=\n                            \"Icon Icon--dm Icon--large\"></span> <span class=\n                            \"text\">Messages</span> <span class=\n                            \"dm-new\"><span class=\n                            \"count-inner\"></span></span></a>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"pull-right\" style=\"display: inline-block;\">\n                    <div role=\"search\">\n                        <form action=\"/search\" class=\n                        \"t1-form form-search js-search-form\" id=\n                        \"global-nav-search\" name=\"global-nav-search\">\n                            <label class=\"visuallyhidden\" for=\n                            \"search-query\">Search query</label>\n                            <input aria-autocomplete=\"list\" aria-expanded=\n                            \"false\" aria-owns=\"typeahead-dropdown-1\"\n                            autocomplete=\"off\" class=\"search-input\" id=\n                            \"search-query\" name=\"q\" placeholder=\n                            \"Search Twitter\" spellcheck=\"false\" type=\"text\">\n                            <span class=\n                            \"search-icon js-search-action\"><button class=\n                            \"Icon Icon--search nav-search\" tabindex=\"-1\" type=\n                            \"submit\"><span class=\n                            \"search-icon js-search-action\"><span class=\n                            \"visuallyhidden\">Search\n                            Twitter</span></span></button></span>\n                            <div class=\"dropdown-menu typeahead\" id=\n                            \"typeahead-dropdown-1\" role=\"listbox\">\n                                <div aria-hidden=\"true\" class=\"dropdown-caret\">\n                                    <div class=\"caret-outer\"></div>\n                                    <div class=\"caret-inner\"></div>\n                                </div>\n                                <div class=\n                                \"dropdown-inner js-typeahead-results\" role=\n                                \"presentation\">\n                                    <div class=\n                                    \"typeahead-recent-searches block0\" role=\n                                    \"presentation\">\n                                        <h3 class=\n                                        \"typeahead-category-title recent-searches-title\"\n                                        id=\"recent-searches-heading\">Recent\n                                        searches</h3><button class=\n                                        \"btn-link clear-recent-searches\"\n                                        tabindex=\"-1\" type=\"button\">Clear\n                                        All</button>\n                                        <ul class=\n                                        \"typeahead-items recent-searches-list\"\n                                        role=\"presentation\">\n                                            <li class=\n                                            \"typeahead-item typeahead-recent-search-item\"\n                                            role=\"presentation\">\n                                                <span aria-hidden=\"true\" class=\n                                                \"Icon Icon--close\"><span class=\n                                                \"visuallyhidden\">Remove</span></span>\n                                                <a aria-describedby=\n                                                \"recent-searches-heading\"\n                                                class=\"js-nav\" data-ds=\n                                                \"recent_search\"\n                                                data-query-source=\"\"\n                                                data-search-query=\"\" href=\"\"\n                                                role=\"option\" tabindex=\n                                                \"-1\"></a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                    <div class=\n                                    \"typeahead-saved-searches block1\" role=\n                                    \"presentation\">\n                                        <h3 class=\n                                        \"typeahead-category-title saved-searches-title\"\n                                        id=\"saved-searches-heading\">Saved\n                                        searches</h3>\n                                        <ul class=\n                                        \"typeahead-items saved-searches-list\"\n                                        role=\"presentation\">\n                                            <li class=\n                                            \"typeahead-item typeahead-saved-search-item\"\n                                            role=\"presentation\">\n                                                <span aria-hidden=\"true\" class=\n                                                \"Icon Icon--close\"><span class=\n                                                \"visuallyhidden\">Remove</span></span>\n                                                <a aria-describedby=\n                                                \"saved-searches-heading\" class=\n                                                \"js-nav\" data-ds=\"saved_search\"\n                                                data-query-source=\"\"\n                                                data-search-query=\"\" href=\"\"\n                                                role=\"option\" tabindex=\n                                                \"-1\"></a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                    <ul class=\n                                    \"typeahead-items typeahead-topics block2\"\n                                    role=\"presentation\" style=\"display: none;\">\n                                        <li class=\n                                        \"typeahead-item typeahead-topic-item\"\n                                        role=\"presentation\">\n                                            <a class=\"js-nav\" data-ds=\"topics\"\n                                            data-query-source=\"typeahead_click\"\n                                            data-search-query=\"\" href=\"\" role=\n                                            \"option\" tabindex=\"-1\"></a>\n                                        </li>\n                                    </ul>\n                                    <ul class=\n                                    \"typeahead-items typeahead-accounts social-context js-typeahead-accounts block3\"\n                                    role=\"presentation\" style=\"display: none;\">\n                                        <li class=\n                                        \"typeahead-item typeahead-account-item js-selectable\"\n                                        data-remote=\"true\" data-score=\"\"\n                                        data-user-id=\"\" data-user-screenname=\"\"\n                                        role=\"presentation\">\n                                            <a class=\"js-nav\" data-ds=\"account\"\n                                            data-query-source=\"typeahead_click\"\n                                            data-search-query=\"\" role=\n                                            \"option\"><img alt=\"\" class=\n                                            \"avatar size32\"> <span class=\n                                            \"typeahead-user-item-info\"><span class=\"fullname\">\n                                            </span> <span class=\n                                            \"js-verified hidden\"><span class=\n                                            \"Icon Icon--verified Icon--small\"><span class=\"u-hiddenVisually\">\n                                            Verified\n                                            account</span></span></span>\n                                            <span class=\n                                            \"username\"><s>@</s><b></b></span></span>\n                                            <span class=\n                                            \"typeahead-social-context\"></span></a>\n                                        </li>\n                                        <li class=\n                                        \"js-selectable typeahead-accounts-shortcut js-shortcut\"\n                                        role=\"presentation\">\n                                            <a class=\"js-nav\" data-ds=\n                                            \"account_search\" data-query-source=\n                                            \"typeahead_click\"\n                                            data-search-query=\"\" data-shortcut=\n                                            \"true\" href=\"\" role=\"option\"></a>\n                                        </li>\n                                    </ul>\n                                </div>\n                            </div>\n                        </form>\n                    </div>\n                    <ul class=\"nav right-actions\">\n                        <li class=\"me dropdown session js-session\"\n                        data-global-action=\"t1me\" id=\"user-dropdown\">\n                            <a aria-haspopup=\"true\" class=\n                            \"btn js-tooltip settings dropdown-toggle js-dropdown-toggle\"\n                            data-placement=\"bottom\" href=\"/settings/account\"\n                            id=\"user-dropdown-toggle\" role=\"button\" title=\n                            \"Profile and settings\"><img alt=\n                            \"Profile and settings\" class=\"avatar size32\"\n                            data-user-id=\"242308086\" src=\n                            \"https://pbs.twimg.com/profile_images/624988001555357696/OmDogfNi_normal.jpg\"></a>\n                            <div class=\"dropdown-menu\">\n                                <div class=\"dropdown-caret\">\n                                    <span class=\"caret-outer\"></span>\n                                    <span class=\"caret-inner\"></span>\n                                </div>\n                                <ul>\n                                    <li class=\"current-user\" data-name=\n                                    \"profile\">\n                                        <a class=\n                                        \"account-summary account-summary-small js-nav\"\n                                        data-nav=\"view_profile\" href=\n                                        \"/nicolelzhu\">\n                                        <div class=\"content\">\n                                            <div class=\n                                            \"account-group js-mini-current-user\"\n                                            data-screen-name=\"nicolelzhu\"\n                                            data-user-id=\"242308086\">\n                                                <b class=\"fullname\">Nicole\n                                                Zhu</b><span class=\n                                                \"screen-name hidden\" dir=\n                                                \"ltr\">@nicolelzhu</span><small class=\"metadata\">View\n                                                profile</small>\n                                            </div>\n                                        </div></a>\n                                    </li>\n                                    <li class=\"dropdown-divider\"></li>\n                                    <li data-name=\"lists\">\n                                        <a data-nav=\"all_lists\" href=\n                                        \"/nicolelzhu/lists\">Lists</a>\n                                    </li>\n                                    <li class=\"dropdown-divider\"></li>\n                                    <li>\n                                        <a data-nav=\"help_center\" href=\n                                        \"//support.twitter.com\">Help</a>\n                                    </li>\n                                    <li class=\"js-keyboard-shortcut-trigger\"\n                                    data-nav=\"shortcuts\"><button class=\n                                    \"dropdown-link\" type=\"button\">Keyboard\n                                    shortcuts</button></li>\n                                    <li>\n                                        <a data-nav=\"ads\" href=\n                                        \"https://ads.twitter.com/start?ref=gl-tw-tw-twitter-ads\"\n                                        target=\"_blank\">Twitter Ads</a>\n                                    </li>\n                                    <li>\n                                        <a class=\"user-dropdown-analytics\"\n                                        data-nav=\"user_dropdown_analytics\"\n                                        href=\"https://analytics.twitter.com/\"\n                                        target=\"_blank\">Analytics</a>\n                                    </li>\n                                    <li class=\"dropdown-divider\"></li>\n                                    <li>\n                                        <a class=\"js-nav\" data-nav=\"settings\"\n                                        href=\"/settings/account\">Settings</a>\n                                    </li>\n                                    <li class=\"js-signout-button\" data-nav=\n                                    \"logout\" id=\"signout-button\">\n                                        <button class=\"dropdown-link\" type=\n                                        \"button\">Log out</button>\n                                        <form action=\"/logout\" class=\n                                        \"t1-form dropdown-link-form signout-form\"\n                                        id=\"signout-form\" method=\"post\" name=\n                                        \"signout-form\">\n                                            <input class=\"authenticity_token\"\n                                            name=\"authenticity_token\" type=\n                                            \"hidden\" value=\n                                            \"c4db12abbe6de2b3f6eb5a70c9c3b5283d45b2ef\">\n                                            <input class=\"js-reliability-event\"\n                                            name=\"reliability_event\" type=\n                                            \"hidden\"> <input name=\"scribe_log\"\n                                            type=\"hidden\">\n                                        </form>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                        <li aria-labelledby=\"global-new-tweet-button\" class=\n                        \"topbar-tweet-btn\" role=\"complementary\"><button class=\n                        \"js-global-new-tweet js-tooltip btn primary-btn tweet-btn js-dynamic-tooltip\"\n                        data-component-context=\"new_tweet_button\"\n                        data-placement=\"bottom\" id=\"global-new-tweet-button\"\n                        type=\"button\"><span class=\n                        \"Icon Icon--tweet Icon--large\"></span> <span class=\n                        \"text\">Tweet</span></button></li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>",
+      "image" : "img/twitter.png",
+      "name" : "Twitter",
+      "tags" : {
+        "anchors within list items" : {
+          "comments" : {
+            "-KInrYC0zuevdtKjo4kc" : {
+              "comment" : "Actual routing done with anchor tags",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInrv4C0mdEOq0HDb9R" : {
+              "end" : 150,
+              "start" : 131
+            },
+            "-KInrxKpE6fGRk-Zr1B2" : {
+              "end" : 181,
+              "start" : 163
+            }
+          }
+        },
+        "clear structure" : {
+          "count" : 1,
+          "highlights" : {
+            "-KIneLFEbJsdAI__3xTH" : {
+              "end" : 31,
+              "start" : 25
+            },
+            "-KIneMvcwH6L9drFRK9s" : {
+              "end" : 3,
+              "start" : 0
+            }
+          }
+        },
+        "dropdown menus" : {
+          "count" : 1,
+          "highlights" : {
+            "-KIneCOaqopitvquc33k" : {
+              "end" : 255,
+              "start" : 253
+            },
+            "-KIneEMprlFNJfQnT7PQ" : {
+              "end" : 260,
+              "start" : 255
+            },
+            "-KIneISf9XKD-FZtwA1m" : {
+              "end" : 272,
+              "start" : 265
+            }
+          }
+        },
+        "form with action for search" : {
+          "comments" : {
+            "-KInrYBzMvfcFBzPTYr0" : {
+              "comment" : "Not just an input with a framework",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInrr9OBpzVu9OdGv_Z" : {
+              "end" : 82,
+              "start" : 79
+            }
+          }
+        },
+        "logo in the middle" : {
+          "comments" : {
+            "-KInrYC382E-TDYDVldF" : {
+              "comment" : "Even though the logo is in the middle, the element came first in the header",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KIns1MFSA-i5KeONa6k" : {
+              "end" : 5,
+              "start" : 3
+            }
+          }
+        },
+        "span icons" : {
+          "comments" : {
+            "-KInrYBxTX8KaFKyTTwD" : {
+              "comment" : "Icons are made with span tags",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInrmqiUenQtZTwaian" : {
+              "end" : 20,
+              "start" : 17
+            },
+            "-KInro2pSIXqF6hSTylP" : {
+              "end" : 34,
+              "start" : 31
+            }
+          }
+        },
+        "straightforward" : {
+          "comments" : {
+            "-KIne2_SDNvhAFgUiXjF" : {
+              "comment" : "Code is structured well without needless nested divs, clear naming conventions",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KIne6BCJSmAm7Gzk3Gm" : {
+              "end" : 134,
+              "start" : 131
+            }
+          }
+        },
+        "ul li structure" : {
+          "comments" : {
+            "-KInrYC2SuEIS4IVuPPy" : {
+              "comment" : "No &lt;nav&gt; wrapper for the navigation bar",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInrzDsJCzSo-db_Dw5" : {
+              "end" : 204,
+              "start" : 196
+            }
+          }
+        }
+      },
+      "type" : "nav",
+      "url" : "https://www.twitter.com/"
+    },
+    "-KHT2TD8gXMt7HdnNwm7" : {
+      "code" : "<header class=\"body-max-width gnav-header-inner clear apply-nav-height col-group\" id=\"gnav-header-inner\" role=\"banner\">     <div class=\"col-xs-12\">         <div class=\"apply-nav-height\" id=\"etsy-logo\">             <a aria-label=\"Etsy Logo\" href=\"/?ref=lgo\">Etsy</a>         </div><a aria-label=\"search\" class=\"search-browse-nav nav-link apply-nav-height\" href=\"#\"><span class=\"screen-reader-only\">Search</span> <span aria-hidden=\"true\" class=\"nav-icon gnav-ss-icon gnav-ss-search\"></span></a>         <div class=\"search-browse-wrapper\">             <div class=\"search-browse-inner with-pointer\">                 <form action=\"/search.php\" class=\"search-nav expanded-search apply-nav-height\" id=\"gnav-search\" method=\"get\" name=\"gnav-search\" role=\"search\">                     <div class=\"gnav-search-inner clearable\">                         <label class=\"screen-reader-only\" for=\"search-query\">Search for items or shops</label>                         <div class=\"search-input-wrapper text-field-wrapper\">                             <input aria-label=\"Search for items or shops\" autocomplete=\"off\" class=\"search-input dropdown-relative-positioned rounded\"                             id=\"search-query\" name=\"search_query\"                             placeholder=\"Search for items or shops\" type=\"text\" value=\"\">                             <div id=\"search-suggestions\" style=\"display: none;\"></div>                         </div>                         <div class=\"search-button-wrapper hide\">                             <button class=\"btn btn-primary\" type=\"submit\" value=\"Search\">Search</button>                         </div>                     </div>                         <input id=\"search-js-router-enabled\" type=\"hidden\" value=\"true\"> <input id=\"search-type\" name=\"search_type\" type=\"hidden\" value=\"all\">                 </form>             </div>         </div>         <a class=\"apply-nav-height header__skip-to-content screen-reader-only focusable\" href=\"#content\">Skip to Content</a>         <ul class=\"account-nav apply-nav-height\">             <li class=\"sell-on-etsy-link\">                 <a class=\"sell-on-etsy-trigger\" href=\"/sell?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F\" id=\"sell-on-etsy\" title=\"Sell on Etsy\"><span class=\"sell-copy\">Sell on Etsy</span> <span class=\"sell-copy short\">Sell</span></a>             </li>             <li class=\"register-link\">                 <a class=\"inline-overlay-trigger register-header-action select-register\" data-downtime-overlay-type=\"register\" href=\"/join?ref=hdr&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F\" id=\"register\" role=\"button\" title=\"Register\">Register</a>             </li>             <li class=\"sign-in-link\">                 <a class=\"inline-overlay-trigger signin-header-action select-signin\" href=\"/signin?ref=hdr&amp;from_action=signin-header&amp;from_page=https%3A%2F%2Fwww.etsy.com%2F\" id=\"sign-in\" role=\"button\" title=\"Sign in\">Sign in</a>             </li>             <li class=\"cart\" data-sub-nav=\"cart\">                 <a aria-labelledby=\"gnav-account-cart-description\" class=\"nav-link\" href=\"/cart?ref=hdr\" title=\"Cart\">                     <span aria-hidden=\"true\" class=\"nav-icon gnav-ss-icon gnav-ss-cart\"></span>                     <span class=\"text-link\">                         <span class=\"text-link-copy\" id=\"gnav-account-cart-description\">Cart</span>                     </span>                 </a>             </li>         </ul>     </div> </header>",
+      "image" : "img/etsy.png",
+      "name" : "Etsy",
+      "tags" : {
+        "accessible" : {
+          "comments" : {
+            "-KJBvC6jQ2CNdX4OBGLU" : {
+              "comment" : "Uses \"screen-reader-only\" class and aria attributes",
+              "name" : "Alex"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KJBvGtCDK34-d1J02YI" : {
+              "end" : 9,
+              "start" : 7
+            },
+            "-KJBvHyunlwcrkaNgIRb" : {
+              "end" : 11,
+              "start" : 9
+            },
+            "-KJBvJv0BpmDE5H6zFbY" : {
+              "end" : 5,
+              "start" : 3
+            },
+            "-KJBvPdy-_sxe_VbzCps" : {
+              "end" : 35,
+              "start" : 33
+            }
+          }
+        },
+        "clean" : {
+          "comments" : {
+            "-KJBvC6mdOtO3MyoVjsK" : {
+              "comment" : "Readable tags, classes and IDs, not overly complicated in terms of nested HTML",
+              "name" : "Alex"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KJBvbQkX8iXSGCDcnRJ" : {
+              "end" : 26,
+              "start" : 24
+            }
+          }
+        },
+        "easy to read" : {
+          "comments" : {
+            "-KJBvC6akXRuvywBg4Kf" : {
+              "comment" : "Structure of nested HTML is clear, with appropriate tags used for forms like div/form, and ul li for navigation list items",
+              "name" : "Alex"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KJBvXmH-wb43LsLPhVP" : {
+              "end" : 18,
+              "start" : 16
+            },
+            "-KJBv_3k4jXI-xE0uq8X" : {
+              "end" : 20,
+              "start" : 19
+            }
+          }
+        },
+        "functional" : {
+          "comments" : {
+            "-KJBvC6e7Q_00cHorX6K" : {
+              "comment" : "Same HTML structure could be easily adapted and used for many different types of websites, not just ecommerce",
+              "name" : "Alex"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KJBvM6TBvUGzddSsI9q" : {
+              "end" : 15,
+              "start" : 14
+            },
+            "-KJBvSrig2BdwJ_H6Nvu" : {
+              "end" : 43,
+              "start" : 35
+            }
+          }
+        },
+        "straightforward" : {
+          "comments" : {
+            "-KJBvC6hYFJQ3R4tqcNh" : {
+              "comment" : "Uses semantic tags and descriptive class/ID names to describe the purpose of each portion of the code",
+              "name" : "Alex"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KJBvVTlhAVwryE5luYO" : {
+              "end" : 51,
+              "start" : 48
+            }
+          }
+        }
+      },
+      "type" : "nav",
+      "url" : "https://www.etsy.com/"
+    },
+    "-KHT2bdj4WingCQPcuEV" : {
+      "code" : "<nav class=\"_onabe\" data-reactid=\".0.2\" role=\"navigation\">     <div class=\"_fjpuc _sq03j\" data-reactid=\".0.2.0\">         <div class=\"_6v8vp\" data-reactid=\".0.2.0.0\">             <a class=\"_1b8in _345gm coreSpriteNavigationBrandSmall\"             data-reactid=\".0.2.0.0.0\" href=\"/\">Instagram</a>             <div class=\"_nhei4\" data-reactid=\".0.2.0.0.1\">                 <div class=\"_9pxkq _icv3j\" data-reactid=\".0.2.0.0.1.0\">                     <input class=\"_9x5sw _qy55y\" data-reactid=\".0.2.0.0.1.0.0\" placeholder=\"Search\" type=\"text\" value=\"\">                     <div class=\"_t1y9a _98hun\" data-reactid=\".0.2.0.0.1.0.1\">                         <div class=\"_etslc\" data-reactid=\".0.2.0.0.1.0.1.0\">                             <span class=\"_oqxv9 coreSpriteSearchIcon\"                             data-reactid=\".0.2.0.0.1.0.1.0.0\"></span><span class=\"_9ea4j\" data-reactid=\".0.2.0.0.1.0.1.0.1\">Search</span>                         </div>                     </div>                 </div>                 <div class=\"_pq5am\" data-reactid=\".0.2.0.0.1.1\">                     <div class=\"_7smet\" data-reactid=\".0.2.0.0.1.1.0\">                         <a class=\"_bddja _345gm coreSpriteExplore\" data-reactid=\".0.2.0.0.1.1.0.0\" href=\"/explore/\">Find People</a>                     </div>                     <div class=\"_7smet\" data-reactid=\".0.2.0.0.1.1.1\">                         <a class=\"_im3et coreSpriteActivity _345gm\" data-reactid=\".0.2.0.0.1.1.1.0\" href=\"#\">Activity Feed</a>                     </div>                     <div class=\"_7smet\" data-reactid=\".0.2.0.0.1.1.2\">                         <a class=\"_345gm coreSpriteProfile\" data-reactid=\".0.2.0.0.1.1.2.0\" href=\"/nicolelzhu/\">Profile</a>                     </div>                 </div>             </div>         </div>     </div> </nav>",
+      "image" : "img/instagram.png",
+      "name" : "Instagram",
+      "tags" : {
+        "hard to understand" : {
+          "comments" : {
+            "-KInn_nnHJ8SHFH7g_GX" : {
+              "comment" : "Obfuscated class names and IDs obscures the purpose of each element",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInnetcV1M6XvUhQtoh" : {
+              "end" : 21,
+              "start" : 19
+            },
+            "-KInngOffYQZXfJ6yr1f" : {
+              "end" : 25,
+              "start" : 23
+            }
+          }
+        },
+        "incomprehensible" : {
+          "comments" : {
+            "-KInn_nkzAjbMAFjw4tg" : {
+              "comment" : "Random letters and numbers resulting from React are very difficult to read or understand",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInncs_HC3ZobQYrCsx" : {
+              "end" : 14,
+              "start" : 8
+            }
+          }
+        },
+        "messy" : {
+          "comments" : {
+            "-KInn_njpFJeErireRzA" : {
+              "comment" : "All the React stuff makes the code messy and hard to read",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInnbW_P2o5McpJRzo0" : {
+              "end" : 5,
+              "start" : 3
+            }
+          }
+        }
+      },
+      "type" : "nav",
+      "url" : "https://www.instagram.com/"
+    },
+    "-KHT2m8OLiErTC_wRlZM" : {
+      "code" : "<header class=\"navbar navbar-default navbar-fixed-top\" id=         \"js-navbar\" role=\"banner\">   <div id=\"js-message-bars\">     <div class=\"hidden alert alert-info alert-dismissible\" id=          \"js-message-bar-cookie-notice\" role=\"alert\">       <div class=\"container\">         <button class=\"close\" data-dismiss=\"alert\" type=                 \"button\">           <span aria-hidden=                 \"true\">×           </span>           <span class=                 \"sr-only\">Close           </span>         </button>         <a class=\"alert-link cookie-link\"            href=\"/uk/legal/privacy-policy/#cookies\">Cookie           Policy         </a>.       </div>     </div>   </div>   <div class=\"container\">     <div class=\"navbar-header\">       <button class=\"navbar-toggle collapsed\" data-target=               \"#navbar-nav\" data-toggle=\"sidepanel\" type=               \"button\">         <span class=\"sr-only\">Toggle navigation         </span>         <span class=\"icon-bar\">         </span>          <span class=               \"icon-bar\">         </span>          <span class=               \"icon-bar\">         </span>       </button>       <ul class=\"nav\">         <li class=\"dropdown\">           <a class=              \"user-link dropdown-toggle hidden-xs hidden-sm\"              data-toggle=\"dropdown\" href=              \"/uk/account/overview/\">             <img alt=\"Nicole Zhu\"                  class=\"user-img img-circle navbar-user-img\"                  src=\"https://graph.facebook.com/898775106/picture?width=64&height=64\">               </a>             <a class=\"user-link hidden-md hidden-lg\" href=                \"/uk/account/overview/\">               <img alt=\"Nicole Zhu\"                    class=\"user-img img-circle navbar-user-img\"                    src=\"https://graph.facebook.com/898775106/picture?width=64&height=64\">                 </a>               <ul class=\"dropdown-menu dropdown-menu-right\">                 <li>                   <a href=                      \"/uk/account/overview/\">Account                   </a>                 </li>                 <li>                   <a href=\"/uk/logout/\">Log out                   </a>                 </li>               </ul>               </li>             </ul>           <a class=\"user-link hidden\" href=              \"/uk/account/overview/\">             <img alt=\"Nicole Zhu\" class=                  \"user-img img-circle navbar-user-img\" src=                  \"https://graph.facebook.com/898775106/picture?width=64&height=64\">               </a>             <a class=\"navbar-brand\" href=\"/uk/\">               <span class=                     \"navbar-logo\">Spotify               </span>             </a>             </div>           <nav class=\"collapse navbar-collapse\" id=\"navbar-nav\" role=                \"navigation\">             <ul class=\"nav navbar-nav navbar-right nav-main\">               <li>                 <a data-ga-action=\"premium\" data-ga-category=                    \"menu\" href=\"/uk/premium/?checkout=false\" id=                    \"nav-link-premium\">Premium                 </a>               </li>               <li>                 <a data-ga-action=\"help\" data-ga-category=                    \"menu\" href=\"https://support.spotify.com\" id=                    \"nav-link-help\">Help                 </a>               </li>               <li>                 <a class=\" js-get-spotify js-gtm-event\"                    data-ga-action=\"download\" data-ga-category=                    \"menu\" data-gtm-event-name=                    \"download_spotify_button_clicked\" href=                    \"/uk/download/\" id=                    \"nav-link-download\">Download                 </a>               </li>               <li class=\"divider\" role=\"separator\">               </li>               <li class=                   \"alternate sidepanel-item-small hidden-md\">                 <a data-ga-action=\"upgrade\" data-ga-category=                    \"menu\" href=\"/uk/premium/\" id=                    \"nav-link-upgrade\">Upgrade                 </a>               </li>               <li class=                   \"alternate sidepanel-item-small hidden-md hidden-lg\">                 <a data-ga-action=\"account\" data-ga-category=\"menu\"                    href=\"/uk/account/overview/\" id=                    \"nav-link-account\">Account                 </a>               </li>               <li class=                   \"alternate sidepanel-item-small hidden-md hidden-lg\">                 <a data-ga-action=\"log out\" data-ga-category=\"menu\"                    href=\"/uk/logout/\" id=\"nav-link-log out\">Log                   Out                 </a>               </li>               <li class=\"dropdown alternate hidden-sidepanel\">                 <a class=\"user-link dropdown-toggle\"                    data-toggle=\"dropdown\" href=                    \"/uk/account/overview/\">                   <img alt=\"Nicole Zhu\"                        class=\"user-img img-circle navbar-user-img\"                        src=\"https://graph.facebook.com/898775106/picture?width=64&height=64\">                     <span class=\"user-text\">Nicole Zhu                     </span>                     <svg class=\"svg-chevron-down\">                       <use xlink:href=\"#chevron-down\" xmlns:xlink=                            \"http://www.w3.org/1999/xlink\">                       </use>                     </svg>                     </a>                   <ul class=\"dropdown-menu dropdown-menu-right\">                     <li class=                         \"alternate sidepanel-item-small visible-md-block\">                       <a data-ga-action=\"upgrade\"                          data-ga-category=\"menu\" href=\"/uk/premium/\"                          id=\"nav-link-upgrade\">Upgrade                       </a>                     </li>                     <li>                       <a href=                          \"/uk/account/overview/\">Account                       </a>                     </li>                     <li>                       <a href=\"/uk/logout/\">Log Out                       </a>                     </li>                   </ul>                   </li>                 </ul>               </nav>             </div>           </header>         </div>",
+      "image" : "img/spotify.png",
+      "name" : "Spotify",
+      "tags" : {
+        "analytics" : {
+          "comments" : {
+            "-KInVHi8TL-wpPTuTPFj" : {
+              "comment" : "Bunch of data-ga tags which signifies analytics",
+              "name" : "Kevin"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInVN-xQQvFeCyPlEQp" : {
+              "end" : 60,
+              "start" : 58
+            },
+            "-KInVP4kGSbkGg-aopKW" : {
+              "end" : 64,
+              "start" : 62
+            },
+            "-KInVRYniiTvkBIyJKim" : {
+              "end" : 68,
+              "start" : 66
+            }
+          }
+        },
+        "anchors within list items" : {
+          "comments" : {
+            "-KInrYBnbKWglm9a01bw" : {
+              "comment" : "Actual routing done with anchor tags",
+              "name" : "Jon"
+            }
+          },
+          "count" : 2,
+          "highlights" : {
+            "-KInsi6f1Iz_PGluB8MZ" : {
+              "end" : 44,
+              "start" : 40
+            },
+            "-KInskK1N8jdFUuEQRs5" : {
+              "end" : 69,
+              "start" : 65
+            }
+          }
+        },
+        "bootstrap" : {
+          "comments" : {
+            "-KInVHi6s9IdKg7zo0Br" : {
+              "comment" : "Appears to use bootstrap for handling modals and base styles.",
+              "name" : "Kevin"
+            },
+            "-KIne2_MF7BiLOV8BBXH" : {
+              "comment" : "Seems to use Bootstrap modals - evidence in class names",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 2,
+          "highlights" : {
+            "-KIneufdsngetgbkjZ8S" : {
+              "end" : 76,
+              "start" : 75
+            }
+          }
+        },
+        "header tag" : {
+          "comments" : {
+            "-KInrYBuJ6f7t39fBMCy" : {
+              "comment" : "A &lt;header&gt; tag wraps the entire header",
+              "name" : "Jon"
+            }
+          },
+          "count" : 2,
+          "highlights" : {
+            "-KInsbuH5iVdzMx6Tgh2" : {
+              "end" : 1,
+              "start" : 0
+            }
+          }
+        },
+        "hidden hamburger menu" : {
+          "count" : 1,
+          "highlights" : {
+            "-KIneUhn2bTBEoTnxQgj" : {
+              "end" : 18,
+              "start" : 17
+            },
+            "-KIneY_S3a78u5sK0LZ8" : {
+              "end" : 26,
+              "start" : 18
+            }
+          }
+        },
+        "straightforward" : {
+          "comments" : {
+            "-KIne2_JVIhhfod2qtcB" : {
+              "comment" : "Pretty shallow DOM tree with easy to follow nested element structure",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInePB5fmUtvPRIafyx" : {
+              "end" : 17,
+              "start" : 15
+            }
+          }
+        },
+        "svg icons" : {
+          "comments" : {
+            "-KInrYBf4jJa2vTT07QT" : {
+              "comment" : "Icons are made with SVGs not images",
+              "name" : "Jon"
+            }
+          },
+          "count" : 2,
+          "highlights" : {
+            "-KInsN2snWDvmJtTI2T0" : {
+              "end" : 92,
+              "start" : 88
+            }
+          }
+        },
+        "ul li for dropdown" : {
+          "comments" : {
+            "-KInrYBk4R4hLgOLxZ47" : {
+              "comment" : "No &lt;nav&gt; tag for the dropdown, just &lt;ul&gt; and &lt;li&gt; structure",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInsWillUUGgTMA5_T5" : {
+              "end" : 29,
+              "start" : 27
+            }
+          }
+        },
+        "ul li within nav for navbar" : {
+          "comments" : {
+            "-KInrYBrLgT6Gc9cb3by" : {
+              "comment" : "Semantically wraps the navigation elements with a &lt;nav&gt; and inside there's a &lt;ul&gt; and &lt;li&gt; structure",
+              "name" : "Jon"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KIns_HuuKyJFgDYnSLI" : {
+              "end" : 40,
+              "start" : 35
+            }
+          }
+        }
+      },
+      "type" : "nav",
+      "url" : "https://www.spotify.com/"
+    },
+    "-KHT2rsjv1SjrxcwNs9W" : {
+      "code" : "<div id=\"yt-masthead\">     <div class=\"yt-masthead-logo-container\">         <button aria-controls=\"appbar-guide-menu\" aria-expanded=\"true\"         aria-label=\"Guide\" class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-text yt-uix-button-empty yt-uix-button-has-icon appbar-guide-toggle appbar-guide-clickable-ancestor\" id=\"appbar-guide-button\" onclick=\";return false;\" type=\"button\">             <span class=\"yt-uix-button-icon-wrapper\">                 <span class=\"yt-uix-button-icon yt-uix-button-icon-appbar-guide yt-sprite\"></span>             </span>         </button>         <div id=\"appbar-main-guide-notification-container\"></div>         <span id=\"yt-masthead-logo-fragment\">             <a class=\"yt-uix-sessionlink masthead-logo-renderer spf-link\" data-sessionlink=\"itct=CAUQsV4iEwiZn4mu8qfLAhUMEE4KHa_KB78ojh4\" href=\"/\" id=\"logo-container\" title=\"YouTube Home\">                 <span class=\"logo masthead-logo-renderer-logo yt-sprite\" title=\"YouTube Home\"></span>             </a>         </span>     </div>     <div class=\"yt-uix-clickcard\" id=\"yt-masthead-user\">         <a class=\"yt-uix-button yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default\" data-sessionlink=\"ei=G_PZVtmlDoyguAKvlZ_4Cw&amp;feature=mhsb\" data-upsell=\"upload\" href=\"//www.youtube.com/upload\" id=\"upload-btn\">             <span class=\"yt-uix-button-content\">Upload</span>         </a>         <div class=\"notifications-container\">             <button aria-haspopup=\"true\" aria-label=\"Notifications\" class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-has-icon sb-notif-off yt-uix-gen204\" data-gen204=\"bell=jingled\" id=\"sb-button-notify\" onclick=\";return false;\" type=\"button\">                 <span class=\"yt-uix-button-icon-wrapper\">                     <span class=\"yt-uix-button-icon yt-uix-button-icon-bell yt-sprite\"></span>                 </span>                 <span class=\"yt-uix-button-content\">0</span>             </button>         </div>         <span class=\"yt-uix-clickcard\" data-card-action=\"yt.www.masthead.handleAccountPickerClick\" data-card-class=\"yt-masthead-account-picker-card yt-masthead-multilogin\" id=\"yt-masthead-account-picker\">    <button aria-haspopup=\"true\" aria-label=\"Account profile photo that opens list of alternate accounts\" class=\"yt-uix-button yt-uix-button-size-default yt-masthead-user-icon yt-uix-clickcard-target\" data-force-position=\"true\" data-orientation=\"vertical\" data-position=\"bottomleft\" data-position-fixed=\"true\" onclick=\";return false;\" type=\"button\">             <span class=\"yt-uix-clickcard\" data-card-action=\"yt.www.masthead.handleAccountPickerClick\" data-card-class=\"yt-masthead-account-picker-card yt-masthead-multilogin\" id=\"yt-masthead-account-picker\">                 <span class=\"yt-uix-button-content\">                     <span class=\"video-thumb yt-thumb yt-thumb-27\">                         <span class=\"yt-thumb-square\">                             <span class=\"yt-thumb-clip\">                                 <img alt=\"\" aria-hidden=\"true\" height=\"27\" src=\"https://yt3.ggpht.com/-jXq3iKY2Q6Q/AAAAAAAAAAI/AAAAAAAAAAA/GAxCCKvKZ8w/s88-c-k-no/photo.jpg\" width=\"27\">                                 <span class=\"vertical-align\"></span>                             </span>                         </span>                     </span>                 </span>             </span>         <div class=\"yt-masthead-account-picker yt-uix-clickcard-content\">             <a class=\"yt-masthead-picker-header yt-masthead-picker-active-account\"             href=\"https://www.google.com/settings/u/0/personalinfo\">nzhu94@gmail.com</a>             <div id=\"yt-unlimited-member\"></div>             <div class=\"yt-masthead-picker-body\">                 <a class=\"yt-masthead-picker-photo-wrapper\" href=\"https://aboutme.google.com/u/0#profile_photo\">                     <span class=\"video-thumb yt-thumb yt-thumb-64\">                         <span class=\"yt-thumb-square\">                             <span class=\"yt-thumb-clip\">                                 <img alt=\"\" aria-hidden=\"true\" height=\"64\" src=\"https://yt3.ggpht.com/-jXq3iKY2Q6Q/AAAAAAAAAAI/AAAAAAAAAAA/GAxCCKvKZ8w/s88-c-k-no/photo.jpg\" width=\"64\">                                 <span class=\"vertical-align\"></span>                             </span>                         </span>                     </span>                     <span class=\"yt-masthead-picker-photo-change\">Change</span>                 </a>                 <div class=\"yt-masthead-picker-info\">                     <div class=\"yt-masthead-picker-name\" dir=\"ltr\">Nicole Zhu</div>                     <div class=\"yt-masthead-picker-account-subtitle\" id=\"yt-subscriber-count\">  ​</div>                     <a class=\"yt-uix-button yt-masthead-picker-button yt-masthead-picker-button-primary yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default\" data-sessionlink=\"ei=G_PZVtmlDoyguAKvlZ_4Cw\" href=\"/dashboard?o=U\">                         <span class=\"yt-uix-button-content\">Creator Studio</span>                     </a>                     <a class=\"yt-uix-button yt-masthead-picker-button yt-masthead-picker-settings-button yt-uix-tooltip yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default yt-uix-button-has-icon yt-uix-tooltip yt-uix-button-empty\" data-sessionlink=\"ei=G_PZVtmlDoyguAKvlZ_4Cw\" href=\"/account\" title=\"YouTube settings\">                         <span class=\"yt-uix-button-icon-wrapper\">                             <span class=\"yt-uix-button-icon yt-uix-button-icon-icon-account-settings yt-sprite\"></span>                         </span>                     </a>                 </div>             </div>             <div class=\"yt-masthead-multilogin-users\" id=\"yt-masthead-multilogin\">                 <div id=\"yt-delegate-accounts\"></div>                 <div class=\"yt-masthead-multilogin-users-header\">Other accounts</div>                 <a class=\"yt-masthead-account-picker-option yt-masthead-account-picker-user-option\" href=\"/signin?feature=masthead_switcher&amp;next=%2F&amp;skip_identity_prompt=False&amp;authuser=3&amp;action_handle_signin=true\">                     <span class=\"video-thumb yt-masthead-picker-photo-wrapper yt-thumb yt-thumb-36\">                         <span class=\"yt-thumb-square\">                             <span class=\"yt-thumb-clip\">                                 <img alt=\"hunnymagazine@gmail.com\" height=\"36\" src=\"https://yt3.ggpht.com/-YK9CVsIcEXE/AAAAAAAAAAI/AAAAAAAAAAA/5X5LONEXdaM/s88-c-k-no/photo.jpg\" width=\"36\">                                 <span class=\"vertical-align\"></span>                             </span>                         </span>                     </span>                     <div class=\"yt-masthead-picker-info\">                         <div class=\"yt-masthead-picker-name\" dir=\"ltr\">hunnymagazine@gmail.com</div>                         <div class=\"yt-masthead-picker-account-subtitle\">hunnymagazine@gmail.com</div>                     </div>                 </a>             </div>             <div class=\"clearfix\" id=\"yt-channel-switcher-link\"></div>             <div class=\"yt-masthead-picker-footer clearfix\">                 <a class=\"yt-uix-button yt-masthead-picker-button yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default\"                 data-sessionlink=\"ei=G_PZVtmlDoyguAKvlZ_4Cw\" href=\"https://accounts.google.com/AddSession?uilel=0&amp;service=youtube&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Den%26app%3Ddesktop%26next%3D%252F%26action_handle_signin%3Dtrue&amp;passive=false&amp;hl=en\">                     <span class=\"yt-uix-button-content\">Add account</span>                 </a>                 <a class=\"yt-uix-button yt-masthead-picker-button yt-uix-sessionlink yt-uix-button-default yt-uix-button-size-default\"                 data-sessionlink=\"ei=G_PZVtmlDoyguAKvlZ_4Cw\" href=\"/logout\">                     <span class=\"yt-uix-button-content\">Sign out</span>                 </a>             </div>         </div>         </button>         </span>     </div>     <div id=\"yt-masthead-content\">         <form action=\"/results\" class=\"search-form consolidated-form\"         data-clicktracking=\"CAEQ7VAiEwiZn4mu8qfLAhUMEE4KHa_KB78ojh4\" id=\"masthead-search\" name=\"masthead-search\" onsubmit=\"if (document.getElementById('masthead-search-term').value == '') return false;\">         <button class=\"yt-uix-button yt-uix-button-size-default yt-uix-button-default search-btn-component search-button\" dir=\"ltr\" id=\"search-btn\" onclick=\"if (document.getElementById('masthead-search-term').value == '') return false; document.getElementById('masthead-search').submit(); return false;;return true;\" tabindex=\"2\" type=\"submit\">             <span class=\"yt-uix-button-content\">Search</span>         </button>             <div class=\"masthead-search-terms-border\" dir=\"ltr\" id=\"masthead-search-terms\">                 <input aria-label=\"Search\" autocomplete=\"off\" autofocus=\"\" class=\"search-term masthead-search-renderer-input yt-uix-form-input-bidi\" id=\"masthead-search-term\" name=\"search_query\" onkeydown=\"if (!this.value &amp;&amp; (event.keyCode == 40 || event.keyCode == 32 || event.keyCode == 34)) {this.onkeydown = null; this.blur();}\" placeholder=\"\" tabindex=\"1\" title=\"Search\" type=\"text\" value=\"\">             </div>         </form>     </div> </div>",
+      "image" : "img/youtube.png",
+      "name" : "Youtube",
+      "tags" : {
+        "analytics" : {
+          "comments" : {
+            "-KInVHiAN6X_x0BHgTMj" : {
+              "comment" : "Bunch of data-ga tags which signifies analytics",
+              "name" : "Kevin"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInVjEhZUy9HNuAKGlE" : {
+              "end" : 60,
+              "start" : 58
+            },
+            "-KInVl0PpN50DTaaifr6" : {
+              "end" : 64,
+              "start" : 62
+            }
+          }
+        },
+        "complex" : {
+          "comments" : {
+            "-KJBvC6VLOQNLH6osKRF" : {
+              "comment" : "Lots of inline JavaScript functions with obscure names",
+              "name" : "Alex"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KJBvg6kZRuIV2UWo3xY" : {
+              "end" : 10,
+              "start" : 3
+            }
+          }
+        },
+        "messy" : {
+          "comments" : {
+            "-KInbWFXtzNNfReF5Dpq" : {
+              "comment" : "There is a heavy use attributes but that may be an artifact of a JS MVC",
+              "name" : "Nikky P"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInbXVuw5t5yU1czVMr" : {
+              "end" : 1,
+              "start" : 0
+            },
+            "-KInbgB7LW4S8H03tH_E" : {
+              "end" : 61,
+              "start" : 57
+            }
+          }
+        },
+        "some-accessibility" : {
+          "comments" : {
+            "-KInVHiEYHfEh75AuOpI" : {
+              "comment" : "some number of aria tags, alt text, etc.",
+              "name" : "Kevin"
+            }
+          },
+          "count" : 1,
+          "highlights" : {
+            "-KInVbOvf5GR0zhc_UeI" : {
+              "end" : 6,
+              "start" : 5
+            },
+            "-KInVd7k2PTC0Aq0ZTfF" : {
+              "end" : 3,
+              "start" : 2
+            },
+            "-KInVfgZ4ioCmNVas3bV" : {
+              "end" : 31,
+              "start" : 30
+            }
+          }
+        },
+        "uses header instead of nav" : {
+          "count" : 1,
+          "highlights" : {
+            "-KInVUdofYiCwrJdqLQx" : {
+              "end" : 29,
+              "start" : 28
+            }
+          }
+        }
+      },
+      "type" : "nav",
+      "url" : "https://www.youtube.com/"
+    }
+  }
+}
